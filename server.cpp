@@ -20,8 +20,24 @@ int main() {
 
     while (true) {
         int clientSocket = accept(serverSocket, NULL, NULL);
-        send(clientSocket, "Hello, client!\n", 16, 0);
+
+        // Read data from the client
+        char buffer[1024];
+        ssize_t bytesRead = recv(clientSocket, buffer, sizeof(buffer), 0);
+        if (bytesRead <= 0) {
+            std::cerr << "Error reading from client." << std::endl;
+            close(clientSocket);
+            continue;
+        }
+
+        // Print the received data
+        buffer[bytesRead] = '\0'; // Null-terminate the received data
+        std::cout << "Received from client: " << buffer << std::endl;
+
+        send(clientSocket, "Goodbye, client!\n", 16, 0); //send goodbye
+
         close(clientSocket);
+
     }
 
     close(serverSocket);
