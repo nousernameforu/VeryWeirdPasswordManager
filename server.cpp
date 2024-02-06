@@ -1,4 +1,3 @@
-// server.cpp
 #include <iostream>
 #include <cstring>
 #include <unistd.h>
@@ -30,17 +29,24 @@ int main() {
             continue;
         }
 
-        // Print the received data
-        buffer[bytesRead] = '\0'; // Null-terminate the received data
-        std::cout << "Received from client: " << buffer << std::endl;
+        // Null-terminate the received data
+        buffer[bytesRead] = '\0';
 
-        send(clientSocket, "Goodbye, client!\n", 16, 0); //send goodbye
+        // Process the received message and perform actions based on it
+        if (strcmp(buffer, "HELLO") == 0) {
+            send(clientSocket, "Hello, client!\n", 15, 0);
+        } else if (strcmp(buffer, "TIME") == 0) {
+            // Implement time-related functionality
+            // For example, send the current time to the client
+            // Replace the following line with your time-related logic
+            send(clientSocket, "Current time: 12:00:00\n", 23, 0);
+        } else {
+            send(clientSocket, "Unknown command\n", 16, 0);
+        }
 
         close(clientSocket);
-
     }
 
     close(serverSocket);
     return 0;
 }
-

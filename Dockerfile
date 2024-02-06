@@ -1,10 +1,7 @@
-# Dockerfile
-FROM ubuntu:latest
+# This is a Dockerfile
 
-# Update package list and install necessary packages
-RUN apt-get update && \
-    apt-get install -y g++ && \
-    rm -rf /var/lib/apt/lists/*
+FROM alpine:latest
+RUN apk --no-cache add g++ make
 
 # Set the working directory
 WORKDIR /app
