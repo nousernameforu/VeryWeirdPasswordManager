@@ -9,7 +9,7 @@ echo $container_name
 docker build -t cpp-tcp-server .
 
 #check if docker with same name is running or exists
-if docker ps --format '{{.Names}}' | grep $container_name; then
+if docker ps -a --format '{{.Names}}' | grep $container_name; then
 	echo "Will delete existing container now"
 	docker stop $container_name && docker rm $container_name
 fi
