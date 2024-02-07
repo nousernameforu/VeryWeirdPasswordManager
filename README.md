@@ -1,2 +1,2 @@
-# genericTCPparcer
-pile of top tier garbage 
+# VeryWeirdPasswordManager
+Проект по созданию простого менеджера паролей для предмета "Технологии и методы программирования"
