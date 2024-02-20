@@ -1,7 +1,8 @@
 # This is a Dockerfile
 
 FROM alpine:latest
-RUN apk --no-cache add g++ make
+
+RUN apk update && apk --no-cache add g++ make sqlite-dev
 
 # Set the working directory
 WORKDIR /app
@@ -10,7 +11,7 @@ WORKDIR /app
 COPY server.cpp .
 
 # Compile the C++ code
-RUN g++ -o server server.cpp
+RUN g++ -o server server.cpp -lsqlite3
 
 # Expose the port
 EXPOSE 8080
