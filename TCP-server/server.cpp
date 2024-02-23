@@ -1,9 +1,20 @@
 #include <iostream>
 #include <cstring>
+#include <fstream>
 #include <unistd.h>
 #include <arpa/inet.h>
-#include <fstream>
-#include <sqlite3.h>
+
+//this is needed for command mappings in tcpserver run 
+#include <unordered_map>
+#include <functional>
+
+//authentication library connection
+#include "UserAuthentication.h"
+
+//file handeling lib connection
+#include "FileHandeling.h"
+
+
 /*
 Will need to write a library for parcing an incomming command
 Will need to write a library to manage a database 
@@ -22,66 +33,13 @@ void dumpBufferToLog(const char* buffer, ssize_t size) {
     }
 }
 
-class TCPauth {
-    public:
-    bool authenticateUser(const std::string& username, const std::string& password) {
-        // Use SQLite to query the database for the given username and password
-        sqlite3* db;
-         // Connect to the SQLite database in the Docker container
-        if (sqlite3_open("/database/temporary_passwords.db", &db) != SQLITE_OK) {
-            std::cerr << "Error opening database\n";
-            return false;
-        }
-
-        std::string query = "SELECT * FROM users WHERE username = '" + username + "' AND password = '" + password + "';";
-        sqlite3_stmt* statement;
-
-        if (sqlite3_prepare_v2(db, query.c_str(), -1, &statement, nullptr) != SQLITE_OK) {
-            std::cerr << "Error preparing SQL statement\n";
-            sqlite3_close(db);
-            return false;
-        }
-
-        int result = sqlite3_step(statement);
-
-        // Check if the user exists and the password is correct
-        bool isAuthenticated = (result == SQLITE_ROW);
-
-        sqlite3_finalize(statement);
-        sqlite3_close(db);
-
-        return isAuthenticated;
-    }
-
-};
-
-class TCPreg {
-public:
-    bool registerUser(const std::string& username, const std::string& password) {
-        // Use SQLite to insert a new user into the database
-        sqlite3* db;
-
-        if (sqlite3_open("/database/temporary_passwords.db", &db) != SQLITE_OK) {
-            std::cerr << "Error opening database\n";
-            return false;
-        }
-
-        std::string query = "INSERT INTO users (username, password) VALUES ('" + username + "', '" + password + "');";
-        if (sqlite3_exec(db, query.c_str(), nullptr, nullptr, nullptr) != SQLITE_OK) {
-            std::cerr << "Error executing SQL statement\n";
-            sqlite3_close(db);
-            return false;
-        }
-
-        sqlite3_close(db);
-        return true;
-    }
-};
+//just the server
 
 class TCPServer {
 private:
     int serverSocket;
     bool isAuthenticated = false;
+    FileHandeling fileTransfer;
 
 public:
     TCPServer(int port) {
@@ -102,6 +60,74 @@ public:
     ~TCPServer() {
         close(serverSocket);
     }
+
+    //All of the commands will be here:
+
+    //authenticate the user
+
+    void authCommand(int clientSocket, char* buffer) {
+        char* token = strtok(buffer + 5, " ");
+        std::string username = token ? token : "";
+        token = strtok(nullptr, " ");
+            send(clientSocket, "Authentication failed\n", 23, 0);
+    }
+    //register the user
+
+    void regCommand(int clientSocket, char* buffer) {
+        char* token = strtok(buffer + 4, " ");
+        std::string username = token ? token : "";
+        token = strtok(nullptr, " ");
+        std::string password = token ? token : "";
+        // if (Auth.registerUser(username, password)) {
+        //     send(clientSocket, "User registration successful\n", 30, 0);
+        // } else {
+        //     send(clientSocket, "User registration failed\n", 26, 0);
+        // }
+    }
+
+    //print hello world to user
+
+    void helloCommand(int clientSocket) {
+        send(clientSocket, "Hello, client!\n", 16, 0);
+    }
+
+    //quit command
+
+    void quitCommand(int clientSocket) {
+        send(clientSocket, "Quitting the program\n", 22, 0);
+        close(clientSocket); 
+    }
+
+    //sending of files
+
+    void sendFileCommand(int clientSocket, char* buffer) {
+        char* token = strtok(buffer + 10, " ");
+        std::string filePath = token ? token : "";
+        if (fileTransfer.sendFile(clientSocket, filePath)) {
+            send(clientSocket, "File sent successfully\n", 23, 0);
+        } else {
+            send(clientSocket, "Failed to send file\n", 20, 0);
+        }
+    }
+
+    //receiving of files
+
+    void receiveFileCommand(int clientSocket, char* buffer) {
+        char* token = strtok(buffer + 13, " ");
+        std::string filePath = token ? token : "";
+        if (fileTransfer.receiveFile(clientSocket, filePath)) {
+            send(clientSocket, "File received successfully\n", 28, 0);
+        } else {
+            send(clientSocket, "Failed to receive file\n", 24, 0);
+        }
+    }
+
+    //for unknown commands
+
+    void unknownCommand(int clientSocket) {
+        send(clientSocket, "Unknown command\n", 17, 0);
+    }
+
 
     void run() {
         int clientSocket = accept(serverSocket, NULL, NULL);
@@ -126,40 +152,24 @@ public:
 
             if (!isAuthenticated) {
                 if (strncmp(buffer, "AUTH", 4) == 0) {
-                    char* token = strtok(buffer + 5, " ");
-                    std::string username = token ? token : "";
-                    token = strtok(nullptr, " ");
-                    std::string password = token ? token : "";
-                    TCPauth TCPauth_user;
-                    if (TCPauth_user.authenticateUser(username, password)) {
-                        send(clientSocket, "Authentication successful\n", 27, 0);
-                        isAuthenticated = true;
-                    } else {
-                        send(clientSocket, "Authentication failed\n", 23, 0);
-                    }
+                    authCommand(clientSocket,buffer);
                 } else if (strncmp(buffer, "REG", 3) == 0) {
-                    char* token = strtok(buffer + 4, " ");
-                    std::string username = token ? token : "";
-                    token = strtok(nullptr, " ");
-                    std::string password = token ? token : "";
-                    TCPreg TCPreg_user;
-                    if (TCPreg_user.registerUser(username, password)) {
-                        send(clientSocket, "User registration successful\n", 30, 0);
-                    } else {
-                        send(clientSocket, "User registration failed\n", 26, 0);
-                    }
+                    regCommand(clientSocket,buffer);
                 } else {
                     send(clientSocket, "Authentication needed to proceed\n", 34, 0);
                 }
             } else {
                 if (strcmp(buffer, "HELLO") == 0) {
-                    send(clientSocket, "Hello, client!\n", 16, 0); //Hello 
+                    helloCommand(clientSocket);
                 } else if (strcmp(buffer, "QUIT") == 0) {
-                    send(clientSocket, "Quitting the program\n", 22, 0); //Quit function
-                    close(clientSocket); 
+                    quitCommand(clientSocket);
                     break;
+                } else if (strncmp(buffer, "SEND_FILE", 9) == 0) {
+                    sendFileCommand(clientSocket,buffer);
+                } else if (strncmp(buffer, "RECEIVE_FILE", 12) == 0) {
+                    receiveFileCommand(clientSocket,buffer);
                 } else {
-                    send(clientSocket, "Unknown command\n", 17, 0);
+                    unknownCommand(clientSocket);
                 }
             }
         }
