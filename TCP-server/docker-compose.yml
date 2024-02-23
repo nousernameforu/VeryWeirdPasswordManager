@@ -27,6 +27,7 @@ services:
     #  - database-link-network
     volumes:
       - ./database:/database
+      - ./client-files:/client-files
     #depends_on:
     #  - mysql-server
 
