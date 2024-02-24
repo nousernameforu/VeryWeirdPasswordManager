@@ -7,7 +7,6 @@
 
 #include <iostream>
 #include <fstream>
-#include <unistd.h>
 #include <arpa/inet.h>
 #include <cstring>
 #include <cerrno>
