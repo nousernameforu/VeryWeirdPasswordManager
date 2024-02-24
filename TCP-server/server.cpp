@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cstring>
-#include <fstream>
 #include <unistd.h>
 #include <arpa/inet.h>
 
@@ -13,12 +12,6 @@
 
 //file handeling lib connection
 #include "FileHandeling.h"
-
-
-/*
-Will need to write a library for parcing an incomming command
-Will need to write a library to manage a database 
-*/
 
 void dumpBufferToLog(const char* buffer, ssize_t size) {
     std::ofstream logFile("commands_log.txt", std::ios::app); // Open log file in append mode
@@ -69,8 +62,16 @@ public:
         char* token = strtok(buffer + 5, " ");
         std::string username = token ? token : "";
         token = strtok(nullptr, " ");
+        std::string password = token ? token : "";
+        UserAuthentication Auth;
+        if (Auth.authenticateUser(username, password)) {
+            send(clientSocket, "Authentication successful\n", 27, 0);
+            isAuthenticated = true;
+        } else {
             send(clientSocket, "Authentication failed\n", 23, 0);
+        }
     }
+
     //register the user
 
     void regCommand(int clientSocket, char* buffer) {
@@ -78,11 +79,12 @@ public:
         std::string username = token ? token : "";
         token = strtok(nullptr, " ");
         std::string password = token ? token : "";
-        // if (Auth.registerUser(username, password)) {
-        //     send(clientSocket, "User registration successful\n", 30, 0);
-        // } else {
-        //     send(clientSocket, "User registration failed\n", 26, 0);
-        // }
+        UserAuthentication Auth;
+        if (Auth.registerUser(username, password)) {
+            send(clientSocket, "User registration successful\n", 30, 0);
+        } else {
+            send(clientSocket, "User registration failed\n", 26, 0);
+        }
     }
 
     //print hello world to user

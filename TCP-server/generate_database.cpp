@@ -17,8 +17,9 @@ int main() {
     const char *createTableQuery =
         "CREATE TABLE IF NOT EXISTS users ("
         "id INTEGER PRIMARY KEY AUTOINCREMENT,"
-        "username TEXT NOT NULL,"
-        "password TEXT NOT NULL);";
+        "username TEXT UNIQUE NOT NULL,"
+        "password TEXT NOT NULL,"
+        "salt TEXT NOT NULL);";
 
     rc = sqlite3_exec(db, createTableQuery, 0, 0, &errMsg);
 
@@ -29,7 +30,7 @@ int main() {
         std::cout << "Table created successfully." << std::endl;
     }
 
-    // Insert sample data
+    /* Insert sample data
     const char *insertDataQuery1 = "INSERT INTO users (username, password) VALUES ('user1', 'pass1');";
     const char *insertDataQuery2 = "INSERT INTO users (username, password) VALUES ('user2', 'pass2');";
 
@@ -50,7 +51,8 @@ int main() {
     } else {
         std
 ::cout << "Data inserted successfully." << std::endl;
-}
+}*/
+
 // Close the database
 sqlite3_close(db);
 

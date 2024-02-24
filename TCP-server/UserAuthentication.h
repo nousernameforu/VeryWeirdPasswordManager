@@ -8,11 +8,15 @@
 #include <iostream>
 #include <sqlite3.h>
 #include <string>
+#include <openssl/bio.h>
+#include <openssl/evp.h>
+#include <random>
 
 using namespace std;
 
 class UserAuthentication {
 private:
+    string generateRandomSalt(int length);
     sqlite3* db;
 public:
     UserAuthentication();
