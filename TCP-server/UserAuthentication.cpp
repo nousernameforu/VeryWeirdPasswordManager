@@ -17,7 +17,7 @@ UserAuthentication::~UserAuthentication() {
     }
 }
 
-//method to generate random salt
+//PRIVATE method to generate random salt
 std::string UserAuthentication::generateRandomSalt(int length) {
     const char charset[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     const int charsetSize = sizeof(charset) - 1;
@@ -89,6 +89,7 @@ bool UserAuthentication::authenticateUser(const string& username, const string& 
 
     sqlite3_finalize(statement);
     sqlite3_close(db);
+    
 }
 
 
