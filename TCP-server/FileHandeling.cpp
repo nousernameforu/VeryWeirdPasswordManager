@@ -1,12 +1,20 @@
 #include "FileHandeling.h"
 
+//Singleton attampt section
+
+// InstanceDestroyer::~InstanceDestroyer(){delete p_instance;}
+// void InstanceDestroyer::initialize(FileHandeling * p) {p_instance = p;}
+
+//Singleton attampt section end
+
+
 //function to check if the filepath is not escaping the allowed dir
-bool FileHandeling::isValidFilePath(const std::string& filePath, const std::string& baseDirectory) {
+bool FileHandeling::isValidFilePath(const string& filePath, const string& baseDirectory) {
         filesystem::path fullPath(filePath);
 
         // Check if the file exists before creating the base directory path
         if (!filesystem::exists(fullPath)) {
-            std::cerr << "File does not exist: " << filePath << std::endl;
+            cerr << "File does not exist: " << filePath << endl;
             return false;
         }
 
@@ -15,34 +23,33 @@ bool FileHandeling::isValidFilePath(const std::string& filePath, const std::stri
         return filesystem::equivalent(fullPath, allowedDirectory / fullPath.filename());
     }
 
-
-FileHandeling::FileHandeling(){
-
+FileHandeling::FileHandeling() {
+    std::cout << "[FileHandle] Constructor ran. " << endl;
+    //here should be something
 }
 
 FileHandeling::~FileHandeling() {
-    
+    std::cout << "[FileHandle] Destructor ran. " << endl;
 }
 
-bool FileHandeling::sendFile(int clientSocket, const string& fileName) {
+bool FileHandeling::sendFile(int clientSocket, const string& fileName, const string& baseDirectory) {    
     string filePath = baseDirectory + fileName;
 
-    if (!isValidFilePath(filePath,baseDirectory)) {
+    if (!isValidFilePath(filePath, baseDirectory)) {
         cerr << "Invalid file path: " << filePath << endl;
-        return false;
-    }
+    };
 
-    std::ifstream fileToSend(filePath, std::ios::binary);
+    ifstream fileToSend(filePath, ios::binary);
     if (!fileToSend.is_open()) {
         perror("Error opening file");
     }
 
-    cout << "Trying to send file <" << fileName << "> " << endl;
+    std::cout << "Trying to send file <" << filePath << "> " << endl;
 
     // Send file size
-    fileToSend.seekg(0, std::ios::end);
+    fileToSend.seekg(0, ios::end);
     int fileSize = fileToSend.tellg();
-    fileToSend.seekg(0, std::ios::beg);
+    fileToSend.seekg(0, ios::beg);
     send(clientSocket, &fileSize, sizeof(fileSize), 0);
 
     // Send file data
@@ -58,29 +65,26 @@ bool FileHandeling::sendFile(int clientSocket, const string& fileName) {
     return true;
 }
 
-bool FileHandeling::receiveFile(int clientSocket, const string& fileName) {
+bool FileHandeling::receiveFile(int clientSocket, const string& fileName, const string& baseDirectory) {
     string filePath = baseDirectory + fileName;
-
-    if (!isValidFilePath(filePath,baseDirectory)) {
+    if (!isValidFilePath(filePath, baseDirectory)) {
         cerr << "Invalid file path: " << filePath << endl;
-        return false;
-    }
-
+    };
     int fileSize;
-    recv(clientSocket, &fileSize, sizeof(fileSize), 0);
-    cout << "Trying to receive a file from client" << endl;
+    recv(clientSocket, &fileSize, sizeof(fileSize) - 1, 0);
+    std::cout << "Trying to receive a file from client" << endl;
     // Receive file data
-    std::ofstream file(filePath, std::ios::binary);
+    ofstream fileToReceive(filePath, ios::binary);
     char buffer[1024];
     int bytesRead;
 
     while (fileSize > 0) {
         bytesRead = recv(clientSocket, buffer, sizeof(buffer), 0);
-        file.write(buffer, bytesRead);
+        fileToReceive.write(buffer, bytesRead);
         fileSize -= bytesRead;
     }
 
-    file.close();
-    cout << "The file has been received successfully" << endl;
+    fileToReceive.close();
+    std::cout << "The file has been received successfully" << endl;
     return true;
 }

@@ -1,32 +1,41 @@
+//TCPserver.cpp
+
 #include "TCPserver.h"
 
+//Singleton attampt section
+
+// InstanceDestroyer::~InstanceDestroyer(){delete p_instance;}
+// void InstanceDestroyer::initialize(TCPserver * p) {p_instance = p;}
+
+//Singleton attampt section end
+
+
 void TCPserver::dumpBufferToLog(const char* buffer, ssize_t size, int clientSocket) {
-    std::ofstream logFile("commands_log.txt", std::ios::app); // Open log file in append mode
+    ofstream logFile("/logs/commands_log.txt", ios::app); // Open log file in append mode
 
     if (logFile.is_open()) {
         logFile.write(buffer, size);  //need to add clientsocket to the output to know which client wrote what.
-
-        logFile << std::endl;
+        logFile << endl;
         logFile.close();
-        std::cout << "Buffer dumped to commands_log.txt" << std::endl;
+        std::cout << "[Log] Buffer dumped to commands_log.txt" << endl;
     } else {
-        std::cerr << "Error opening log file." << std::endl;
+        cerr << "[Log] Error opening log file." << endl;
     }
-}
+}   
 
 TCPserver::TCPserver(int port) {
     serverSocket = socket(AF_INET, SOCK_STREAM, 0);
 
-        sockaddr_in serverAddress;
-        memset(&serverAddress, 0, sizeof(serverAddress));
-        serverAddress.sin_family = AF_INET;
-        serverAddress.sin_addr.s_addr = INADDR_ANY;
-        serverAddress.sin_port = htons(port);
+    sockaddr_in serverAddress;
+    memset(&serverAddress, 0, sizeof(serverAddress));
+    serverAddress.sin_family = AF_INET;
+    serverAddress.sin_addr.s_addr = INADDR_ANY;
+    serverAddress.sin_port = htons(port);
 
-        bind(serverSocket, (struct sockaddr*)&serverAddress, sizeof(serverAddress));
-        listen(serverSocket, 5);
+    bind(serverSocket, (struct sockaddr*)&serverAddress, sizeof(serverAddress));
+    listen(serverSocket, 5);
 
-        std::cout << "Server listening on port " << port << "..." << std::endl;
+    std::cout << "[Server] Listening on port " << port << "..." << endl;
 };
 
 TCPserver::~TCPserver(){
@@ -40,13 +49,13 @@ TCPserver::~TCPserver(){
 
 bool TCPserver::authCommand(int clientSocket, char* buffer) {
     char* token = strtok(buffer + 5, " ");
-    std::string username = token ? token : "";
+    string username = token ? token : "";
     token = strtok(nullptr, " ");
-    std::string password = token ? token : "";
-    UserAuthentication Auth;
-    if (Auth.authenticateUser(username, password)) {
+    string password = token ? token : "";
+    if (UserAuthentication::getInstance()->authenticateUser(username, password)) {
         send(clientSocket, "Authentication successful\n", 27, 0);
         clientAuthStatus[clientSocket] = true;  // Set authentication status for the client
+        clientUsernames[clientSocket] = username; // Record the username of user
     } else {
         send(clientSocket, "Authentication failed\n", 23, 0);
     }
@@ -55,11 +64,10 @@ bool TCPserver::authCommand(int clientSocket, char* buffer) {
 
 bool TCPserver::regCommand(int clientSocket, char* buffer) {
     char* token = strtok(buffer + 4, " ");
-    std::string username = token ? token : "";
+    string username = token ? token : "";
     token = strtok(nullptr, " ");
-    std::string password = token ? token : "";
-    UserAuthentication Auth;
-    if (Auth.registerUser(username, password)) {
+    string password = token ? token : "";
+    if (UserAuthentication::getInstance()->registerUser(username, password)) {
         send(clientSocket, "User registration successful\n", 30, 0);
     } else {
         send(clientSocket, "User registration failed\n", 26, 0);
@@ -69,19 +77,20 @@ bool TCPserver::regCommand(int clientSocket, char* buffer) {
 
 bool TCPserver::sendFileCommand(int clientSocket, char* buffer) {
     char* token = strtok(buffer + 10, " ");
-    std::string filePath = token ? token : "";
-    FileHandeling fileTransfer;
-    if (!fileTransfer.sendFile(clientSocket, filePath)) {   
+    string filePath = token ? token : "";
+    string username = clientUsernames[clientSocket];
+    if (this->fileReception.sendFile(clientSocket, username, baseDirectory)) {   
         cerr << "Failed to send file!" << endl;
     }
     return true;
 }
 
 bool TCPserver::receiveFileCommand(int clientSocket, char* buffer) {
+
     char* token = strtok(buffer + 13, " ");
-    std::string filePath = token ? token : "";
-    FileHandeling fileTransfer;
-    if (!fileTransfer.receiveFile(clientSocket, filePath)) {
+    string filePath = token ? token : "";
+    string username = clientUsernames[clientSocket];
+    if (this->fileReception.receiveFile(clientSocket, username, baseDirectory)) {
         cerr << "Failed to receive file!" << endl;
     }
     return true;
@@ -94,11 +103,14 @@ bool TCPserver::helloCommand(int clientSocket) {
 
 bool TCPserver::quitCommand(int clientSocket) {
     send(clientSocket, "Quitting the program\n", 22, 0);
+    clientAuthStatus[clientSocket] = false;
     close(clientSocket); 
     return true;
 }
 
 void TCPserver::handleClient(int clientSocket) {
+    cout << "[UserAuthentication] pointer for this client: " << UserAuthentication::getInstance() << endl;
+
     while(true){
         // Buffer to store received data
         char buffer[1024];
@@ -108,7 +120,8 @@ void TCPserver::handleClient(int clientSocket) {
         int bytesRead = recv(clientSocket, buffer, sizeof(buffer) - 1, 0);
         if (bytesRead <= 0) {
             // Handle error or client disconnect
-            std::cerr << "Error reading from client " << clientSocket << "."<< std::endl;
+            cerr << "Error reading from client " << clientSocket << "."<< endl;
+            clientAuthStatus[clientSocket] = false;
             close(clientSocket);
             return;
         }
@@ -124,7 +137,7 @@ void TCPserver::handleClient(int clientSocket) {
         dumpBufferToLog(buffer, bytesRead, clientSocket);
 
         // Process the received data (you can replace this with your logic)
-        std::cout << "Received from client " << clientSocket << ": " << buffer << std::endl;
+        std::cout << "Received from client " << clientSocket << ": " << buffer << endl;
         // dumpBufferToLog(buffer, bytesRead);
 
         if (clientAuthStatus.find(clientSocket) == clientAuthStatus.end() || !clientAuthStatus[clientSocket]) {
@@ -163,8 +176,8 @@ void TCPserver::startAcceptingConnections() {
         int clientSocket = accept(serverSocket, (struct sockaddr*)&clientAddress, &clientAddrLen);
 
         if (clientSocket != -1) {
-            std::thread clientThread(&TCPserver::handleClient, this, clientSocket);
-            clientThreads.push_back(std::move(clientThread));
+            thread clientThread(&TCPserver::handleClient, this, clientSocket);
+            clientThreads.push_back(move(clientThread));
         }
     }
 }
