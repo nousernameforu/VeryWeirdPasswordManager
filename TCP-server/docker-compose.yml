@@ -28,6 +28,7 @@ services:
     volumes:
       - ./database:/database
       - ./client-files:/client-files
+      - ./logs:/logs
     #depends_on:
     #  - mysql-server
 

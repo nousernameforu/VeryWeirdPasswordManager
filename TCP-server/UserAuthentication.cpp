@@ -1,6 +1,36 @@
+//UserAuthentication.cpp
+
 #include "UserAuthentication.h"
 
-using namespace std;
+//Singleton attampt section
+
+// Initialize static members
+UserAuthentication* UserAuthentication::p_instance = nullptr;
+SingletonDestroyer UserAuthentication::destroyer;
+
+// Implementation of SingletonDestroyer destructor
+SingletonDestroyer::~SingletonDestroyer() {
+    delete p_instance;
+    cout << "[signletonDestroyer] Destructor ran." << endl;
+}
+
+// Implementation of SingletonDestroyer initialize method
+void SingletonDestroyer::initialize(UserAuthentication* p) {
+    p_instance = p;
+}
+
+// Implementation of UserAuthentication getInstance method
+UserAuthentication* UserAuthentication::getInstance() {
+    if (!p_instance) {
+        p_instance = new UserAuthentication();
+        destroyer.initialize(p_instance);
+    }
+    return p_instance;
+}
+
+//Singleton attampt section end
+
+
 
 //Constructor opens the sqlite database
 UserAuthentication::UserAuthentication() : db(nullptr) {
@@ -8,6 +38,7 @@ UserAuthentication::UserAuthentication() : db(nullptr) {
         cerr << "Error opening database\n";
         //error if not open
     }
+    cout << "[userAuthentication] Constructor ran." << endl;
 }
 
 //Destructor will close the connection
@@ -15,18 +46,19 @@ UserAuthentication::~UserAuthentication() {
     if (db) {
         sqlite3_close(db);
     }
+    cout << "[userAuthentication] Destructor ran." << endl;
 }
 
 //PRIVATE method to generate random salt
-std::string UserAuthentication::generateRandomSalt(int length) {
+string UserAuthentication::generateRandomSalt(int length) {
     const char charset[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     const int charsetSize = sizeof(charset) - 1;
 
-    std::random_device rd;
-    std::default_random_engine rng(rd());
-    std::uniform_int_distribution<int> distribution(0, charsetSize - 1);
+    random_device rd;
+    default_random_engine rng(rd());
+    uniform_int_distribution<int> distribution(0, charsetSize - 1);
 
-    std::string salt;
+    string salt;
     for (int i = 0; i < length; ++i) {
         salt += charset[distribution(rng)];
     }
@@ -40,6 +72,7 @@ bool UserAuthentication::authenticateUser(const string& username, const string& 
     sqlite3_stmt* statement;
 
     if (sqlite3_prepare_v2(db, query.c_str(), -1, &statement, nullptr) != SQLITE_OK) {
+        cout << "test: " << sqlite3_prepare_v2(db, query.c_str(), -1, &statement, nullptr) << endl;
         cerr << "Error preparing SQL statement\n";
         sqlite3_close(db);
         return false;
@@ -85,11 +118,10 @@ bool UserAuthentication::authenticateUser(const string& username, const string& 
 
     //check if password matches
     bool isAuthenticated = (hashedInput == hashedPassword);
-    return isAuthenticated;
 
     sqlite3_finalize(statement);
-    sqlite3_close(db);
-    
+    return isAuthenticated;
+
 }
 
 
@@ -130,10 +162,8 @@ bool UserAuthentication::registerUser(const string& username, const string& pass
     string query = "INSERT INTO users (username, password, salt) VALUES ('" + username + "', '" + hashedPassword + "', '" + salt + "');";
     if (sqlite3_exec(db, query.c_str(), nullptr, nullptr, nullptr) != SQLITE_OK) {
         cerr << "Error executing SQL statement\n";
-        sqlite3_close(db);
         return false;
     }
 
-    sqlite3_close(db);
     return true;
 }
