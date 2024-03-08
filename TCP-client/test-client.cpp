@@ -4,56 +4,9 @@
 #include <arpa/inet.h>
 #include <fstream>
 
+#include "FileHandeling.h"
+
 using namespace std;
-
-//receiveFile
-bool receiveFileFromServer(int tcpSocket) {
-    int fileSize;
-    recv(tcpSocket, &fileSize, sizeof(fileSize), 0);
-    cout << "Trying to receive a file from server" << endl;
-    // Receive file data
-    std::ofstream receivedFile("received_file.txt", std::ios::binary);
-    char buffer[1024];
-    int bytesRead;
-
-    while (fileSize > 0) {
-        bytesRead = recv(tcpSocket, buffer, sizeof(buffer), 0);
-        receivedFile.write(buffer, bytesRead);
-        fileSize -= bytesRead;
-    }
-
-    receivedFile.close();
-    cout << "The file has been received successfully" << endl;
-    return true;
-}
-
-bool sendFileToServer(int tcpSocket) {
-    std::ifstream fileToSend("received_file.txt", std::ios::binary);
-    if (!fileToSend.is_open()) {
-        perror("Error opening file");
-    }
-
-    cout << "Trying to send file <" << "received_file.txt" << "> " << endl;
-
-    // Send file size
-    fileToSend.seekg(0, std::ios::end);
-    int fileSize = fileToSend.tellg();
-    fileToSend.seekg(0, std::ios::beg);
-    send(tcpSocket, &fileSize, sizeof(fileSize), 0);
-
-    // Send file data
-    char buffer[1024];
-    while (!fileToSend.eof()) {
-        fileToSend.read(buffer, sizeof(buffer));
-        send(tcpSocket, buffer, fileToSend.gcount(), 0);
-    }
-
-    fileToSend.close();
-
-    std::cout << "File sent successfully" << endl;
-    return true;
-}
-
 
 int main() {
     int tcpSocket = socket(AF_INET, SOCK_STREAM, 0);
@@ -62,7 +15,7 @@ int main() {
     memset(&serverAddress, 0, sizeof(serverAddress));
     serverAddress.sin_family = AF_INET;
     serverAddress.sin_port = htons(8080);
-    inet_pton(AF_INET, "127.0.0.1", &serverAddress.sin_addr);
+    inet_pton(AF_INET, "192.168.1.33", &serverAddress.sin_addr);
 
     if (connect(tcpSocket, (struct sockaddr*)&serverAddress, sizeof(serverAddress)) == -1) {
         cerr << "Error connecting to the server." << endl;
@@ -72,7 +25,7 @@ int main() {
     cout << "Connected to the server." << endl;
     while (true) {
         string message;
-        cout << "Enter message (type 'Exit' to quit): ";
+        cout << "Enter message (type 'Exit' to quit t): ";
         getline(cin, message);
         const char* charArray = message.c_str();
 
@@ -84,13 +37,13 @@ int main() {
         } else
  
         if (strncmp(charArray, "SEND_FILE", 9) == 0) {
-            if(!receiveFileFromServer(tcpSocket) == true){
+            if(!FileHandeling::getInstance()->receiveFile(tcpSocket,"received_file.txt") == true){
                 cerr << "Failed to receive file from server." << endl;
             };
         } else 
         
         if (strncmp(charArray, "RECEIVE_FILE", 12) == 0) {
-            if(!sendFileToServer(tcpSocket) == true){
+            if(!FileHandeling::getInstance()->sendFile(tcpSocket,"received_file.txt") == true){
                 cerr << "Failed to send file to the server." << endl;
             };
         } else {

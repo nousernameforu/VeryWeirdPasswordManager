@@ -2,14 +2,6 @@
 
 #include "TCPserver.h"
 
-//Singleton attampt section
-
-// InstanceDestroyer::~InstanceDestroyer(){delete p_instance;}
-// void InstanceDestroyer::initialize(TCPserver * p) {p_instance = p;}
-
-//Singleton attampt section end
-
-
 void TCPserver::dumpBufferToLog(const char* buffer, ssize_t size, int clientSocket) {
     ofstream logFile("/logs/commands_log.txt", ios::app); // Open log file in append mode
 
@@ -25,8 +17,8 @@ void TCPserver::dumpBufferToLog(const char* buffer, ssize_t size, int clientSock
 
 TCPserver::TCPserver(int port) {
     serverSocket = socket(AF_INET, SOCK_STREAM, 0);
-
     sockaddr_in serverAddress;
+    serverAddress.sin_addr.s_addr = INADDR_ANY;
     memset(&serverAddress, 0, sizeof(serverAddress));
     serverAddress.sin_family = AF_INET;
     serverAddress.sin_addr.s_addr = INADDR_ANY;
@@ -76,21 +68,18 @@ bool TCPserver::regCommand(int clientSocket, char* buffer) {
 }
 
 bool TCPserver::sendFileCommand(int clientSocket, char* buffer) {
-    char* token = strtok(buffer + 10, " ");
-    string filePath = token ? token : "";
     string username = clientUsernames[clientSocket];
-    if (this->fileReception.sendFile(clientSocket, username, baseDirectory)) {   
+    string filePath = "/client-files/" + username;
+    if (!FileHandeling::getInstance()->sendFile(clientSocket, filePath)) {   
         cerr << "Failed to send file!" << endl;
     }
     return true;
 }
 
 bool TCPserver::receiveFileCommand(int clientSocket, char* buffer) {
-
-    char* token = strtok(buffer + 13, " ");
-    string filePath = token ? token : "";
     string username = clientUsernames[clientSocket];
-    if (this->fileReception.receiveFile(clientSocket, username, baseDirectory)) {
+    string filePath = "/client-files/" + username;
+    if (!FileHandeling::getInstance()->receiveFile(clientSocket, filePath)) {
         cerr << "Failed to receive file!" << endl;
     }
     return true;
@@ -113,7 +102,7 @@ void TCPserver::handleClient(int clientSocket) {
 
     while(true){
         // Buffer to store received data
-        char buffer[1024];
+        char buffer[1024] = "";
         memset(buffer, 0, sizeof(buffer));
 
         // Read data from the client
@@ -128,11 +117,11 @@ void TCPserver::handleClient(int clientSocket) {
 
         buffer[bytesRead] = '\0';
 
-        for (ssize_t i = 0; i < bytesRead; ++i) {
-            if (buffer[i] == '\r' || buffer[i] == '\n') {
-                buffer[i] = '\0';
-            }
-        }
+        // for (ssize_t i = 0; i < bytesRead; ++i) {
+        //     if (buffer[i] == '\r' || buffer[i] == '\n') {
+        //         buffer[i] = '\0';
+        //     }
+        // }
 
         dumpBufferToLog(buffer, bytesRead, clientSocket);
 
@@ -162,7 +151,7 @@ void TCPserver::handleClient(int clientSocket) {
                     cerr << "error" << endl;
                 };
             } else {
-                // unknownCommand(clientSocket);
+                send(clientSocket, "Unknown command", 16, 0);
             }
         }
     }
