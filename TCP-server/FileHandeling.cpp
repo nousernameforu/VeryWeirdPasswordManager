@@ -26,13 +26,6 @@ FileHandeling* FileHandeling::getInstance() {
     return p_instance;
 }
 
-
-
-
-
-
-
-
 FileHandeling::FileHandeling() {
     std::cout << "[FileHandle] Constructor ran. " << std::endl;
 }
@@ -43,7 +36,20 @@ FileHandeling::~FileHandeling() {
 
 bool FileHandeling::sendFile(int clientSocket, const std::string& filePath) {
     
+    const std::string HANDSHAKE_MESSAGE = "READY";
+
+    char handshakeResponse[HANDSHAKE_MESSAGE.size() + 1];
+
+    send(clientSocket, HANDSHAKE_MESSAGE.c_str(), HANDSHAKE_MESSAGE.size(), 0);
     std::ifstream fileToSend(filePath, std::ios::binary);
+
+    recv(clientSocket, handshakeResponse, HANDSHAKE_MESSAGE.size(), 0);
+    handshakeResponse[HANDSHAKE_MESSAGE.size()] = '\0';
+    if (HANDSHAKE_MESSAGE != handshakeResponse) {
+        std::cerr << "Handshake failed." << std::endl;
+        return false;
+    }
+
     if (!fileToSend.is_open()) {
         std::cerr << "Error opening file" << std::endl;
         return false;
@@ -72,6 +78,18 @@ bool FileHandeling::sendFile(int clientSocket, const std::string& filePath) {
 
 bool FileHandeling::receiveFile(int clientSocket, const std::string& filePath) {
 
+    const std::string HANDSHAKE_MESSAGE = "READY";
+
+    send(clientSocket, HANDSHAKE_MESSAGE.c_str(), HANDSHAKE_MESSAGE.size(), 0);
+
+    char handshakeMessage[HANDSHAKE_MESSAGE.size() + 1];
+    recv(clientSocket, handshakeMessage, HANDSHAKE_MESSAGE.size(), 0);
+    handshakeMessage[HANDSHAKE_MESSAGE.size()] = '\0';
+    if (HANDSHAKE_MESSAGE != handshakeMessage) {
+        std::cerr << "Handshake failed." << std::endl;
+        return false;
+    }
+    
     int fileSize = 0;
     recv(clientSocket, &fileSize, sizeof(fileSize) - 1, 0);
     std::cout << "Trying to receive a file..." << std::endl;

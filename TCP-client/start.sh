@@ -1,7 +1,7 @@
 #/bin/sh
 
-cp ../TCP-server/FileHandeling.h FileHandeling.h && \
-cp ../TCP-server/FileHandeling.cpp FileHandeling.cpp && \
+#cp ../TCP-server/FileHandeling.h FileHandeling.h && \
+#cp ../TCP-server/FileHandeling.cpp FileHandeling.cpp && \
 
 # Compile the FileHandeling lib
 g++ -c FileHandeling.cpp -o FileHandeling.o && ar rcs libFileHandeling.a FileHandeling.o && \

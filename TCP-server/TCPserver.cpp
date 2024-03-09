@@ -102,7 +102,7 @@ void TCPserver::handleClient(int clientSocket) {
 
     while(true){
         // Buffer to store received data
-        char buffer[1024] = "";
+        char buffer[1024] = "\0";
         memset(buffer, 0, sizeof(buffer));
 
         // Read data from the client
@@ -115,7 +115,7 @@ void TCPserver::handleClient(int clientSocket) {
             return;
         }
 
-        buffer[bytesRead] = '\0';
+        // buffer[bytesRead] =+ '\0';
 
         // for (ssize_t i = 0; i < bytesRead; ++i) {
         //     if (buffer[i] == '\r' || buffer[i] == '\n') {
