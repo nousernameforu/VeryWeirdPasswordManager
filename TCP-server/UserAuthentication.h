@@ -14,7 +14,7 @@
 
 using namespace std;
 
-//Singleton attampt section
+//Singleton section
 
 class UserAuthentication;
 
@@ -27,7 +27,7 @@ public:
     void initialize(UserAuthentication* p);
 };
 
-//UserAuthentication part
+//UserAuthentication section
 
 class UserAuthentication {
 private:

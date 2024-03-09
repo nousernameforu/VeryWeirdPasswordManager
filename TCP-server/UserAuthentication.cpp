@@ -2,7 +2,7 @@
 
 #include "UserAuthentication.h"
 
-//Singleton attampt section
+//Singleton section
 
 // Initialize static members
 UserAuthentication* UserAuthentication::p_instance = nullptr;
@@ -27,10 +27,6 @@ UserAuthentication* UserAuthentication::getInstance() {
     }
     return p_instance;
 }
-
-//Singleton attampt section end
-
-
 
 //Constructor opens the sqlite database
 UserAuthentication::UserAuthentication() : db(nullptr) {
