@@ -65,7 +65,7 @@ bool FileHandeling::sendFile(int clientSocket, const std::string& filePath) {
     std::cout << "Sent the file size: " << fileSize << std::endl;
 
     // Send file data
-    char sendBuffer[1024] = "\0";
+    char sendBuffer[1024];
     while (!fileToSend.eof()) {
         fileToSend.read(sendBuffer, sizeof(sendBuffer));
         send(clientSocket, sendBuffer, fileToSend.gcount(), 0);
@@ -97,7 +97,7 @@ bool FileHandeling::receiveFile(int clientSocket, const std::string& filePath) {
     // Receive file data
     std::ofstream fileToReceive(filePath, std::ios::binary);
     std::cout << "Opened the file" << std::endl;
-    char receiveBuffer[1024] = "\0";
+    char receiveBuffer[1024];
     int bytesRead;
     std::cout << "Reading the sent file." << std::endl;
     while (fileSize > 0) {
