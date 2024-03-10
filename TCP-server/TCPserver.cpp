@@ -115,13 +115,11 @@ void TCPserver::handleClient(int clientSocket) {
             return;
         }
 
-        // buffer[bytesRead] =+ '\0';
-
-        // for (ssize_t i = 0; i < bytesRead; ++i) {
-        //     if (buffer[i] == '\r' || buffer[i] == '\n') {
-        //         buffer[i] = '\0';
-        //     }
-        // }
+        for (ssize_t i = 0; i < bytesRead; ++i) {
+            if (buffer[i] == '\r' || buffer[i] == '\n') {
+                buffer[i] = '\0';
+            }
+        }
 
         dumpBufferToLog(buffer, bytesRead, clientSocket);
 
