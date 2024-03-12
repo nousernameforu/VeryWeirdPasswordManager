@@ -102,7 +102,7 @@ void TCPserver::handleClient(int clientSocket) {
 
     while(true){
         // Buffer to store received data
-        char buffer[1024] = "\0";
+        char buffer[1024];
         memset(buffer, 0, sizeof(buffer));
 
         // Read data from the client
@@ -141,11 +141,11 @@ void TCPserver::handleClient(int clientSocket) {
             } else if (strcmp(buffer, "QUIT") == 0) {
                 quitCommand(clientSocket);
             } else if (strncmp(buffer, "SEND_FILE", 9) == 0) {
-                if (!sendFileCommand(clientSocket,buffer)){
+                if (!receiveFileCommand(clientSocket,buffer)){
                     cerr << "error" << endl;
                 };
             } else if (strncmp(buffer, "RECEIVE_FILE", 12) == 0) {
-                if (!receiveFileCommand(clientSocket,buffer)){
+                if (!sendFileCommand(clientSocket,buffer)){
                     cerr << "error" << endl;
                 };
             } else {

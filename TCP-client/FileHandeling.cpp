@@ -48,6 +48,8 @@ bool FileHandeling::sendFile(int clientSocket, const std::string& filePath) {
 
     send(clientSocket, HANDSHAKE_MESSAGE.c_str(), HANDSHAKE_MESSAGE.size(), 0);
 
+    FileEncryption::getInstance("keyfile")->encryptFile(filePath + "_unencrypted.txt",filePath);
+
     std::ifstream fileToSend(filePath, std::ios::binary);
     if (!fileToSend.is_open()) {
         std::cerr << "Error opening file" << std::endl;
@@ -90,7 +92,7 @@ bool FileHandeling::receiveFile(int clientSocket, const std::string& filePath) {
     send(clientSocket, HANDSHAKE_MESSAGE.c_str(), HANDSHAKE_MESSAGE.size(), 0);
 
     int fileSize = 0;
-    recv(clientSocket, &fileSize, sizeof(fileSize) - 1, 0);
+    recv(clientSocket, &fileSize, sizeof(fileSize), 0);
     std::cout << "Trying to receive a file..." << std::endl;
 
     // Receive file data
@@ -111,6 +113,7 @@ bool FileHandeling::receiveFile(int clientSocket, const std::string& filePath) {
     }
     fileToReceive.close();
     std::cout << "The file has been received successfully" << std::endl;
+    FileEncryption::getInstance("keyfile")->decryptFile(filePath,filePath + "_unencrypted.txt");
     return true;
 }
 
