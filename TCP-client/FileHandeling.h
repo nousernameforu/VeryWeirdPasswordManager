@@ -11,6 +11,7 @@
 #include <cstring>
 #include <cerrno>
 #include <thread>
+#include "FileEncryption.h"
 
 //Singleton attampt section
 

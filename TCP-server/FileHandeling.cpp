@@ -91,7 +91,7 @@ bool FileHandeling::receiveFile(int clientSocket, const std::string& filePath) {
     }
     
     int fileSize = 0;
-    recv(clientSocket, &fileSize, sizeof(fileSize) - 1, 0);
+    recv(clientSocket, &fileSize, sizeof(fileSize), 0);
     std::cout << "Trying to receive a file..." << std::endl;
 
     // Receive file data
