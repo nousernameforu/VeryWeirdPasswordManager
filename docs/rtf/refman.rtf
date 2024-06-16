@@ -1,0 +1,2787 @@
+{\rtf1\ansi\ansicpg1252\uc1 \deff0\deflang1033\deflangfe1033
+{\fonttbl {\f0\froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}
+{\f1\fswiss\fcharset0\fprq2{\*\panose 020b0604020202020204}Arial;}
+{\f2\fmodern\fcharset0\fprq1{\*\panose 02070309020205020404}Courier New;}
+{\f3\froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+}
+{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;\red0\green128\blue0;\red96\green64\blue32;\rede0\green128\blue0;\red128\green0\blue0;\red128\green96\blue32;\red0\green32\blue128;\red0\green128\blue128;\red255\green0\blue255;\red0\green0\blue0;\red112\green0\blue112;\red255\green0\blue0;}
+{\stylesheet
+{\widctlpar\adjustright \fs20\cgrid \snext0 Normal;}
+{\paperw11900\paperh16840\margl1800\margr1800\margt1440\margb1440\gutter0\ltrsect}
+{\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid \sbasedon0 \snext0 heading 1;}
+{\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid \sbasedon0 \snext0 heading 2;}
+{\s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid \sbasedon0 \snext0 heading 3;}
+{\s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext0 heading 4;}{\*\cs10 \additive Default Paragraph Font;}
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs12\cgrid \sbasedon0 \snext0 heading 6;}{\*\cs10 \additive Default Paragraph Font;}
+{\s15\qc\sb240\sa60\widctlpar\outlinelevel0\adjustright \b\f1\fs32\kerning28\cgrid \sbasedon0 \snext15 Title;}
+{\s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid \sbasedon0 \snext16 Subtitle;}
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid \sbasedon0 \snext17 BodyText;}
+{\s18\widctlpar\fs22\cgrid \sbasedon0 \snext18 DenseText;}
+{\s28\widctlpar\tqc\tx4320\tqr\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext28 header;}
+{\s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid \sbasedon0 \snext29 footer;}
+{\s30\li360\sa60\sb120\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext30 GroupHeader;}
+{\s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext41 Code Example 0;}
+{\s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext42 Code Example 1;}
+{\s42\li720\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext43 Code Example 2;}
+{\s43\li1080\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext44 Code Example 3;}
+{\s44\li1440\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext45 Code Example 4;}
+{\s45\li1800\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext46 Code Example 5;}
+{\s46\li2160\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext47 Code Example 6;}
+{\s47\li2520\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext48 Code Example 7;}
+{\s48\li2880\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext49 Code Example 8;}
+{\s49\li3240\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext50 Code Example 9;}
+{\s50\li3600\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext51 Code Example 10;}
+{\s51\li3960\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext52 Code Example 11;}
+{\s52\li4320\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext53 Code Example 12;}
+{\s53\li4680\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext53 Code Example 13;}
+{\s60\li0\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext61 List Continue 0;}
+{\s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext62 List Continue 1;}
+{\s62\li720\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext63 List Continue 2;}
+{\s63\li1080\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext64 List Continue 3;}
+{\s64\li1440\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext65 List Continue 4;}
+{\s65\li1800\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext66 List Continue 5;}
+{\s66\li2160\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext67 List Continue 6;}
+{\s67\li2520\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext68 List Continue 7;}
+{\s68\li2880\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext69 List Continue 8;}
+{\s69\li3240\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext70 List Continue 9;}
+{\s70\li3600\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext71 List Continue 10;}
+{\s71\li3960\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext72 List Continue 11;}
+{\s72\li4320\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext73 List Continue 12;}
+{\s73\li4680\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext73 List Continue 13;}
+{\s80\li0\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext81 DescContinue 0;}
+{\s81\li360\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext82 DescContinue 1;}
+{\s82\li720\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext83 DescContinue 2;}
+{\s83\li1080\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext84 DescContinue 3;}
+{\s84\li1440\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext85 DescContinue 4;}
+{\s85\li1800\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext86 DescContinue 5;}
+{\s86\li2160\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext87 DescContinue 6;}
+{\s87\li2520\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext88 DescContinue 7;}
+{\s88\li2880\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext89 DescContinue 8;}
+{\s89\li3240\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext90 DescContinue 9;}
+{\s90\li3600\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext91 DescContinue 10;}
+{\s91\li3960\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext92 DescContinue 11;}
+{\s92\li4320\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext93 DescContinue 12;}
+{\s93\li4680\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext93 DescContinue 13;}
+{\s100\li0\sa30\sb30\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext101 LatexTOC 0;}
+{\s101\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext102 LatexTOC 1;}
+{\s102\li720\sa24\sb24\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext103 LatexTOC 2;}
+{\s103\li1080\sa21\sb21\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext104 LatexTOC 3;}
+{\s104\li1440\sa18\sb18\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext105 LatexTOC 4;}
+{\s105\li1800\sa15\sb15\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext106 LatexTOC 5;}
+{\s106\li2160\sa12\sb12\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext107 LatexTOC 6;}
+{\s107\li2520\sa9\sb9\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext108 LatexTOC 7;}
+{\s108\li2880\sa6\sb6\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext109 LatexTOC 8;}
+{\s109\li3240\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext110 LatexTOC 9;}
+{\s110\li3600\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext111 LatexTOC 10;}
+{\s111\li3960\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext112 LatexTOC 11;}
+{\s112\li4320\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext113 LatexTOC 12;}
+{\s113\li4680\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext113 LatexTOC 13;}
+{\s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext121 \sautoupd List Bullet 0;}
+{\s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext122 \sautoupd List Bullet 1;}
+{\s122\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext123 \sautoupd List Bullet 2;}
+{\s123\fi-360\li1440\widctlpar\jclisttab\tx1440{\*\pn \pnlvlbody\ilvl0\ls4\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext124 \sautoupd List Bullet 3;}
+{\s124\fi-360\li1800\widctlpar\jclisttab\tx1800{\*\pn \pnlvlbody\ilvl0\ls5\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext125 \sautoupd List Bullet 4;}
+{\s125\fi-360\li2160\widctlpar\jclisttab\tx2160{\*\pn \pnlvlbody\ilvl0\ls6\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext126 \sautoupd List Bullet 5;}
+{\s126\fi-360\li2520\widctlpar\jclisttab\tx2520{\*\pn \pnlvlbody\ilvl0\ls7\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext127 \sautoupd List Bullet 6;}
+{\s127\fi-360\li2880\widctlpar\jclisttab\tx2880{\*\pn \pnlvlbody\ilvl0\ls8\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext128 \sautoupd List Bullet 7;}
+{\s128\fi-360\li3240\widctlpar\jclisttab\tx3240{\*\pn \pnlvlbody\ilvl0\ls9\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext129 \sautoupd List Bullet 8;}
+{\s129\fi-360\li3600\widctlpar\jclisttab\tx3600{\*\pn \pnlvlbody\ilvl0\ls10\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext130 \sautoupd List Bullet 9;}
+{\s130\fi-360\li3960\widctlpar\jclisttab\tx3960{\*\pn \pnlvlbody\ilvl0\ls11\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext131 \sautoupd List Bullet 10;}
+{\s131\fi-360\li4320\widctlpar\jclisttab\tx4320{\*\pn \pnlvlbody\ilvl0\ls12\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext132 \sautoupd List Bullet 11;}
+{\s132\fi-360\li4680\widctlpar\jclisttab\tx4680{\*\pn \pnlvlbody\ilvl0\ls13\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext133 \sautoupd List Bullet 12;}
+{\s133\fi-360\li5040\widctlpar\jclisttab\tx5040{\*\pn \pnlvlbody\ilvl0\ls14\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext133 \sautoupd List Bullet 13;}
+{\s140\fi-360\li360\widctlpar\fs20\cgrid \sbasedon0 \snext141 \sautoupd List Enum 0;}
+{\s141\fi-360\li720\widctlpar\fs20\cgrid \sbasedon0 \snext142 \sautoupd List Enum 1;}
+{\s142\fi-360\li1080\widctlpar\fs20\cgrid \sbasedon0 \snext143 \sautoupd List Enum 2;}
+{\s143\fi-360\li1440\widctlpar\fs20\cgrid \sbasedon0 \snext144 \sautoupd List Enum 3;}
+{\s144\fi-360\li1800\widctlpar\fs20\cgrid \sbasedon0 \snext145 \sautoupd List Enum 4;}
+{\s145\fi-360\li2160\widctlpar\fs20\cgrid \sbasedon0 \snext146 \sautoupd List Enum 5;}
+{\s146\fi-360\li2520\widctlpar\fs20\cgrid \sbasedon0 \snext147 \sautoupd List Enum 6;}
+{\s147\fi-360\li2880\widctlpar\fs20\cgrid \sbasedon0 \snext148 \sautoupd List Enum 7;}
+{\s148\fi-360\li3240\widctlpar\fs20\cgrid \sbasedon0 \snext149 \sautoupd List Enum 8;}
+{\s149\fi-360\li3600\widctlpar\fs20\cgrid \sbasedon0 \snext150 \sautoupd List Enum 9;}
+{\s150\fi-360\li3960\widctlpar\fs20\cgrid \sbasedon0 \snext151 \sautoupd List Enum 10;}
+{\s151\fi-360\li4320\widctlpar\fs20\cgrid \sbasedon0 \snext152 \sautoupd List Enum 11;}
+{\s152\fi-360\li4680\widctlpar\fs20\cgrid \sbasedon0 \snext153 \sautoupd List Enum 12;}
+{\s153\fi-360\li5040\widctlpar\fs20\cgrid \sbasedon0 \snext153 \sautoupd List Enum 13;}
+}
+{\*\listtable
+{\list\listtemplateid1
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u8226 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li360 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9702 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li720 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9642 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li1080 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u8226 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li1440 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9702 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li1800 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9642 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li2160 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u8662 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li2520 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9702 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li2880 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9642 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li3600 }
+\listid1}
+{\list\listtemplateid2
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9744 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li360 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9744 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li720 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9744 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li1080 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9744 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li1440 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9744 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li1800 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9744 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li2160 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9744 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li2520 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9744 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li2880 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9744 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li3600 }
+\listid2}
+{\list\listtemplateid3
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9746 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li360 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9746 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li720 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9746 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li1080 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9746 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li1440 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9746 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li1800 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9746 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li2160 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9746 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li2520 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9746 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li2880 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9746 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li3600 }
+\listid3}
+}
+{\listoverridetable
+{\listoverride\listid1\listoverridecount0\ls1}
+{\listoverride\listid2\listoverridecount0\ls2}
+{\listoverride\listid3\listoverridecount0\ls3}
+}
+{\info 
+{\title {\comment VeryWeirdPasswordManager }VeryWeirdPasswordManager}
+{\comment Generated by doxygen 1.11.0.}
+}\pard\plain 
+\sectd\pgnlcrm
+{\footer \s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid {\chpgn}}
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+\vertalc\qc\par\par\par\par\par\par\par
+\pard\plain \s15\qc\sb240\sa60\widctlpar\outlinelevel0\adjustright \b\f1\fs32\kerning28\cgrid 
+{\field\fldedit {\*\fldinst TITLE \\*MERGEFORMAT}{\fldrslt VeryWeirdPasswordManager}}\par
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+\par
+\par\par\par\par\par\par\par\par\par\par\par\par
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+{\field\fldedit {\*\fldinst AUTHOR \\*MERGEFORMAT}{\fldrslt AUTHOR}}\par
+Version \par\page\page\vertalt
+\pard\plain 
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid Table of Contents\par
+\pard\plain \par
+{\field\fldedit {\*\fldinst TOC \\f \\*MERGEFORMAT}{\fldrslt Table of contents}}\par
+\pard\plain 
+\sect \sbkpage \pgndec \pgnrestart
+\sect \sectd \sbknone
+{\footer \s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid {\chpgn}}
+\par \pard\plain 
+\par \pard\plain 
+\pard\plain \s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+VeryWeirdPasswordManager\par \pard\plain 
+{\tc\tcl1 \v VeryWeirdPasswordManager}
+{\xe \v VeryWeirdPasswordManager}
+{\bkmkstart AAAAAAAABF}
+{\bkmkend AAAAAAAABF}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{\bkmkstart AAAAAAAABG}
+{\bkmkend AAAAAAAABG}
+\'D0\'9F\'D1\'80\'D0\'BE\'D0\'B5\'D0\'BA\'D1\'82 \'D0\'BF\'D0\'BE \'D1\'81\'D0\'BE\'D0\'B7\'D0\'B4\'D0\'B0\'D0\'BD\'D0\'B8\'D1\'8E \'D0\'BF\'D1\'80\'D0\'BE\'D1\'81\'D1\'82\'D0\'BE\'D0\'B3\'D0\'BE \'D0\'BC\'D0\'B5\'D0\'BD\'D0\'B5\'D0\'B4\'D0\'B6\'D0\'B5\'D1\'80\'D0\'B0 \'D0\'BF\'D0\'B0\'D1\'80\'D0\'BE\'D0\'BB\'D0\'B5\'D0\'B9 \'D0\'B4\'D0\'BB\'D1\'8F \'D0\'BF\'D1\'80\'D0\'B5\'D0\'B4\'D0\'BC\'D0\'B5\'D1\'82\'D0\'B0 "\'D0\'A2\'D0\'B5\'D1\'85\'D0\'BD\'D0\'BE\'D0\'BB\'D0\'BE\'D0\'B3\'D0\'B8\'D0\'B8 \'D0\'B8 \'D0\'BC\'D0\'B5\'D1\'82\'D0\'BE\'D0\'B4\'D1\'8B \'D0\'BF\'D1\'80\'D0\'BE\'D0\'B3\'D1\'80\'D0\'B0\'D0\'BC\'D0\'BC\'D0\'B8\'D1\'80\'D0\'BE\'D0\'B2\'D0\'B0\'D0\'BD\'D0\'B8\'D1\'8F"\par
+{\bkmkstart AAAAAAAABH}
+{\bkmkend AAAAAAAABH}
+{{\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+How to set up:
+\par}
+{\tc\tcl2 \v How to set up:}
+(on linux or mac idk)\par
+install docker and docker-compose on your platform: {
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid curl -fsSL https://get.docker.com -o get-docker.sh && \\\par
+sudo sh ./get-docker.sh --dry-run\par
+}
+ then install g++ and openssl-dev to run the test client: {
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid apt-get install g++ openssl-dev\par
+}
+ get repo cloned and cd into it: {
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid git clone https://github.com/nousernameforu/VeryWeirdPasswordManager && \\\par
+cd VeryWeirdPasswordManager\par
+}
+ then run the server with docker-compose: {
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid cd TCP-server && \\\par
+docker-compose up  \par
+}
+\par
+after server started run a client with startup.sh shell script: {
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid cd ../TCP-client && \\\par
+chmod +x startup.sh && \\\par
+./startup.sh\par
+}
+\par
+Now you can test this crappy code I wrote. \par}
+}}
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+Class Index\par \pard\plain 
+{\tc \v Class Index}
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Class List\par \pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Here are the classes, structs, unions and interfaces with brief descriptions:}
+{
+\par
+\pard\plain \s101\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+{\b {\b File_SingletonDestroyer} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAABI \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b FileEncryption} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAABL \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b FileHandeling} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAABR \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b SingletonDestroyer} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAABY \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b TCPserver} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAACC \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b UserAuthentication} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAACN \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+\par}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+File Index\par \pard\plain 
+{\tc \v File Index}
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+File List\par \pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Here is a list of all files with brief descriptions:}
+{
+\par
+\pard\plain \s101\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+{\b TCP-client/{\b FileEncryption.cpp} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAO \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b TCP-client/{\b FileEncryption.h} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAQ \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b TCP-client/{\b FileHandeling.cpp} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAR \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b TCP-client/{\b FileHandeling.h} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAT \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b TCP-client/{\b test-client.cpp} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAV \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b TCP-server/{\b app.cpp} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAX \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b TCP-server/{\b FileHandeling.cpp} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAS \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b TCP-server/{\b FileHandeling.h} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAU \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b TCP-server/{\b generate_database.cpp} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAZ \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b TCP-server/{\b TCPserver.cpp} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAABB \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b TCP-server/{\b TCPserver.h} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAABC \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b TCP-server/{\b UserAuthentication.cpp} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAABD \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b TCP-server/{\b UserAuthentication.h} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAABE \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+\par}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+Class Documentation{\tc \v Class Documentation}
+\par \pard\plain 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+File_SingletonDestroyer Class Reference\par \pard\plain 
+{\tc\tcl2 \v File_SingletonDestroyer}
+{\xe \v File_SingletonDestroyer}
+{\bkmkstart AAAAAAAABI}
+{\bkmkend AAAAAAAABI}
+\par
+{
+{\f2 #include <FileHandeling.h>}}\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Public Member Functions\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ~File_SingletonDestroyer} ()\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b initialize} ({\b FileHandeling} *p)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ~File_SingletonDestroyer} ()\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b initialize} ({\b FileHandeling} *p)\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+Definition at line {\b 20} of file {\b FileHandeling.h}.}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Constructor & Destructor Documentation\par
+\pard\plain 
+{\xe \v ~File_SingletonDestroyer\:File_SingletonDestroyer}
+{\xe \v File_SingletonDestroyer\:~File_SingletonDestroyer}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+File_SingletonDestroyer::~File_SingletonDestroyer ()}}
+\par
+{\bkmkstart AAAAAAAABJ}
+{\bkmkend AAAAAAAABJ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 10} of file {\b FileHandeling.cpp}.}\par
+}
+{\xe \v ~File_SingletonDestroyer\:File_SingletonDestroyer}
+{\xe \v File_SingletonDestroyer\:~File_SingletonDestroyer}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+File_SingletonDestroyer::~File_SingletonDestroyer ()}}
+\par
+{\bkmkstart AAAAAAAABJ}
+{\bkmkend AAAAAAAABJ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Member Function Documentation\par
+\pard\plain 
+{\xe \v initialize\:File_SingletonDestroyer}
+{\xe \v File_SingletonDestroyer\:initialize}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void File_SingletonDestroyer::initialize ({\b FileHandeling} * p)}}
+\par
+{\bkmkstart AAAAAAAABK}
+{\bkmkend AAAAAAAABK}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 16} of file {\b FileHandeling.cpp}.}\par
+}
+{\xe \v initialize\:File_SingletonDestroyer}
+{\xe \v File_SingletonDestroyer\:initialize}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void File_SingletonDestroyer::initialize ({\b FileHandeling} * p)}}
+\par
+{\bkmkstart AAAAAAAABK}
+{\bkmkend AAAAAAAABK}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+The documentation for this class was generated from the following files:{\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+TCP-client/{\b FileHandeling.h}\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+TCP-server/{\b FileHandeling.h}\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+TCP-client/{\b FileHandeling.cpp}\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+TCP-server/{\b FileHandeling.cpp}\par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+FileEncryption Class Reference\par \pard\plain 
+{\tc\tcl2 \v FileEncryption}
+{\xe \v FileEncryption}
+{\bkmkstart AAAAAAAABL}
+{\bkmkend AAAAAAAABL}
+\par
+{
+{\f2 #include <FileEncryption.h>}}\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Public Member Functions\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b generateKeyFile} (const std::string &keyFileName)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b FileEncryption} (const std::string &keyFileName)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b encryptFile} (const std::string &inputFile, const std::string &outputFile)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b decryptFile} (const std::string &inputFile, const std::string &outputFile)\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Static Public Member Functions\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+static {\b FileEncryption} * {\b getInstance} (const std::string &keyFileName)\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+Definition at line {\b 22} of file {\b FileEncryption.h}.}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Constructor & Destructor Documentation\par
+\pard\plain 
+{\xe \v FileEncryption\:FileEncryption}
+{\xe \v FileEncryption\:FileEncryption}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+FileEncryption::FileEncryption (const std::string & keyFileName)}}
+\par
+{\bkmkstart AAAAAAAABM}
+{\bkmkend AAAAAAAABM}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 67} of file {\b FileEncryption.cpp}.}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Member Function Documentation\par
+\pard\plain 
+{\xe \v decryptFile\:FileEncryption}
+{\xe \v FileEncryption\:decryptFile}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void FileEncryption::decryptFile (const std::string & inputFile, const std::string & outputFile)}}
+\par
+{\bkmkstart AAAAAAAABN}
+{\bkmkend AAAAAAAABN}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 120} of file {\b FileEncryption.cpp}.}\par
+}
+{\xe \v encryptFile\:FileEncryption}
+{\xe \v FileEncryption\:encryptFile}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void FileEncryption::encryptFile (const std::string & inputFile, const std::string & outputFile)}}
+\par
+{\bkmkstart AAAAAAAABO}
+{\bkmkend AAAAAAAABO}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 71} of file {\b FileEncryption.cpp}.}\par
+}
+{\xe \v generateKeyFile\:FileEncryption}
+{\xe \v FileEncryption\:generateKeyFile}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void FileEncryption::generateKeyFile (const std::string & keyFileName)}}
+\par
+{\bkmkstart AAAAAAAABP}
+{\bkmkend AAAAAAAABP}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 46} of file {\b FileEncryption.cpp}.}\par
+}
+{\xe \v getInstance\:FileEncryption}
+{\xe \v FileEncryption\:getInstance}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+{\b FileEncryption} * FileEncryption::getInstance (const std::string & keyFileName){\f2 [static]}}}
+\par
+{\bkmkstart AAAAAAAABQ}
+{\bkmkend AAAAAAAABQ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 21} of file {\b FileEncryption.cpp}.}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+The documentation for this class was generated from the following files:{\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+TCP-client/{\b FileEncryption.h}\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+TCP-client/{\b FileEncryption.cpp}\par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+FileHandeling Class Reference\par \pard\plain 
+{\tc\tcl2 \v FileHandeling}
+{\xe \v FileHandeling}
+{\bkmkstart AAAAAAAABR}
+{\bkmkend AAAAAAAABR}
+\par
+{
+{\f2 #include <FileHandeling.h>}}\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Public Member Functions\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b FileHandeling} ()\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ~FileHandeling} ()\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+bool {\b sendFile} (int clientSocket, const std::string &fileName)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+bool {\b receiveFile} (int clientSocket, const std::string &fileName)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b FileHandeling} ()\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ~FileHandeling} ()\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+bool {\b sendFile} (int clientSocket, const std::string &fileName)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+bool {\b receiveFile} (int clientSocket, const std::string &fileName)\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Static Public Member Functions\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+static {\b FileHandeling} * {\b getInstance} ()\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+static {\b FileHandeling} * {\b getInstance} ()\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+Definition at line {\b 31} of file {\b FileHandeling.h}.}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Constructor & Destructor Documentation\par
+\pard\plain 
+{\xe \v FileHandeling\:FileHandeling}
+{\xe \v FileHandeling\:FileHandeling}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+FileHandeling::FileHandeling ()}}
+\par
+{\bkmkstart AAAAAAAABS}
+{\bkmkend AAAAAAAABS}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 29} of file {\b FileHandeling.cpp}.}\par
+}
+{\xe \v ~FileHandeling\:FileHandeling}
+{\xe \v FileHandeling\:~FileHandeling}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+FileHandeling::~FileHandeling ()}}
+\par
+{\bkmkstart AAAAAAAABT}
+{\bkmkend AAAAAAAABT}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 33} of file {\b FileHandeling.cpp}.}\par
+}
+{\xe \v FileHandeling\:FileHandeling}
+{\xe \v FileHandeling\:FileHandeling}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+FileHandeling::FileHandeling ()}}
+\par
+{\bkmkstart AAAAAAAABS}
+{\bkmkend AAAAAAAABS}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v ~FileHandeling\:FileHandeling}
+{\xe \v FileHandeling\:~FileHandeling}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+FileHandeling::~FileHandeling ()}}
+\par
+{\bkmkstart AAAAAAAABT}
+{\bkmkend AAAAAAAABT}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Member Function Documentation\par
+\pard\plain 
+{\xe \v getInstance\:FileHandeling}
+{\xe \v FileHandeling\:getInstance}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+{\b FileHandeling} * FileHandeling::getInstance (){\f2 [static]}}}
+\par
+{\bkmkstart AAAAAAAABU}
+{\bkmkend AAAAAAAABU}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 21} of file {\b FileHandeling.cpp}.}\par
+}
+{\xe \v getInstance\:FileHandeling}
+{\xe \v FileHandeling\:getInstance}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+static {\b FileHandeling} * FileHandeling::getInstance (){\f2 [static]}}}
+\par
+{\bkmkstart AAAAAAAABV}
+{\bkmkend AAAAAAAABV}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v receiveFile\:FileHandeling}
+{\xe \v FileHandeling\:receiveFile}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+bool FileHandeling::receiveFile (int clientSocket, const std::string & fileName)}}
+\par
+{\bkmkstart AAAAAAAABW}
+{\bkmkend AAAAAAAABW}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 80} of file {\b FileHandeling.cpp}.}\par
+}
+{\xe \v receiveFile\:FileHandeling}
+{\xe \v FileHandeling\:receiveFile}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+bool FileHandeling::receiveFile (int clientSocket, const std::string & fileName)}}
+\par
+{\bkmkstart AAAAAAAABW}
+{\bkmkend AAAAAAAABW}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v sendFile\:FileHandeling}
+{\xe \v FileHandeling\:sendFile}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+bool FileHandeling::sendFile (int clientSocket, const std::string & fileName)}}
+\par
+{\bkmkstart AAAAAAAABX}
+{\bkmkend AAAAAAAABX}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 37} of file {\b FileHandeling.cpp}.}\par
+}
+{\xe \v sendFile\:FileHandeling}
+{\xe \v FileHandeling\:sendFile}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+bool FileHandeling::sendFile (int clientSocket, const std::string & fileName)}}
+\par
+{\bkmkstart AAAAAAAABX}
+{\bkmkend AAAAAAAABX}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+The documentation for this class was generated from the following files:{\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+TCP-client/{\b FileHandeling.h}\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+TCP-server/{\b FileHandeling.h}\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+TCP-client/{\b FileHandeling.cpp}\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+TCP-server/{\b FileHandeling.cpp}\par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+SingletonDestroyer Class Reference\par \pard\plain 
+{\tc\tcl2 \v SingletonDestroyer}
+{\xe \v SingletonDestroyer}
+{\bkmkstart AAAAAAAABY}
+{\bkmkend AAAAAAAABY}
+\par
+{
+{\f2 #include <FileEncryption.h>}}\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Public Member Functions\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ~SingletonDestroyer} ()\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b initialize} ({\b FileEncryption} *p)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ~SingletonDestroyer} ()\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b initialize} ({\b UserAuthentication} *p)\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+Definition at line {\b 14} of file {\b FileEncryption.h}.}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Constructor & Destructor Documentation\par
+\pard\plain 
+{\xe \v ~SingletonDestroyer\:SingletonDestroyer}
+{\xe \v SingletonDestroyer\:~SingletonDestroyer}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SingletonDestroyer::~SingletonDestroyer ()}}
+\par
+{\bkmkstart AAAAAAAABZ}
+{\bkmkend AAAAAAAABZ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 10} of file {\b FileEncryption.cpp}.}\par
+}
+{\xe \v ~SingletonDestroyer\:SingletonDestroyer}
+{\xe \v SingletonDestroyer\:~SingletonDestroyer}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SingletonDestroyer::~SingletonDestroyer ()}}
+\par
+{\bkmkstart AAAAAAAABZ}
+{\bkmkend AAAAAAAABZ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Member Function Documentation\par
+\pard\plain 
+{\xe \v initialize\:SingletonDestroyer}
+{\xe \v SingletonDestroyer\:initialize}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void SingletonDestroyer::initialize ({\b FileEncryption} * p)}}
+\par
+{\bkmkstart AAAAAAAACA}
+{\bkmkend AAAAAAAACA}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 16} of file {\b FileEncryption.cpp}.}\par
+}
+{\xe \v initialize\:SingletonDestroyer}
+{\xe \v SingletonDestroyer\:initialize}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void SingletonDestroyer::initialize ({\b UserAuthentication} * p)}}
+\par
+{\bkmkstart AAAAAAAACB}
+{\bkmkend AAAAAAAACB}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 18} of file {\b UserAuthentication.cpp}.}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+The documentation for this class was generated from the following files:{\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+TCP-client/{\b FileEncryption.h}\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+TCP-server/{\b UserAuthentication.h}\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+TCP-client/{\b FileEncryption.cpp}\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+TCP-server/{\b UserAuthentication.cpp}\par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+TCPserver Class Reference\par \pard\plain 
+{\tc\tcl2 \v TCPserver}
+{\xe \v TCPserver}
+{\bkmkstart AAAAAAAACC}
+{\bkmkend AAAAAAAACC}
+\par
+{
+{\f2 #include <TCPserver.h>}}\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Public Member Functions\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b TCPserver} (int port)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ~TCPserver} ()\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+bool {\b authCommand} (int clientSocket, char *buffer)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+bool {\b regCommand} (int clientSocket, char *buffer)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+bool {\b helloCommand} (int clientSocket)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+bool {\b quitCommand} (int clientSocket)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+bool {\b sendFileCommand} (int clientSocket, char *buffer)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+bool {\b receiveFileCommand} (int clientSocket, char *buffer)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b handleClient} (int clientSocket)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b startAcceptingConnections} ()\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+Definition at line {\b 21} of file {\b TCPserver.h}.}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Constructor & Destructor Documentation\par
+\pard\plain 
+{\xe \v TCPserver\:TCPserver}
+{\xe \v TCPserver\:TCPserver}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+TCPserver::TCPserver (int port)}}
+\par
+{\bkmkstart AAAAAAAACD}
+{\bkmkend AAAAAAAACD}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 18} of file {\b TCPserver.cpp}.}\par
+}
+{\xe \v ~TCPserver\:TCPserver}
+{\xe \v TCPserver\:~TCPserver}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+TCPserver::~TCPserver ()}}
+\par
+{\bkmkstart AAAAAAAACE}
+{\bkmkend AAAAAAAACE}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 33} of file {\b TCPserver.cpp}.}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Member Function Documentation\par
+\pard\plain 
+{\xe \v authCommand\:TCPserver}
+{\xe \v TCPserver\:authCommand}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+bool TCPserver::authCommand (int clientSocket, char * buffer)}}
+\par
+{\bkmkstart AAAAAAAACF}
+{\bkmkend AAAAAAAACF}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 42} of file {\b TCPserver.cpp}.}\par
+}
+{\xe \v handleClient\:TCPserver}
+{\xe \v TCPserver\:handleClient}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void TCPserver::handleClient (int clientSocket)}}
+\par
+{\bkmkstart AAAAAAAACG}
+{\bkmkend AAAAAAAACG}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 100} of file {\b TCPserver.cpp}.}\par
+}
+{\xe \v helloCommand\:TCPserver}
+{\xe \v TCPserver\:helloCommand}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+bool TCPserver::helloCommand (int clientSocket)}}
+\par
+{\bkmkstart AAAAAAAACH}
+{\bkmkend AAAAAAAACH}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 88} of file {\b TCPserver.cpp}.}\par
+}
+{\xe \v quitCommand\:TCPserver}
+{\xe \v TCPserver\:quitCommand}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+bool TCPserver::quitCommand (int clientSocket)}}
+\par
+{\bkmkstart AAAAAAAACI}
+{\bkmkend AAAAAAAACI}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 93} of file {\b TCPserver.cpp}.}\par
+}
+{\xe \v receiveFileCommand\:TCPserver}
+{\xe \v TCPserver\:receiveFileCommand}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+bool TCPserver::receiveFileCommand (int clientSocket, char * buffer)}}
+\par
+{\bkmkstart AAAAAAAACJ}
+{\bkmkend AAAAAAAACJ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 79} of file {\b TCPserver.cpp}.}\par
+}
+{\xe \v regCommand\:TCPserver}
+{\xe \v TCPserver\:regCommand}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+bool TCPserver::regCommand (int clientSocket, char * buffer)}}
+\par
+{\bkmkstart AAAAAAAACK}
+{\bkmkend AAAAAAAACK}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 57} of file {\b TCPserver.cpp}.}\par
+}
+{\xe \v sendFileCommand\:TCPserver}
+{\xe \v TCPserver\:sendFileCommand}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+bool TCPserver::sendFileCommand (int clientSocket, char * buffer)}}
+\par
+{\bkmkstart AAAAAAAACL}
+{\bkmkend AAAAAAAACL}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 70} of file {\b TCPserver.cpp}.}\par
+}
+{\xe \v startAcceptingConnections\:TCPserver}
+{\xe \v TCPserver\:startAcceptingConnections}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void TCPserver::startAcceptingConnections ()}}
+\par
+{\bkmkstart AAAAAAAACM}
+{\bkmkend AAAAAAAACM}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 158} of file {\b TCPserver.cpp}.}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+The documentation for this class was generated from the following files:{\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+TCP-server/{\b TCPserver.h}\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+TCP-server/{\b TCPserver.cpp}\par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+UserAuthentication Class Reference\par \pard\plain 
+{\tc\tcl2 \v UserAuthentication}
+{\xe \v UserAuthentication}
+{\bkmkstart AAAAAAAACN}
+{\bkmkend AAAAAAAACN}
+\par
+{
+{\f2 #include <UserAuthentication.h>}}\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Public Member Functions\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b UserAuthentication} ()\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ~UserAuthentication} ()\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+bool {\b authenticateUser} (const string &username, const string &password)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+bool {\b registerUser} (const string &username, const string &password)\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Static Public Member Functions\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+static {\b UserAuthentication} * {\b getInstance} ()\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+Definition at line {\b 32} of file {\b UserAuthentication.h}.}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Constructor & Destructor Documentation\par
+\pard\plain 
+{\xe \v UserAuthentication\:UserAuthentication}
+{\xe \v UserAuthentication\:UserAuthentication}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+UserAuthentication::UserAuthentication ()}}
+\par
+{\bkmkstart AAAAAAAACO}
+{\bkmkend AAAAAAAACO}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 32} of file {\b UserAuthentication.cpp}.}\par
+}
+{\xe \v ~UserAuthentication\:UserAuthentication}
+{\xe \v UserAuthentication\:~UserAuthentication}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+UserAuthentication::~UserAuthentication ()}}
+\par
+{\bkmkstart AAAAAAAACP}
+{\bkmkend AAAAAAAACP}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 41} of file {\b UserAuthentication.cpp}.}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Member Function Documentation\par
+\pard\plain 
+{\xe \v authenticateUser\:UserAuthentication}
+{\xe \v UserAuthentication\:authenticateUser}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+bool UserAuthentication::authenticateUser (const string & username, const string & password)}}
+\par
+{\bkmkstart AAAAAAAACQ}
+{\bkmkend AAAAAAAACQ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 66} of file {\b UserAuthentication.cpp}.}\par
+}
+{\xe \v getInstance\:UserAuthentication}
+{\xe \v UserAuthentication\:getInstance}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+{\b UserAuthentication} * UserAuthentication::getInstance (){\f2 [static]}}}
+\par
+{\bkmkstart AAAAAAAACR}
+{\bkmkend AAAAAAAACR}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 23} of file {\b UserAuthentication.cpp}.}\par
+}
+{\xe \v registerUser\:UserAuthentication}
+{\xe \v UserAuthentication\:registerUser}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+bool UserAuthentication::registerUser (const string & username, const string & password)}}
+\par
+{\bkmkstart AAAAAAAACS}
+{\bkmkend AAAAAAAACS}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 125} of file {\b UserAuthentication.cpp}.}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+The documentation for this class was generated from the following files:{\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+TCP-server/{\b UserAuthentication.h}\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+TCP-server/{\b UserAuthentication.cpp}\par
+}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+File Documentation{\tc \v File Documentation}
+\par \pard\plain 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+README.md File Reference\par \pard\plain 
+{\tc\tcl2 \v README.md}
+{\xe \v README.md}
+{\bkmkstart AAAAAAAAAN}
+{\bkmkend AAAAAAAAAN}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+TCP-client/FileEncryption.cpp File Reference\par \pard\plain 
+{\tc\tcl2 \v TCP-client/FileEncryption.cpp}
+{\xe \v TCP-client/FileEncryption.cpp}
+{\bkmkstart AAAAAAAAAO}
+{\bkmkend AAAAAAAAAO}
+{
+\pard\plain \s18\widctlpar\fs22\cgrid {\f2 #include "FileEncryption.h"}\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Functions\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+bool {\b fileExists} (const std::string &fileName)\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Function Documentation\par
+\pard\plain 
+{\xe \v fileExists\:FileEncryption.cpp}
+{\xe \v FileEncryption.cpp\:fileExists}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+bool fileExists (const std::string & fileName)}}
+\par
+{\bkmkstart AAAAAAAAAP}
+{\bkmkend AAAAAAAAAP}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 62} of file {\b FileEncryption.cpp}.}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+FileEncryption.cpp\par \pard\plain 
+{\tc\tcl2 \v TCP-client/FileEncryption.cpp}
+{\xe \v TCP-client/FileEncryption.cpp}
+{\bkmkstart AAAAAAAAAA}
+{\bkmkend AAAAAAAAAA}
+Go to the documentation of this file.\par
+{
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00001 {\cf21 #include "FileEncryption.h"}\par
+00002 \par
+00003 {\cf20 //Singleton section}\par
+00004 \par
+00005 {\cf20 // Initialize static members}\par
+00006 FileEncryption* FileEncryption::p_instance = {\cf17 nullptr};\par
+00007 SingletonDestroyer FileEncryption::destroyer;\par
+00008 \par
+00009 {\cf20 // Implementation of SingletonDestroyer destructor}\par
+00010 SingletonDestroyer::~SingletonDestroyer() \{\par
+00011     {\cf17 delete} p_instance;\par
+00012     std::cout << {\cf22 "[File_signletonDestroyer] Destructor ran."} << std::endl;\par
+00013 \}\par
+00014 \par
+00015 {\cf20 // Implementation of SingletonDestroyer initialize method}\par
+00016 {\cf18 void} SingletonDestroyer::initialize(FileEncryption* p) \{\par
+00017     p_instance = p;\par
+00018 \}\par
+00019 \par
+00020 {\cf20 // Implementation of FileHandeling getInstance method}\par
+00021 FileEncryption* FileEncryption::getInstance({\cf17 const} std::string& keyFileName) \{\par
+00022     {\cf19 if} (!p_instance) \{\par
+00023         p_instance = {\cf17 new} FileEncryption(keyFileName);\par
+00024         destroyer.initialize(p_instance);\par
+00025     \}\par
+00026     {\cf19 return} p_instance;\par
+00027 \}\par
+00028 \par
+00029 {\cf18 void} FileEncryption::loadKey({\cf17 const} std::string& keyFileName) \{\par
+00030     std::ifstream keyFile(keyFileName, std::ios::binary);\par
+00031     {\cf19 if} (!keyFile.is_open()) \{\par
+00032         std::cerr << {\cf22 "Error opening key file."} << std::endl;\par
+00033         {\cf19 return};\par
+00034     \}\par
+00035 \par
+00036     keyFile.seekg(0, std::ios::end);\par
+00037     std::streamsize keySize = keyFile.tellg();\par
+00038     keyFile.seekg(0, std::ios::beg);\par
+00039 \par
+00040     key.resize(keySize);\par
+00041     keyFile.read({\cf17 reinterpret_cast<}{\cf18 char}*{\cf17 >}(key.data()), keySize);\par
+00042 \par
+00043     keyFile.close();\par
+00044 \};\par
+00045 \par
+00046 {\cf18 void} FileEncryption::generateKeyFile({\cf17 const} std::string& keyFileName) \{\par
+00047     std::ofstream keyFile(keyFileName, std::ios::binary);\par
+00048     {\cf19 if} (!keyFile.is_open()) \{\par
+00049         std::cerr << {\cf22 "Error creating key file."} << std::endl;\par
+00050         {\cf19 return};\par
+00051     \}\par
+00052 \par
+00053     {\cf20 // Generate a random key}\par
+00054     {\cf18 unsigned} {\cf18 char} randomKey[AES_BLOCK_SIZE];\par
+00055     RAND_bytes(randomKey, AES_BLOCK_SIZE);\par
+00056 \par
+00057     keyFile.write({\cf17 reinterpret_cast<}{\cf18 char}*{\cf17 >}(randomKey), AES_BLOCK_SIZE);\par
+00058 \par
+00059     keyFile.close();\par
+00060 \}\par
+00061 \par
+00062 {\cf18 bool} fileExists({\cf17 const} std::string& fileName) \{\par
+00063     std::ifstream file(fileName);\par
+00064     {\cf19 return} file.good();\par
+00065 \}\par
+00066 \par
+00067 FileEncryption::FileEncryption({\cf17 const} std::string& keyFileName) \{\par
+00068     loadKey(keyFileName);\par
+00069 \};\par
+00070 \par
+00071 {\cf18 void} FileEncryption::encryptFile({\cf17 const} std::string& inputFile, {\cf17 const} std::string& outputFile) \{\par
+00072     std::ifstream inStream(inputFile, std::ios::binary);\par
+00073     std::ofstream outStream(outputFile, std::ios::binary);\par
+00074 \par
+00075     {\cf19 if} (!inStream.is_open()) \{\par
+00076         std::cerr << {\cf22 "Error opening input file "} << inputFile << std::endl;\par
+00077         {\cf19 return};\par
+00078     \}\par
+00079 \par
+00080     {\cf19 if} (!outStream.is_open()) \{\par
+00081         std::cerr << {\cf22 "Error opening output file."} << outputFile << std::endl;\par
+00082         {\cf19 return};\par
+00083     \}\par
+00084 \par
+00085     {\cf20 // Generate IV (Initialization Vector)}\par
+00086     {\cf18 unsigned} {\cf18 char} iv[AES_BLOCK_SIZE];\par
+00087     RAND_bytes(iv, AES_BLOCK_SIZE);\par
+00088 \par
+00089     outStream.write({\cf17 reinterpret_cast<}{\cf18 char}*{\cf17 >}(iv), AES_BLOCK_SIZE);\par
+00090 \par
+00091     AES_KEY encKey;\par
+00092     AES_set_encrypt_key(key.data(), 128, &encKey);\par
+00093 \par
+00094     {\cf18 unsigned} {\cf18 char} inBuffer[AES_BLOCK_SIZE];\par
+00095     {\cf18 unsigned} {\cf18 char} outBuffer[AES_BLOCK_SIZE];\par
+00096 \par
+00097     {\cf19 while} (inStream.read({\cf17 reinterpret_cast<}{\cf18 char}*{\cf17 >}(inBuffer), AES_BLOCK_SIZE)) \{\par
+00098         AES_encrypt(inBuffer, outBuffer, &encKey);\par
+00099         outStream.write({\cf17 reinterpret_cast<}{\cf18 char}*{\cf17 >}(outBuffer), AES_BLOCK_SIZE);\par
+00100     \}\par
+00101 \par
+00102     {\cf20 // Handle PKCS#7 padding for the last block}\par
+00103     {\cf18 size_t} bytesRead = inStream.gcount();\par
+00104     {\cf19 if} (bytesRead > 0 && bytesRead < AES_BLOCK_SIZE) \{\par
+00105         {\cf20 // Calculate padding value}\par
+00106         {\cf18 size_t} paddingSize = AES_BLOCK_SIZE - bytesRead;\par
+00107         {\cf19 for} ({\cf18 size_t} i = bytesRead; i < AES_BLOCK_SIZE; ++i) \{\par
+00108             inBuffer[i] = {\cf17 static_cast<}{\cf18 unsigned} {\cf18 char}{\cf17 >}(paddingSize);\par
+00109         \}\par
+00110 \par
+00111         {\cf20 // Encrypt the padded block}\par
+00112         AES_encrypt(inBuffer, outBuffer, &encKey);\par
+00113         outStream.write({\cf17 reinterpret_cast<}{\cf18 char}*{\cf17 >}(outBuffer), AES_BLOCK_SIZE);\par
+00114     \}\par
+00115 \par
+00116     inStream.close();\par
+00117     outStream.close();\par
+00118 \};\par
+00119 \par
+00120 {\cf18 void} FileEncryption::decryptFile({\cf17 const} std::string& inputFile, {\cf17 const} std::string& outputFile) \{\par
+00121     std::ifstream inStream(inputFile, std::ios::binary);\par
+00122     std::ofstream outStream(outputFile, std::ios::binary);\par
+00123 \par
+00124     {\cf19 if} (!inStream.is_open() || !outStream.is_open()) \{\par
+00125         std::cerr << {\cf22 "Error opening files."} << std::endl;\par
+00126         {\cf19 return};\par
+00127     \}\par
+00128 \par
+00129     {\cf20 // Read IV from the beginning of the file}\par
+00130     {\cf18 unsigned} {\cf18 char} iv[AES_BLOCK_SIZE];\par
+00131     inStream.read({\cf17 reinterpret_cast<}{\cf18 char}*{\cf17 >}(iv), AES_BLOCK_SIZE);\par
+00132 \par
+00133     AES_KEY decKey;\par
+00134     AES_set_decrypt_key(key.data(), 128, &decKey);\par
+00135 \par
+00136     {\cf18 unsigned} {\cf18 char} inBuffer[AES_BLOCK_SIZE];\par
+00137     {\cf18 unsigned} {\cf18 char} outBuffer[AES_BLOCK_SIZE];\par
+00138 \par
+00139     {\cf18 size_t} bytesRead = 0;\par
+00140 \par
+00141     {\cf19 while} (inStream.read({\cf17 reinterpret_cast<}{\cf18 char}*{\cf17 >}(inBuffer), AES_BLOCK_SIZE)) \{\par
+00142         AES_decrypt(inBuffer, outBuffer, &decKey);\par
+00143 \par
+00144         {\cf20 // Handle PKCS#7 padding removal}\par
+00145         bytesRead = inStream.gcount();\par
+00146         {\cf19 if} (bytesRead < AES_BLOCK_SIZE) \{\par
+00147             {\cf18 size_t} paddingSize = {\cf17 static_cast<}{\cf18 size_t}{\cf17 >}(outBuffer[AES_BLOCK_SIZE - 1]);\par
+00148             bytesRead -= paddingSize;\par
+00149         \}\par
+00150 \par
+00151         outStream.write({\cf17 reinterpret_cast<}{\cf18 char}*{\cf17 >}(outBuffer), bytesRead);\par
+00152     \}\par
+00153 \par
+00154 \par
+00155     inStream.close();\par
+00156     outStream.close();\par
+00157 \}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+TCP-client/FileEncryption.h File Reference\par \pard\plain 
+{\tc\tcl2 \v TCP-client/FileEncryption.h}
+{\xe \v TCP-client/FileEncryption.h}
+{\bkmkstart AAAAAAAAAQ}
+{\bkmkend AAAAAAAAAQ}
+{
+\pard\plain \s18\widctlpar\fs22\cgrid {\f2 #include <iostream>}\par
+{\f2 #include <fstream>}\par
+{\f2 #include <openssl/aes.h>}\par
+{\f2 #include <openssl/rand.h>}\par
+{\f2 #include <vector>}\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Classes\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+class {\b SingletonDestroyer}\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+class {\b FileEncryption}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+FileEncryption.h\par \pard\plain 
+{\tc\tcl2 \v TCP-client/FileEncryption.h}
+{\xe \v TCP-client/FileEncryption.h}
+{\bkmkstart AAAAAAAAAB}
+{\bkmkend AAAAAAAAAB}
+Go to the documentation of this file.\par
+{
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00001 {\cf20 //FileEncryption.h}\par
+00002 \par
+00003 {\cf21 #ifndef FILEENCRYPTION_H}\par
+00004 {\cf21 #define FILEENCRYPTION_H}\par
+00005 \par
+00006 {\cf21 #include <iostream>}\par
+00007 {\cf21 #include <fstream>}\par
+00008 {\cf21 #include <openssl/aes.h>}\par
+00009 {\cf21 #include <openssl/rand.h>}\par
+00010 {\cf21 #include <vector>}\par
+00011 \par
+00012 {\cf17 class }FileEncryption;\par
+00013 \par
+00014 {\cf17 class }SingletonDestroyer \{\par
+00015 {\cf17 private}:\par
+00016     FileEncryption* p_instance;\par
+00017 {\cf17 public}:\par
+00018     ~SingletonDestroyer();\par
+00019     {\cf18 void} initialize(FileEncryption* p);\par
+00020 \};\par
+00021 \par
+00022 {\cf17 class }FileEncryption \{\par
+00023 {\cf17 private}:\par
+00024     {\cf18 void} loadKey({\cf17 const} std::string& keyFileName);\par
+00025     \par
+00026     std::vector<unsigned char> key;\par
+00027     {\cf17 static} FileEncryption* p_instance;\par
+00028     {\cf17 static} SingletonDestroyer destroyer;\par
+00029 {\cf17 public}:\par
+00030 \par
+00031     {\cf18 void} generateKeyFile({\cf17 const} std::string& keyFileName);\par
+00032 \par
+00033     {\cf17 static} FileEncryption* getInstance({\cf17 const} std::string& keyFileName);\par
+00034     FileEncryption({\cf17 const} std::string& keyFileName);\par
+00035     {\cf18 void} encryptFile({\cf17 const} std::string& inputFile, {\cf17 const} std::string& outputFile);\par
+00036     {\cf18 void} decryptFile({\cf17 const} std::string& inputFile, {\cf17 const} std::string& outputFile);\par
+00037 \};\par
+00038 \par
+00039 {\cf21 #endif}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+TCP-client/FileHandeling.cpp File Reference\par \pard\plain 
+{\tc\tcl2 \v TCP-client/FileHandeling.cpp}
+{\xe \v TCP-client/FileHandeling.cpp}
+{\bkmkstart AAAAAAAAAR}
+{\bkmkend AAAAAAAAAR}
+{
+\pard\plain \s18\widctlpar\fs22\cgrid {\f2 #include "FileHandeling.h"}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+FileHandeling.cpp\par \pard\plain 
+{\tc\tcl2 \v TCP-client/FileHandeling.cpp}
+{\xe \v TCP-client/FileHandeling.cpp}
+{\bkmkstart AAAAAAAAAC}
+{\bkmkend AAAAAAAAAC}
+Go to the documentation of this file.\par
+{
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00001 {\cf21 #include "FileHandeling.h"}\par
+00002 \par
+00003 {\cf20 //Singleton section}\par
+00004 \par
+00005 {\cf20 // Initialize static members}\par
+00006 FileHandeling* FileHandeling::p_instance = {\cf17 nullptr};\par
+00007 File_SingletonDestroyer FileHandeling::destroyer;\par
+00008 \par
+00009 {\cf20 // Implementation of SingletonDestroyer destructor}\par
+00010 File_SingletonDestroyer::~File_SingletonDestroyer() \{\par
+00011     {\cf17 delete} p_instance;\par
+00012     std::cout << {\cf22 "[File_signletonDestroyer] Destructor ran."} << std::endl;\par
+00013 \}\par
+00014 \par
+00015 {\cf20 // Implementation of SingletonDestroyer initialize method}\par
+00016 {\cf18 void} File_SingletonDestroyer::initialize(FileHandeling* p) \{\par
+00017     p_instance = p;\par
+00018 \}\par
+00019 \par
+00020 {\cf20 // Implementation of FileHandeling getInstance method}\par
+00021 FileHandeling* FileHandeling::getInstance() \{\par
+00022     {\cf19 if} (!p_instance) \{\par
+00023         p_instance = {\cf17 new} FileHandeling();\par
+00024         destroyer.initialize(p_instance);\par
+00025     \}\par
+00026     {\cf19 return} p_instance;\par
+00027 \}\par
+00028 \par
+00029 FileHandeling::FileHandeling() \{\par
+00030     std::cout << {\cf22 "[FileHandle] Constructor ran. "} << std::endl;\par
+00031 \}\par
+00032 \par
+00033 FileHandeling::~FileHandeling() \{\par
+00034     std::cout << {\cf22 "[FileHandle] Destructor ran. "} << std::endl;\par
+00035 \}\par
+00036 \par
+00037 {\cf18 bool} FileHandeling::sendFile({\cf18 int} clientSocket, {\cf17 const} std::string& filePath) \{\par
+00038     \par
+00039     {\cf17 const} std::string HANDSHAKE_MESSAGE = {\cf22 "READY"};\par
+00040 \par
+00041     {\cf18 char} handshakeResponse[HANDSHAKE_MESSAGE.size() + 1];\par
+00042     recv(clientSocket, handshakeResponse, HANDSHAKE_MESSAGE.size(), 0);\par
+00043     handshakeResponse[HANDSHAKE_MESSAGE.size()] = {\cf23 '\\0'};\par
+00044     {\cf19 if} (HANDSHAKE_MESSAGE != handshakeResponse) \{\par
+00045         std::cerr << {\cf22 "Handshake failed."} << std::endl;\par
+00046         {\cf19 return} {\cf17 false};\par
+00047     \}\par
+00048 \par
+00049     send(clientSocket, HANDSHAKE_MESSAGE.c_str(), HANDSHAKE_MESSAGE.size(), 0);\par
+00050 \par
+00051     FileEncryption::getInstance({\cf22 "keyfile"})->encryptFile(filePath + {\cf22 "_unencrypted.txt"},filePath);\par
+00052 \par
+00053     std::ifstream fileToSend(filePath, std::ios::binary);\par
+00054     {\cf19 if} (!fileToSend.is_open()) \{\par
+00055         std::cerr << {\cf22 "Error opening file"} << std::endl;\par
+00056         {\cf19 return} {\cf17 false};\par
+00057     \}\par
+00058 \par
+00059     std::cout << {\cf22 "Trying to send file <"} << filePath << {\cf22 ">... "} << std::endl;\par
+00060 \par
+00061     {\cf20 // Send file size}\par
+00062     fileToSend.seekg(0, std::ios::end);\par
+00063     {\cf18 int} fileSize = fileToSend.tellg();\par
+00064     fileToSend.seekg(0, std::ios::beg);\par
+00065     send(clientSocket, &fileSize, {\cf17 sizeof}(fileSize), 0);\par
+00066     std::cout << {\cf22 "Sent the file size: "} << fileSize << std::endl;\par
+00067 \par
+00068     {\cf20 // Send file data}\par
+00069     {\cf18 char} sendBuffer[1024];\par
+00070     {\cf19 while} (!fileToSend.eof()) \{\par
+00071         fileToSend.read(sendBuffer, {\cf17 sizeof}(sendBuffer));\par
+00072         send(clientSocket, sendBuffer, fileToSend.gcount(), 0);\par
+00073     \}\par
+00074 \par
+00075     fileToSend.close();\par
+00076     std::cout << {\cf22 "File sent successfully"} << std::endl;\par
+00077     {\cf19 return} {\cf17 true};\par
+00078 \}\par
+00079 \par
+00080 {\cf18 bool} FileHandeling::receiveFile({\cf18 int} clientSocket, {\cf17 const} std::string& filePath) \{\par
+00081 \par
+00082     {\cf17 const} std::string HANDSHAKE_MESSAGE = {\cf22 "READY"};\par
+00083 \par
+00084     {\cf18 char} handshakeMessage[HANDSHAKE_MESSAGE.size() + 1];\par
+00085     recv(clientSocket, handshakeMessage, HANDSHAKE_MESSAGE.size(), 0);\par
+00086     handshakeMessage[HANDSHAKE_MESSAGE.size()] = {\cf23 '\\0'};\par
+00087     {\cf19 if} (HANDSHAKE_MESSAGE != handshakeMessage) \{\par
+00088         std::cerr << {\cf22 "Handshake failed."} << std::endl;\par
+00089         {\cf19 return} {\cf17 false};\par
+00090     \}\par
+00091     \par
+00092     send(clientSocket, HANDSHAKE_MESSAGE.c_str(), HANDSHAKE_MESSAGE.size(), 0);\par
+00093 \par
+00094     {\cf18 int} fileSize = 0;\par
+00095     recv(clientSocket, &fileSize, {\cf17 sizeof}(fileSize), 0);\par
+00096     std::cout << {\cf22 "Trying to receive a file..."} << std::endl;\par
+00097 \par
+00098     {\cf20 // Receive file data}\par
+00099     std::ofstream fileToReceive(filePath, std::ios::binary);\par
+00100     std::cout << {\cf22 "Opened the file"} << std::endl;\par
+00101     {\cf18 char} receiveBuffer[1024];\par
+00102     {\cf18 int} bytesRead;\par
+00103     std::cout << {\cf22 "Reading the sent file."} << std::endl;\par
+00104     {\cf19 while} (fileSize > 0) \{\par
+00105         {\cf20 // Receive file data}\par
+00106         bytesRead = recv(clientSocket, receiveBuffer, {\cf17 sizeof}(receiveBuffer), 0);\par
+00107         std::cout << {\cf22 "Receivinig buffer: "} << receiveBuffer << std::endl;\par
+00108         {\cf20 // Write data to the file}\par
+00109         fileToReceive.write(receiveBuffer, bytesRead);\par
+00110         fileSize -= bytesRead;\par
+00111         std::cout << {\cf22 "Filesize is: "} << fileSize << std::endl;\par
+00112 \par
+00113     \}\par
+00114     fileToReceive.close();\par
+00115     std::cout << {\cf22 "The file has been received successfully"} << std::endl;\par
+00116     FileEncryption::getInstance({\cf22 "keyfile"})->decryptFile(filePath,filePath + {\cf22 "_unencrypted.txt"});\par
+00117     {\cf19 return} {\cf17 true};\par
+00118 \}\par
+00119 \par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+TCP-server/FileHandeling.cpp File Reference\par \pard\plain 
+{\tc\tcl2 \v TCP-server/FileHandeling.cpp}
+{\xe \v TCP-server/FileHandeling.cpp}
+{\bkmkstart AAAAAAAAAS}
+{\bkmkend AAAAAAAAAS}
+{
+\pard\plain \s18\widctlpar\fs22\cgrid {\f2 #include "FileHandeling.h"}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+FileHandeling.cpp\par \pard\plain 
+{\tc\tcl2 \v TCP-server/FileHandeling.cpp}
+{\xe \v TCP-server/FileHandeling.cpp}
+{\bkmkstart AAAAAAAAAD}
+{\bkmkend AAAAAAAAAD}
+Go to the documentation of this file.\par
+{
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00001 {\cf21 #include "FileHandeling.h"}\par
+00002 \par
+00003 {\cf20 //Singleton section}\par
+00004 \par
+00005 {\cf20 // Initialize static members}\par
+00006 FileHandeling* FileHandeling::p_instance = {\cf17 nullptr};\par
+00007 File_SingletonDestroyer FileHandeling::destroyer;\par
+00008 \par
+00009 {\cf20 // Implementation of SingletonDestroyer destructor}\par
+00010 File_SingletonDestroyer::~File_SingletonDestroyer() \{\par
+00011     {\cf17 delete} p_instance;\par
+00012     std::cout << {\cf22 "[File_signletonDestroyer] Destructor ran."} << std::endl;\par
+00013 \}\par
+00014 \par
+00015 {\cf20 // Implementation of SingletonDestroyer initialize method}\par
+00016 {\cf18 void} File_SingletonDestroyer::initialize(FileHandeling* p) \{\par
+00017     p_instance = p;\par
+00018 \}\par
+00019 \par
+00020 {\cf20 // Implementation of FileHandeling getInstance method}\par
+00021 FileHandeling* FileHandeling::getInstance() \{\par
+00022     {\cf19 if} (!p_instance) \{\par
+00023         p_instance = {\cf17 new} FileHandeling();\par
+00024         destroyer.initialize(p_instance);\par
+00025     \}\par
+00026     {\cf19 return} p_instance;\par
+00027 \}\par
+00028 \par
+00029 FileHandeling::FileHandeling() \{\par
+00030     std::cout << {\cf22 "[FileHandle] Constructor ran. "} << std::endl;\par
+00031 \}\par
+00032 \par
+00033 FileHandeling::~FileHandeling() \{\par
+00034     std::cout << {\cf22 "[FileHandle] Destructor ran. "} << std::endl;\par
+00035 \}\par
+00036 \par
+00037 {\cf18 bool} FileHandeling::sendFile({\cf18 int} clientSocket, {\cf17 const} std::string& filePath) \{\par
+00038     \par
+00039     {\cf17 const} std::string HANDSHAKE_MESSAGE = {\cf22 "READY"};\par
+00040 \par
+00041     {\cf18 char} handshakeResponse[HANDSHAKE_MESSAGE.size() + 1];\par
+00042 \par
+00043     send(clientSocket, HANDSHAKE_MESSAGE.c_str(), HANDSHAKE_MESSAGE.size(), 0);\par
+00044     std::ifstream fileToSend(filePath, std::ios::binary);\par
+00045 \par
+00046     recv(clientSocket, handshakeResponse, HANDSHAKE_MESSAGE.size(), 0);\par
+00047     handshakeResponse[HANDSHAKE_MESSAGE.size()] = {\cf23 '\\0'};\par
+00048     {\cf19 if} (HANDSHAKE_MESSAGE != handshakeResponse) \{\par
+00049         std::cerr << {\cf22 "Handshake failed."} << std::endl;\par
+00050         {\cf19 return} {\cf17 false};\par
+00051     \}\par
+00052 \par
+00053     {\cf19 if} (!fileToSend.is_open()) \{\par
+00054         std::cerr << {\cf22 "Error opening file"} << std::endl;\par
+00055         {\cf19 return} {\cf17 false};\par
+00056     \}\par
+00057 \par
+00058     std::cout << {\cf22 "Trying to send file <"} << filePath << {\cf22 ">... "} << std::endl;\par
+00059 \par
+00060     {\cf20 // Send file size}\par
+00061     fileToSend.seekg(0, std::ios::end);\par
+00062     {\cf18 int} fileSize = fileToSend.tellg();\par
+00063     fileToSend.seekg(0, std::ios::beg);\par
+00064     send(clientSocket, &fileSize, {\cf17 sizeof}(fileSize), 0);\par
+00065     std::cout << {\cf22 "Sent the file size: "} << fileSize << std::endl;\par
+00066 \par
+00067     {\cf20 // Send file data}\par
+00068     {\cf18 char} sendBuffer[1024];\par
+00069     {\cf19 while} (!fileToSend.eof()) \{\par
+00070         fileToSend.read(sendBuffer, {\cf17 sizeof}(sendBuffer));\par
+00071         send(clientSocket, sendBuffer, fileToSend.gcount(), 0);\par
+00072     \}\par
+00073 \par
+00074     fileToSend.close();\par
+00075     std::cout << {\cf22 "File sent successfully"} << std::endl;\par
+00076     {\cf19 return} {\cf17 true};\par
+00077 \}\par
+00078 \par
+00079 {\cf18 bool} FileHandeling::receiveFile({\cf18 int} clientSocket, {\cf17 const} std::string& filePath) \{\par
+00080 \par
+00081     {\cf17 const} std::string HANDSHAKE_MESSAGE = {\cf22 "READY"};\par
+00082 \par
+00083     send(clientSocket, HANDSHAKE_MESSAGE.c_str(), HANDSHAKE_MESSAGE.size(), 0);\par
+00084 \par
+00085     {\cf18 char} handshakeMessage[HANDSHAKE_MESSAGE.size() + 1];\par
+00086     recv(clientSocket, handshakeMessage, HANDSHAKE_MESSAGE.size(), 0);\par
+00087     handshakeMessage[HANDSHAKE_MESSAGE.size()] = {\cf23 '\\0'};\par
+00088     {\cf19 if} (HANDSHAKE_MESSAGE != handshakeMessage) \{\par
+00089         std::cerr << {\cf22 "Handshake failed."} << std::endl;\par
+00090         {\cf19 return} {\cf17 false};\par
+00091     \}\par
+00092     \par
+00093     {\cf18 int} fileSize = 0;\par
+00094     recv(clientSocket, &fileSize, {\cf17 sizeof}(fileSize), 0);\par
+00095     std::cout << {\cf22 "Trying to receive a file..."} << std::endl;\par
+00096 \par
+00097     {\cf20 // Receive file data}\par
+00098     std::ofstream fileToReceive(filePath, std::ios::binary);\par
+00099     std::cout << {\cf22 "Opened the file"} << std::endl;\par
+00100     {\cf18 char} receiveBuffer[1024];\par
+00101     {\cf18 int} bytesRead;\par
+00102     std::cout << {\cf22 "Reading the sent file."} << std::endl;\par
+00103     {\cf19 while} (fileSize > 0) \{\par
+00104         {\cf20 // Receive file data}\par
+00105         bytesRead = recv(clientSocket, receiveBuffer, {\cf17 sizeof}(receiveBuffer), 0);\par
+00106         std::cout << {\cf22 "Receivinig buffer: "} << receiveBuffer << std::endl;\par
+00107         {\cf20 // Write data to the file}\par
+00108         fileToReceive.write(receiveBuffer, bytesRead);\par
+00109         fileSize -= bytesRead;\par
+00110         std::cout << {\cf22 "Filesize is: "} << fileSize << std::endl;\par
+00111 \par
+00112     \}\par
+00113     fileToReceive.close();\par
+00114     std::cout << {\cf22 "The file has been received successfully"} << std::endl;\par
+00115     {\cf19 return} {\cf17 true};\par
+00116 \}\par
+00117 \par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+TCP-client/FileHandeling.h File Reference\par \pard\plain 
+{\tc\tcl2 \v TCP-client/FileHandeling.h}
+{\xe \v TCP-client/FileHandeling.h}
+{\bkmkstart AAAAAAAAAT}
+{\bkmkend AAAAAAAAAT}
+{
+\pard\plain \s18\widctlpar\fs22\cgrid {\f2 #include <iostream>}\par
+{\f2 #include <fstream>}\par
+{\f2 #include <arpa/inet.h>}\par
+{\f2 #include <cstring>}\par
+{\f2 #include <cerrno>}\par
+{\f2 #include <thread>}\par
+{\f2 #include "FileEncryption.h"}\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Classes\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+class {\b File_SingletonDestroyer}\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+class {\b FileHandeling}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+FileHandeling.h\par \pard\plain 
+{\tc\tcl2 \v TCP-client/FileHandeling.h}
+{\xe \v TCP-client/FileHandeling.h}
+{\bkmkstart AAAAAAAAAE}
+{\bkmkend AAAAAAAAAE}
+Go to the documentation of this file.\par
+{
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00001 {\cf20 // FileHandeling.h}\par
+00002 \par
+00003 {\cf20 //Header file for handeling files and file transfers}\par
+00004 \par
+00005 {\cf21 #ifndef FILEHANDELING_H}\par
+00006 {\cf21 #define FILEHANDELING_H}\par
+00007 \par
+00008 {\cf21 #include <iostream>}\par
+00009 {\cf21 #include <fstream>}\par
+00010 {\cf21 #include <arpa/inet.h>}\par
+00011 {\cf21 #include <cstring>}\par
+00012 {\cf21 #include <cerrno>}\par
+00013 {\cf21 #include <thread>}\par
+00014 {\cf21 #include "FileEncryption.h"}\par
+00015 \par
+00016 {\cf20 //Singleton attampt section}\par
+00017 \par
+00018 {\cf17 class }FileHandeling;\par
+00019 \par
+00020 {\cf17 class }File_SingletonDestroyer \{\par
+00021 {\cf17 private}:\par
+00022     FileHandeling* p_instance;\par
+00023 \par
+00024 {\cf17 public}:\par
+00025     ~File_SingletonDestroyer();\par
+00026     {\cf18 void} initialize(FileHandeling* p);\par
+00027 \};\par
+00028 {\cf20 //FileHandeling section}\par
+00029 \par
+00030 \par
+00031 {\cf17 class }FileHandeling \{\par
+00032 {\cf17 private}:\par
+00033     {\cf17 static} FileHandeling* p_instance;\par
+00034     {\cf17 static} File_SingletonDestroyer destroyer;\par
+00035 {\cf17 public}:\par
+00036     {\cf17 static} FileHandeling* getInstance();\par
+00037     FileHandeling();\par
+00038     ~FileHandeling();\par
+00039     {\cf18 bool} sendFile({\cf18 int} clientSocket, {\cf17 const} std::string& fileName);\par
+00040     {\cf18 bool} receiveFile({\cf18 int} clientSocket, {\cf17 const} std::string& fileName);\par
+00041 \};\par
+00042 \par
+00043 {\cf21 #endif}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+TCP-server/FileHandeling.h File Reference\par \pard\plain 
+{\tc\tcl2 \v TCP-server/FileHandeling.h}
+{\xe \v TCP-server/FileHandeling.h}
+{\bkmkstart AAAAAAAAAU}
+{\bkmkend AAAAAAAAAU}
+{
+\pard\plain \s18\widctlpar\fs22\cgrid {\f2 #include <iostream>}\par
+{\f2 #include <fstream>}\par
+{\f2 #include <arpa/inet.h>}\par
+{\f2 #include <cstring>}\par
+{\f2 #include <cerrno>}\par
+{\f2 #include <thread>}\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Classes\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+class {\b File_SingletonDestroyer}\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+class {\b FileHandeling}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+FileHandeling.h\par \pard\plain 
+{\tc\tcl2 \v TCP-server/FileHandeling.h}
+{\xe \v TCP-server/FileHandeling.h}
+{\bkmkstart AAAAAAAAAF}
+{\bkmkend AAAAAAAAAF}
+Go to the documentation of this file.\par
+{
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00001 {\cf20 // FileHandeling.h}\par
+00002 \par
+00003 {\cf20 //Header file for handeling files and file transfers}\par
+00004 \par
+00005 {\cf21 #ifndef FILEHANDELING_H}\par
+00006 {\cf21 #define FILEHANDELING_H}\par
+00007 \par
+00008 {\cf21 #include <iostream>}\par
+00009 {\cf21 #include <fstream>}\par
+00010 {\cf21 #include <arpa/inet.h>}\par
+00011 {\cf21 #include <cstring>}\par
+00012 {\cf21 #include <cerrno>}\par
+00013 {\cf21 #include <thread>}\par
+00014 \par
+00015 {\cf20 //Singleton attampt section}\par
+00016 \par
+00017 {\cf17 class }FileHandeling;\par
+00018 \par
+00019 {\cf17 class }File_SingletonDestroyer \{\par
+00020 {\cf17 private}:\par
+00021     FileHandeling* p_instance;\par
+00022 \par
+00023 {\cf17 public}:\par
+00024     ~File_SingletonDestroyer();\par
+00025     {\cf18 void} initialize(FileHandeling* p);\par
+00026 \};\par
+00027 {\cf20 //FileHandeling section}\par
+00028 \par
+00029 \par
+00030 {\cf17 class }FileHandeling \{\par
+00031 {\cf17 private}:\par
+00032     {\cf17 static} FileHandeling* p_instance;\par
+00033     {\cf17 static} File_SingletonDestroyer destroyer;\par
+00034 {\cf17 public}:\par
+00035     {\cf17 static} FileHandeling* getInstance();\par
+00036     FileHandeling();\par
+00037     ~FileHandeling();\par
+00038     {\cf18 bool} sendFile({\cf18 int} clientSocket, {\cf17 const} std::string& fileName);\par
+00039     {\cf18 bool} receiveFile({\cf18 int} clientSocket, {\cf17 const} std::string& fileName);\par
+00040 \};\par
+00041 \par
+00042 {\cf21 #endif}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+TCP-client/test-client.cpp File Reference\par \pard\plain 
+{\tc\tcl2 \v TCP-client/test-client.cpp}
+{\xe \v TCP-client/test-client.cpp}
+{\bkmkstart AAAAAAAAAV}
+{\bkmkend AAAAAAAAAV}
+{
+\pard\plain \s18\widctlpar\fs22\cgrid {\f2 #include <iostream>}\par
+{\f2 #include <cstring>}\par
+{\f2 #include <unistd.h>}\par
+{\f2 #include <arpa/inet.h>}\par
+{\f2 #include <fstream>}\par
+{\f2 #include "FileHandeling.h"}\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Functions\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b main} ()\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Function Documentation\par
+\pard\plain 
+{\xe \v main\:test-client.cpp}
+{\xe \v test-client.cpp\:main}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+int main ()}}
+\par
+{\bkmkstart AAAAAAAAAW}
+{\bkmkend AAAAAAAAAW}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 11} of file {\b test-client.cpp}.}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+test-client.cpp\par \pard\plain 
+{\tc\tcl2 \v TCP-client/test-client.cpp}
+{\xe \v TCP-client/test-client.cpp}
+{\bkmkstart AAAAAAAAAG}
+{\bkmkend AAAAAAAAAG}
+Go to the documentation of this file.\par
+{
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00001 {\cf21 #include <iostream>}\par
+00002 {\cf21 #include <cstring>}\par
+00003 {\cf21 #include <unistd.h>}\par
+00004 {\cf21 #include <arpa/inet.h>}\par
+00005 {\cf21 #include <fstream>}\par
+00006 \par
+00007 {\cf21 #include "FileHandeling.h"}\par
+00008 \par
+00009 {\cf17 using namespace }std;\par
+00010 \par
+00011 {\cf18 int} main() \{\par
+00012     {\cf18 int} tcpSocket = socket(AF_INET, SOCK_STREAM, 0);\par
+00013 \par
+00014     sockaddr_in serverAddress;\par
+00015     memset(&serverAddress, 0, {\cf17 sizeof}(serverAddress));\par
+00016     serverAddress.sin_family = AF_INET;\par
+00017     serverAddress.sin_port = htons(8080);\par
+00018     inet_pton(AF_INET, {\cf22 "127.0.0.1"}, &serverAddress.sin_addr);\par
+00019 \par
+00020     {\cf19 if} (connect(tcpSocket, ({\cf17 struct} sockaddr*)&serverAddress, {\cf17 sizeof}(serverAddress)) == -1) \{\par
+00021         cerr << {\cf22 "Error connecting to the server."} << endl;\par
+00022         {\cf19 return} 1;\par
+00023     \}\par
+00024 \par
+00025     cout << {\cf22 "Connected to the server."} << endl;\par
+00026     {\cf19 while} ({\cf17 true}) \{\par
+00027         {\cf18 string} message;\par
+00028         cout << {\cf22 "Enter message (type 'Exit' to quit): "};\par
+00029         getline(cin, message);\par
+00030         {\cf17 const} {\cf18 char}* charArray = message.c_str();\par
+00031         \par
+00032 \par
+00033         {\cf19 if} (message == {\cf22 "Exit"}) \{\par
+00034             cout << {\cf22 "Exiting client."} << endl;\par
+00035             {\cf19 break};\par
+00036         \} {\cf19 else}\par
+00037  \par
+00038         {\cf19 if} (strncmp(charArray, {\cf22 "SEND_FILE"}, 10) == 0) \{\par
+00039             send(tcpSocket, message.c_str(), message.size(), 0);\par
+00040             {\cf19 if}(!FileHandeling::getInstance()->sendFile(tcpSocket,{\cf22 "received_file"}) == {\cf17 true})\{\par
+00041                 cerr << {\cf22 "Failed to send file to the server."} << endl;\par
+00042             \};\par
+00043         \} {\cf19 else} \par
+00044         \par
+00045         {\cf19 if} (strncmp(charArray, {\cf22 "RECEIVE_FILE"}, 13) == 0) \{\par
+00046             send(tcpSocket, message.c_str(), message.size(), 0);\par
+00047             {\cf19 if}(!FileHandeling::getInstance()->receiveFile(tcpSocket,{\cf22 "received_file"}) == {\cf17 true})\{\par
+00048                 cerr << {\cf22 "Failed to receive file from server."} << endl;\par
+00049             \};\par
+00050         \} {\cf19 else} \{\par
+00051         send(tcpSocket, message.c_str(), message.size(), 0);\par
+00052         {\cf18 char} MSGbuffer[1024];\par
+00053         ssize_t bytesRead = recv(tcpSocket, MSGbuffer, {\cf17 sizeof}(MSGbuffer), 0);\par
+00054         {\cf19 if} (bytesRead <= 0) \{\par
+00055             cerr << {\cf22 "Error reading from server."} << endl;\par
+00056             {\cf19 break};\par
+00057         \}\par
+00058 \par
+00059         {\cf20 // MSGbuffer[bytesRead] += '\\0'; // Null-terminate the received data}\par
+00060         cout << {\cf22 "Received from server: "} << MSGbuffer << endl;\par
+00061         \}\par
+00062     \}\par
+00063 \par
+00064     close(tcpSocket);\par
+00065     {\cf19 return} 0;\par
+00066 \}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+TCP-server/app.cpp File Reference\par \pard\plain 
+{\tc\tcl2 \v TCP-server/app.cpp}
+{\xe \v TCP-server/app.cpp}
+{\bkmkstart AAAAAAAAAX}
+{\bkmkend AAAAAAAAAX}
+{
+\pard\plain \s18\widctlpar\fs22\cgrid {\f2 #include <iostream>}\par
+{\f2 #include "UserAuthentication.h"}\par
+{\f2 #include "FileHandeling.h"}\par
+{\f2 #include "TCPserver.h"}\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Functions\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b main} ()\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Function Documentation\par
+\pard\plain 
+{\xe \v main\:app.cpp}
+{\xe \v app.cpp\:main}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+int main ()}}
+\par
+{\bkmkstart AAAAAAAAAY}
+{\bkmkend AAAAAAAAAY}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 12} of file {\b app.cpp}.}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+app.cpp\par \pard\plain 
+{\tc\tcl2 \v TCP-server/app.cpp}
+{\xe \v TCP-server/app.cpp}
+{\bkmkstart AAAAAAAAAH}
+{\bkmkend AAAAAAAAAH}
+Go to the documentation of this file.\par
+{
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00001 {\cf21 #include <iostream>}\par
+00002 \par
+00003 {\cf20 //authentication library connection}\par
+00004 {\cf21 #include "UserAuthentication.h"}\par
+00005 \par
+00006 {\cf20 //file handeling lib connection}\par
+00007 {\cf21 #include "FileHandeling.h"}\par
+00008 \par
+00009 {\cf20 //tcp server library }\par
+00010 {\cf21 #include "TCPserver.h"}\par
+00011 \par
+00012 {\cf18 int} main() \{\par
+00013 \par
+00014     TCPserver server(8080);\par
+00015     server.startAcceptingConnections();\par
+00016 \par
+00017     {\cf19 return} 0;\par
+00018 \}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+TCP-server/generate_database.cpp File Reference\par \pard\plain 
+{\tc\tcl2 \v TCP-server/generate_database.cpp}
+{\xe \v TCP-server/generate_database.cpp}
+{\bkmkstart AAAAAAAAAZ}
+{\bkmkend AAAAAAAAAZ}
+{
+\pard\plain \s18\widctlpar\fs22\cgrid {\f2 #include <iostream>}\par
+{\f2 #include <sqlite3.h>}\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Functions\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b main} ()\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Function Documentation\par
+\pard\plain 
+{\xe \v main\:generate_database.cpp}
+{\xe \v generate_database.cpp\:main}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+int main ()}}
+\par
+{\bkmkstart AAAAAAAABA}
+{\bkmkend AAAAAAAABA}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 4} of file {\b generate_database.cpp}.}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+generate_database.cpp\par \pard\plain 
+{\tc\tcl2 \v TCP-server/generate_database.cpp}
+{\xe \v TCP-server/generate_database.cpp}
+{\bkmkstart AAAAAAAAAI}
+{\bkmkend AAAAAAAAAI}
+Go to the documentation of this file.\par
+{
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00001 {\cf21 #include <iostream>}\par
+00002 {\cf21 #include <sqlite3.h>}\par
+00003 \par
+00004 {\cf18 int} main() \{\par
+00005     sqlite3 *db;\par
+00006     {\cf18 char} *errMsg = 0;\par
+00007 \par
+00008     {\cf20 // Open database or create if it doesn't exist}\par
+00009     {\cf18 int} rc = sqlite3_open({\cf22 "temporary_passwords.db"}, &db);\par
+00010 \par
+00011     {\cf19 if} (rc) \{\par
+00012         std::cerr << {\cf22 "Error opening database: "} << sqlite3_errmsg(db) << std::endl;\par
+00013         {\cf19 return} rc;\par
+00014     \}\par
+00015 \par
+00016     {\cf20 // Create a table named "users"}\par
+00017     {\cf17 const} {\cf18 char} *createTableQuery =\par
+00018         {\cf22 "CREATE TABLE IF NOT EXISTS users ("}\par
+00019         {\cf22 "id INTEGER PRIMARY KEY AUTOINCREMENT,"}\par
+00020         {\cf22 "username TEXT UNIQUE NOT NULL,"}\par
+00021         {\cf22 "password TEXT NOT NULL,"}\par
+00022         {\cf22 "salt TEXT NOT NULL);"};\par
+00023 \par
+00024     rc = sqlite3_exec(db, createTableQuery, 0, 0, &errMsg);\par
+00025 \par
+00026     {\cf19 if} (rc != SQLITE_OK) \{\par
+00027         std::cerr << {\cf22 "Error creating table: "} << errMsg << std::endl;\par
+00028         sqlite3_free(errMsg);\par
+00029     \} {\cf19 else} \{\par
+00030         std::cout << {\cf22 "Table created successfully."} << std::endl;\par
+00031     \}\par
+00032 \par
+00033     {\cf20 /* Insert sample data}\par
+00034 {\cf20     const char *insertDataQuery1 = "INSERT INTO users (username, password) VALUES ('user1', 'pass1');";}\par
+00035 {\cf20     const char *insertDataQuery2 = "INSERT INTO users (username, password) VALUES ('user2', 'pass2');";}\par
+00036 {\cf20 }\par
+00037 {\cf20     rc = sqlite3_exec(db, insertDataQuery1, 0, 0, &errMsg);}\par
+00038 {\cf20 }\par
+00039 {\cf20     if (rc != SQLITE_OK) \{}\par
+00040 {\cf20         std::cerr << "Error inserting data: " << errMsg << std::endl;}\par
+00041 {\cf20         sqlite3_free(errMsg);}\par
+00042 {\cf20     \} else \{}\par
+00043 {\cf20         std::cout << "Data inserted successfully." << std::endl;}\par
+00044 {\cf20     \}}\par
+00045 {\cf20 }\par
+00046 {\cf20     rc = sqlite3_exec(db, insertDataQuery2, 0, 0, &errMsg);}\par
+00047 {\cf20 }\par
+00048 {\cf20     if (rc != SQLITE_OK) \{}\par
+00049 {\cf20         std::cerr << "Error inserting data: " << errMsg << std::endl;}\par
+00050 {\cf20         sqlite3_free(errMsg);}\par
+00051 {\cf20     \} else \{}\par
+00052 {\cf20         std}\par
+00053 {\cf20 ::cout << "Data inserted successfully." << std::endl;}\par
+00054 {\cf20 \}*/}\par
+00055 \par
+00056 {\cf20 // Close the database}\par
+00057 sqlite3_close(db);\par
+00058 \par
+00059 {\cf19 return} 0;\par
+00060 \}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+TCP-server/TCPserver.cpp File Reference\par \pard\plain 
+{\tc\tcl2 \v TCP-server/TCPserver.cpp}
+{\xe \v TCP-server/TCPserver.cpp}
+{\bkmkstart AAAAAAAABB}
+{\bkmkend AAAAAAAABB}
+{
+\pard\plain \s18\widctlpar\fs22\cgrid {\f2 #include "TCPserver.h"}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+TCPserver.cpp\par \pard\plain 
+{\tc\tcl2 \v TCP-server/TCPserver.cpp}
+{\xe \v TCP-server/TCPserver.cpp}
+{\bkmkstart AAAAAAAAAJ}
+{\bkmkend AAAAAAAAAJ}
+Go to the documentation of this file.\par
+{
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00001 {\cf20 //TCPserver.cpp}\par
+00002 \par
+00003 {\cf21 #include "TCPserver.h"}\par
+00004 \par
+00005 {\cf18 void} TCPserver::dumpBufferToLog({\cf17 const} {\cf18 char}* buffer, ssize_t size, {\cf18 int} clientSocket) \{\par
+00006     ofstream logFile({\cf22 "/logs/commands_log.txt"}, ios::app); {\cf20 // Open log file in append mode}\par
+00007 \par
+00008     {\cf19 if} (logFile.is_open()) \{\par
+00009         logFile.write(buffer, size);  {\cf20 //need to add clientsocket to the output to know which client wrote what.}\par
+00010         logFile << endl;\par
+00011         logFile.close();\par
+00012         std::cout << {\cf22 "[Log] Buffer dumped to commands_log.txt"} << endl;\par
+00013     \} {\cf19 else} \{\par
+00014         cerr << {\cf22 "[Log] Error opening log file."} << endl;\par
+00015     \}\par
+00016 \}   \par
+00017 \par
+00018 TCPserver::TCPserver({\cf18 int} port) \{\par
+00019     serverSocket = socket(AF_INET, SOCK_STREAM, 0);\par
+00020     sockaddr_in serverAddress;\par
+00021     serverAddress.sin_addr.s_addr = INADDR_ANY;\par
+00022     memset(&serverAddress, 0, {\cf17 sizeof}(serverAddress));\par
+00023     serverAddress.sin_family = AF_INET;\par
+00024     serverAddress.sin_addr.s_addr = INADDR_ANY;\par
+00025     serverAddress.sin_port = htons(port);\par
+00026 \par
+00027     bind(serverSocket, ({\cf17 struct} sockaddr*)&serverAddress, {\cf17 sizeof}(serverAddress));\par
+00028     listen(serverSocket, 5);\par
+00029 \par
+00030     std::cout << {\cf22 "[Server] Listening on port "} << port << {\cf22 "..."} << endl;\par
+00031 \};\par
+00032 \par
+00033 TCPserver::~TCPserver()\{\par
+00034     close(serverSocket);\par
+00035     {\cf19 for} ({\cf17 auto}& thread : clientThreads) \{\par
+00036         {\cf19 if} (thread.joinable()) \{\par
+00037             thread.join();\par
+00038         \}\par
+00039     \}\par
+00040 \};\par
+00041 \par
+00042 {\cf18 bool} TCPserver::authCommand({\cf18 int} clientSocket, {\cf18 char}* buffer) \{\par
+00043     {\cf18 char}* token = strtok(buffer + 5, {\cf22 " "});\par
+00044     {\cf18 string} username = token ? token : {\cf22 ""};\par
+00045     token = strtok({\cf17 nullptr}, {\cf22 " "});\par
+00046     {\cf18 string} password = token ? token : {\cf22 ""};\par
+00047     {\cf19 if} (UserAuthentication::getInstance()->authenticateUser(username, password)) \{\par
+00048         send(clientSocket, {\cf22 "Authentication successful\\n"}, 27, 0);\par
+00049         clientAuthStatus[clientSocket] = {\cf17 true};  {\cf20 // Set authentication status for the client}\par
+00050         clientUsernames[clientSocket] = username; {\cf20 // Record the username of user}\par
+00051     \} {\cf19 else} \{\par
+00052         send(clientSocket, {\cf22 "Authentication failed\\n"}, 23, 0);\par
+00053     \}\par
+00054     {\cf19 return} {\cf17 true};\par
+00055 \};\par
+00056 \par
+00057 {\cf18 bool} TCPserver::regCommand({\cf18 int} clientSocket, {\cf18 char}* buffer) \{\par
+00058     {\cf18 char}* token = strtok(buffer + 4, {\cf22 " "});\par
+00059     {\cf18 string} username = token ? token : {\cf22 ""};\par
+00060     token = strtok({\cf17 nullptr}, {\cf22 " "});\par
+00061     {\cf18 string} password = token ? token : {\cf22 ""};\par
+00062     {\cf19 if} (UserAuthentication::getInstance()->registerUser(username, password)) \{\par
+00063         send(clientSocket, {\cf22 "User registration successful\\n"}, 30, 0);\par
+00064     \} {\cf19 else} \{\par
+00065         send(clientSocket, {\cf22 "User registration failed\\n"}, 26, 0);\par
+00066     \}\par
+00067     {\cf19 return} {\cf17 true};\par
+00068 \}\par
+00069 \par
+00070 {\cf18 bool} TCPserver::sendFileCommand({\cf18 int} clientSocket, {\cf18 char}* buffer) \{\par
+00071     {\cf18 string} username = clientUsernames[clientSocket];\par
+00072     {\cf18 string} filePath = {\cf22 "/client-files/"} + username;\par
+00073     {\cf19 if} (!FileHandeling::getInstance()->sendFile(clientSocket, filePath)) \{   \par
+00074         cerr << {\cf22 "Failed to send file!"} << endl;\par
+00075     \}\par
+00076     {\cf19 return} {\cf17 true};\par
+00077 \}\par
+00078 \par
+00079 {\cf18 bool} TCPserver::receiveFileCommand({\cf18 int} clientSocket, {\cf18 char}* buffer) \{\par
+00080     {\cf18 string} username = clientUsernames[clientSocket];\par
+00081     {\cf18 string} filePath = {\cf22 "/client-files/"} + username;\par
+00082     {\cf19 if} (!FileHandeling::getInstance()->receiveFile(clientSocket, filePath)) \{\par
+00083         cerr << {\cf22 "Failed to receive file!"} << endl;\par
+00084     \}\par
+00085     {\cf19 return} {\cf17 true};\par
+00086 \}\par
+00087 \par
+00088 {\cf18 bool} TCPserver::helloCommand({\cf18 int} clientSocket) \{\par
+00089     send(clientSocket, {\cf22 "Hello, client!\\n"}, 16, 0);\par
+00090     {\cf19 return} {\cf17 true};\par
+00091 \}\par
+00092 \par
+00093 {\cf18 bool} TCPserver::quitCommand({\cf18 int} clientSocket) \{\par
+00094     send(clientSocket, {\cf22 "Quitting the program\\n"}, 22, 0);\par
+00095     clientAuthStatus[clientSocket] = {\cf17 false};\par
+00096     close(clientSocket); \par
+00097     {\cf19 return} {\cf17 true};\par
+00098 \}\par
+00099 \par
+00100 {\cf18 void} TCPserver::handleClient({\cf18 int} clientSocket) \{\par
+00101     cout << {\cf22 "[UserAuthentication] pointer for this client: "} << UserAuthentication::getInstance() << endl;\par
+00102 \par
+00103     {\cf19 while}({\cf17 true})\{\par
+00104         {\cf20 // Buffer to store received data}\par
+00105         {\cf18 char} buffer[1024];\par
+00106         memset(buffer, 0, {\cf17 sizeof}(buffer));\par
+00107 \par
+00108         {\cf20 // Read data from the client}\par
+00109         {\cf18 int} bytesRead = recv(clientSocket, buffer, {\cf17 sizeof}(buffer) - 1, 0);\par
+00110         {\cf19 if} (bytesRead <= 0) \{\par
+00111             {\cf20 // Handle error or client disconnect}\par
+00112             cerr << {\cf22 "Error reading from client "} << clientSocket << {\cf22 "."}<< endl;\par
+00113             clientAuthStatus[clientSocket] = {\cf17 false};\par
+00114             close(clientSocket);\par
+00115             {\cf19 return};\par
+00116         \}\par
+00117 \par
+00118         {\cf19 for} (ssize_t i = 0; i < bytesRead; ++i) \{\par
+00119             {\cf19 if} (buffer[i] == {\cf23 '\\r'} || buffer[i] == {\cf23 '\\n'}) \{\par
+00120                 buffer[i] = {\cf23 '\\0'};\par
+00121             \}\par
+00122         \}\par
+00123 \par
+00124         dumpBufferToLog(buffer, bytesRead, clientSocket);\par
+00125 \par
+00126         {\cf20 // Process the received data (you can replace this with your logic)}\par
+00127         std::cout << {\cf22 "Received from client "} << clientSocket << {\cf22 ": "} << buffer << endl;\par
+00128         {\cf20 // dumpBufferToLog(buffer, bytesRead);}\par
+00129 \par
+00130         {\cf19 if} (clientAuthStatus.find(clientSocket) == clientAuthStatus.end() || !clientAuthStatus[clientSocket]) \{\par
+00131             {\cf19 if} (strncmp(buffer, {\cf22 "AUTH"}, 4) == 0) \{\par
+00132                 authCommand(clientSocket,buffer);\par
+00133             \} {\cf19 else} {\cf19 if} (strncmp(buffer, {\cf22 "REG"}, 3) == 0) \{\par
+00134                 regCommand(clientSocket,buffer);\par
+00135             \} {\cf19 else} \{\par
+00136                 send(clientSocket, {\cf22 "Authentication needed to proceed\\n"}, 34, 0);\par
+00137             \}\par
+00138         \} {\cf19 else} \{\par
+00139             {\cf19 if} (strcmp(buffer, {\cf22 "HELLO"}) == 0) \{\par
+00140                 helloCommand(clientSocket);\par
+00141             \} {\cf19 else} {\cf19 if} (strcmp(buffer, {\cf22 "QUIT"}) == 0) \{\par
+00142                 quitCommand(clientSocket);\par
+00143             \} {\cf19 else} {\cf19 if} (strncmp(buffer, {\cf22 "SEND_FILE"}, 9) == 0) \{\par
+00144                 {\cf19 if} (!receiveFileCommand(clientSocket,buffer))\{\par
+00145                     cerr << {\cf22 "error"} << endl;\par
+00146                 \};\par
+00147             \} {\cf19 else} {\cf19 if} (strncmp(buffer, {\cf22 "RECEIVE_FILE"}, 12) == 0) \{\par
+00148                 {\cf19 if} (!sendFileCommand(clientSocket,buffer))\{\par
+00149                     cerr << {\cf22 "error"} << endl;\par
+00150                 \};\par
+00151             \} {\cf19 else} \{\par
+00152                 send(clientSocket, {\cf22 "Unknown command"}, 16, 0);\par
+00153             \}\par
+00154         \}\par
+00155     \}\par
+00156 \}\par
+00157 \par
+00158 {\cf18 void} TCPserver::startAcceptingConnections() \{\par
+00159     {\cf19 while} ({\cf17 true}) \{\par
+00160         sockaddr_in clientAddress;\par
+00161         socklen_t clientAddrLen = {\cf17 sizeof}(clientAddress);\par
+00162 \par
+00163         {\cf18 int} clientSocket = accept(serverSocket, ({\cf17 struct} sockaddr*)&clientAddress, &clientAddrLen);\par
+00164 \par
+00165         {\cf19 if} (clientSocket != -1) \{\par
+00166             thread clientThread(&TCPserver::handleClient, {\cf17 this}, clientSocket);\par
+00167             clientThreads.push_back(move(clientThread));\par
+00168         \}\par
+00169     \}\par
+00170 \}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+TCP-server/TCPserver.h File Reference\par \pard\plain 
+{\tc\tcl2 \v TCP-server/TCPserver.h}
+{\xe \v TCP-server/TCPserver.h}
+{\bkmkstart AAAAAAAABC}
+{\bkmkend AAAAAAAABC}
+{
+\pard\plain \s18\widctlpar\fs22\cgrid {\f2 #include <iostream>}\par
+{\f2 #include <arpa/inet.h>}\par
+{\f2 #include <vector>}\par
+{\f2 #include <thread>}\par
+{\f2 #include <unistd.h>}\par
+{\f2 #include <unordered_map>}\par
+{\f2 #include "UserAuthentication.h"}\par
+{\f2 #include "FileHandeling.h"}\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Classes\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+class {\b TCPserver}}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+TCPserver.h\par \pard\plain 
+{\tc\tcl2 \v TCP-server/TCPserver.h}
+{\xe \v TCP-server/TCPserver.h}
+{\bkmkstart AAAAAAAAAK}
+{\bkmkend AAAAAAAAAK}
+Go to the documentation of this file.\par
+{
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00001 {\cf20 // TCPserver.h}\par
+00002 \par
+00003 {\cf20 //Header file for the library}\par
+00004 \par
+00005 {\cf21 #ifndef TCPSERVER_H}\par
+00006 {\cf21 #define TCPSERVER_H}\par
+00007 \par
+00008 {\cf21 #include <iostream>}\par
+00009 {\cf21 #include <arpa/inet.h>}\par
+00010 {\cf21 #include <vector>}\par
+00011 {\cf21 #include <thread>}\par
+00012 {\cf21 #include <unistd.h>}\par
+00013 \par
+00014 {\cf21 #include <unordered_map>}\par
+00015 \par
+00016 {\cf21 #include "UserAuthentication.h"}\par
+00017 {\cf21 #include "FileHandeling.h"}\par
+00018 \par
+00019 {\cf17 using namespace }std;\par
+00020 \par
+00021 {\cf17 class }TCPserver \{\par
+00022     {\cf17 private}:\par
+00023         {\cf18 int} serverSocket; {\cf20 //initial server socket}\par
+00024         vector<thread> clientThreads; {\cf20 //Multiple client support is enabled by this vector}\par
+00025         std::unordered_map<int, bool> clientAuthStatus;  {\cf20 // Map to store client authentication status}\par
+00026         {\cf18 void} dumpBufferToLog({\cf17 const} {\cf18 char}* buffer, ssize_t size, {\cf18 int} clientSocket); {\cf20 //Will dump commands to a log file}\par
+00027         {\cf17 const} {\cf18 string} baseDirectory = {\cf22 "/client-files/"};\par
+00028 \par
+00029         std::unordered_map<int, std::string> clientUsernames;  {\cf20 // Map to store authenticated usernames}\par
+00030 \par
+00031     {\cf17 public}:\par
+00032         TCPserver({\cf18 int} port);\par
+00033         ~TCPserver();\par
+00034         {\cf18 bool} authCommand({\cf18 int} clientSocket, {\cf18 char}* buffer);\par
+00035         {\cf18 bool} regCommand({\cf18 int} clientSocket, {\cf18 char}* buffer);\par
+00036         {\cf18 bool} helloCommand({\cf18 int} clientSocket);\par
+00037         {\cf18 bool} quitCommand({\cf18 int} clientSocket);\par
+00038         {\cf18 bool} sendFileCommand({\cf18 int} clientSocket, {\cf18 char}* buffer);\par
+00039         {\cf18 bool} receiveFileCommand({\cf18 int} clientSocket, {\cf18 char}* buffer);\par
+00040 \par
+00041         {\cf18 void} handleClient({\cf18 int} clientSocket);\par
+00042         {\cf18 void} startAcceptingConnections();\par
+00043 \par
+00044 \par
+00045 \};\par
+00046 \par
+00047 {\cf21 #endif}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+TCP-server/UserAuthentication.cpp File Reference\par \pard\plain 
+{\tc\tcl2 \v TCP-server/UserAuthentication.cpp}
+{\xe \v TCP-server/UserAuthentication.cpp}
+{\bkmkstart AAAAAAAABD}
+{\bkmkend AAAAAAAABD}
+{
+\pard\plain \s18\widctlpar\fs22\cgrid {\f2 #include "UserAuthentication.h"}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+UserAuthentication.cpp\par \pard\plain 
+{\tc\tcl2 \v TCP-server/UserAuthentication.cpp}
+{\xe \v TCP-server/UserAuthentication.cpp}
+{\bkmkstart AAAAAAAAAL}
+{\bkmkend AAAAAAAAAL}
+Go to the documentation of this file.\par
+{
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00001 {\cf20 //UserAuthentication.cpp}\par
+00002 \par
+00003 {\cf21 #include "UserAuthentication.h"}\par
+00004 \par
+00005 {\cf20 //Singleton section}\par
+00006 \par
+00007 {\cf20 // Initialize static members}\par
+00008 UserAuthentication* UserAuthentication::p_instance = {\cf17 nullptr};\par
+00009 SingletonDestroyer UserAuthentication::destroyer;\par
+00010 \par
+00011 {\cf20 // Implementation of SingletonDestroyer destructor}\par
+00012 SingletonDestroyer::~SingletonDestroyer() \{\par
+00013     {\cf17 delete} p_instance;\par
+00014     cout << {\cf22 "[signletonDestroyer] Destructor ran."} << endl;\par
+00015 \}\par
+00016 \par
+00017 {\cf20 // Implementation of SingletonDestroyer initialize method}\par
+00018 {\cf18 void} SingletonDestroyer::initialize(UserAuthentication* p) \{\par
+00019     p_instance = p;\par
+00020 \}\par
+00021 \par
+00022 {\cf20 // Implementation of UserAuthentication getInstance method}\par
+00023 UserAuthentication* UserAuthentication::getInstance() \{\par
+00024     {\cf19 if} (!p_instance) \{\par
+00025         p_instance = {\cf17 new} UserAuthentication();\par
+00026         destroyer.initialize(p_instance);\par
+00027     \}\par
+00028     {\cf19 return} p_instance;\par
+00029 \}\par
+00030 \par
+00031 {\cf20 //Constructor opens the sqlite database}\par
+00032 UserAuthentication::UserAuthentication() : db(nullptr) \{\par
+00033     {\cf19 if} (sqlite3_open({\cf22 "/database/temporary_passwords.db"}, &db) != SQLITE_OK) \{\par
+00034         cerr << {\cf22 "Error opening database\\n"};\par
+00035         {\cf20 //error if not open}\par
+00036     \}\par
+00037     cout << {\cf22 "[userAuthentication] Constructor ran."} << endl;\par
+00038 \}\par
+00039 \par
+00040 {\cf20 //Destructor will close the connection}\par
+00041 UserAuthentication::~UserAuthentication() \{\par
+00042     {\cf19 if} (db) \{\par
+00043         sqlite3_close(db);\par
+00044     \}\par
+00045     cout << {\cf22 "[userAuthentication] Destructor ran."} << endl;\par
+00046 \}\par
+00047 \par
+00048 {\cf20 //PRIVATE method to generate random salt}\par
+00049 {\cf18 string} UserAuthentication::generateRandomSalt({\cf18 int} length) \{\par
+00050     {\cf17 const} {\cf18 char} charset[] = {\cf22 "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"};\par
+00051     {\cf17 const} {\cf18 int} charsetSize = {\cf17 sizeof}(charset) - 1;\par
+00052 \par
+00053     random_device rd;\par
+00054     default_random_engine rng(rd());\par
+00055     uniform_int_distribution<int> distribution(0, charsetSize - 1);\par
+00056 \par
+00057     {\cf18 string} salt;\par
+00058     {\cf19 for} ({\cf18 int} i = 0; i < length; ++i) \{\par
+00059         salt += charset[distribution(rng)];\par
+00060     \}\par
+00061 \par
+00062     {\cf19 return} salt;\par
+00063 \}\par
+00064 \par
+00065 {\cf20 //User authentication based on the inputs }\par
+00066 {\cf18 bool} UserAuthentication::authenticateUser({\cf17 const} {\cf18 string}& username, {\cf17 const} {\cf18 string}& password) \{\par
+00067     {\cf18 string} query = {\cf22 "SELECT password, salt FROM users WHERE username = ?;"};\par
+00068     sqlite3_stmt* statement;\par
+00069 \par
+00070     {\cf19 if} (sqlite3_prepare_v2(db, query.c_str(), -1, &statement, {\cf17 nullptr}) != SQLITE_OK) \{\par
+00071         cout << {\cf22 "test: "} << sqlite3_prepare_v2(db, query.c_str(), -1, &statement, {\cf17 nullptr}) << endl;\par
+00072         cerr << {\cf22 "Error preparing SQL statement\\n"};\par
+00073         sqlite3_close(db);\par
+00074         {\cf19 return} {\cf17 false};\par
+00075     \}\par
+00076 \par
+00077     {\cf20 //bind the username as a parameter}\par
+00078     {\cf19 if} (sqlite3_bind_text(statement, 1, username.c_str(), -1, SQLITE_STATIC) != SQLITE_OK) \{\par
+00079         cerr << {\cf22 "Error binding parameter\\n"};\par
+00080         sqlite3_finalize(statement);\par
+00081         sqlite3_close(db);\par
+00082         {\cf19 return} {\cf17 false};\par
+00083     \}\par
+00084 \par
+00085     {\cf18 int} result = sqlite3_step(statement);\par
+00086 \par
+00087     {\cf20 //check if the user exists}\par
+00088     {\cf19 if} (result != SQLITE_ROW) \{\par
+00089         sqlite3_finalize(statement);\par
+00090         sqlite3_close(db);\par
+00091         {\cf19 return} {\cf17 false};\par
+00092     \}\par
+00093 \par
+00094     {\cf20 //fetch the hashed password and salt from the result set}\par
+00095     {\cf17 const} {\cf18 char} *hashedPassword = {\cf17 reinterpret_cast<}{\cf17 const }{\cf18 char}*{\cf17 >}(sqlite3_column_text(statement, 0));\par
+00096     {\cf17 const} {\cf18 char}* salt = {\cf17 reinterpret_cast<}{\cf17 const }{\cf18 char}*{\cf17 >}(sqlite3_column_text(statement, 1));\par
+00097 \par
+00098     {\cf20 //concatenate the password and salt}\par
+00099 \par
+00100     {\cf18 string} concatenatedPassword = password + salt;\par
+00101 \par
+00102     {\cf20 //hash the concatenated password using SHA-256}\par
+00103     {\cf18 unsigned} {\cf18 char} hash[EVP_MAX_MD_SIZE];\par
+00104     {\cf18 unsigned} {\cf18 int} hashLength;\par
+00105 \par
+00106     EVP_MD_CTX* mdctx = EVP_MD_CTX_new();\par
+00107     EVP_DigestInit_ex(mdctx, EVP_sha256(), {\cf17 nullptr});\par
+00108     EVP_DigestUpdate(mdctx, concatenatedPassword.c_str(), concatenatedPassword.length());\par
+00109     EVP_DigestFinal_ex(mdctx, hash, &hashLength);\par
+00110     EVP_MD_CTX_free(mdctx);\par
+00111 \par
+00112     {\cf20 //convert hash to string}\par
+00113     {\cf18 string} hashedInput({\cf17 reinterpret_cast<}{\cf17 const }{\cf18 char}*{\cf17 >}(hash), hashLength);\par
+00114 \par
+00115     {\cf20 //check if password matches}\par
+00116     {\cf18 bool} isAuthenticated = (hashedInput == hashedPassword);\par
+00117 \par
+00118     sqlite3_finalize(statement);\par
+00119     {\cf19 return} isAuthenticated;\par
+00120 \par
+00121 \}\par
+00122 \par
+00123 \par
+00124 {\cf20 //User registration based on the inputs}\par
+00125 {\cf18 bool} UserAuthentication::registerUser({\cf17 const} {\cf18 string}& username, {\cf17 const} {\cf18 string}& password) \{\par
+00126     {\cf20 //generate a random salt}\par
+00127     {\cf18 string} salt = generateRandomSalt(64);\par
+00128 \par
+00129     {\cf20 //goncatenate the password and salt}\par
+00130     {\cf18 string} concatenatedPassword = password + salt;\par
+00131 \par
+00132     {\cf20 //hash the concatenated password using SHA-256}\par
+00133     {\cf18 unsigned} {\cf18 char} hash[EVP_MAX_MD_SIZE];\par
+00134     {\cf18 unsigned} {\cf18 int} hashLength;\par
+00135 \par
+00136     EVP_MD_CTX* mdctx = {\cf17 nullptr};\par
+00137     {\cf17 const} EVP_MD* md = EVP_sha256();\par
+00138 \par
+00139     {\cf19 if} (!(mdctx = EVP_MD_CTX_create())) \{\par
+00140         cerr << {\cf22 "Error creating EVP_MD_CTX\\n"};\par
+00141         {\cf19 return} {\cf17 false};\par
+00142     \}\par
+00143 \par
+00144     {\cf19 if} (EVP_DigestInit_ex(mdctx, md, {\cf17 nullptr}) != 1 ||\par
+00145         EVP_DigestUpdate(mdctx, concatenatedPassword.c_str(), concatenatedPassword.length()) != 1 ||\par
+00146         EVP_DigestFinal_ex(mdctx, hash, &hashLength) != 1) \{\par
+00147         cerr << {\cf22 "Error hashing password\\n"};\par
+00148         EVP_MD_CTX_destroy(mdctx);\par
+00149         {\cf19 return} {\cf17 false};\par
+00150     \}\par
+00151 \par
+00152     EVP_MD_CTX_destroy(mdctx);\par
+00153 \par
+00154     {\cf20 //convert the hash to a string}\par
+00155     {\cf18 string} hashedPassword({\cf17 reinterpret_cast<}{\cf17 const }{\cf18 char}*{\cf17 >}(hash), hashLength);\par
+00156 \par
+00157     {\cf20 //insert the username, hashed password, and salt into the database}\par
+00158     {\cf18 string} query = {\cf22 "INSERT INTO users (username, password, salt) VALUES ('"} + username + {\cf22 "', '"} + hashedPassword + {\cf22 "', '"} + salt + {\cf22 "');"};\par
+00159     {\cf19 if} (sqlite3_exec(db, query.c_str(), {\cf17 nullptr}, {\cf17 nullptr}, {\cf17 nullptr}) != SQLITE_OK) \{\par
+00160         cerr << {\cf22 "Error executing SQL statement\\n"};\par
+00161         {\cf19 return} {\cf17 false};\par
+00162     \}\par
+00163 \par
+00164     {\cf19 return} {\cf17 true};\par
+00165 \}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+TCP-server/UserAuthentication.h File Reference\par \pard\plain 
+{\tc\tcl2 \v TCP-server/UserAuthentication.h}
+{\xe \v TCP-server/UserAuthentication.h}
+{\bkmkstart AAAAAAAABE}
+{\bkmkend AAAAAAAABE}
+{
+\pard\plain \s18\widctlpar\fs22\cgrid {\f2 #include <iostream>}\par
+{\f2 #include <sqlite3.h>}\par
+{\f2 #include <string>}\par
+{\f2 #include <openssl/bio.h>}\par
+{\f2 #include <openssl/evp.h>}\par
+{\f2 #include <random>}\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Classes\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+class {\b SingletonDestroyer}\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+class {\b UserAuthentication}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+UserAuthentication.h\par \pard\plain 
+{\tc\tcl2 \v TCP-server/UserAuthentication.h}
+{\xe \v TCP-server/UserAuthentication.h}
+{\bkmkstart AAAAAAAAAM}
+{\bkmkend AAAAAAAAAM}
+Go to the documentation of this file.\par
+{
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00001 {\cf20 // UserAuthentication.h}\par
+00002 \par
+00003 {\cf20 //Header file for the library}\par
+00004 \par
+00005 {\cf21 #ifndef USERAUTHENTICATION_H}\par
+00006 {\cf21 #define USERAUTHENTICATION_H}\par
+00007 \par
+00008 {\cf21 #include <iostream>}\par
+00009 {\cf21 #include <sqlite3.h>}\par
+00010 {\cf21 #include <string>}\par
+00011 {\cf21 #include <openssl/bio.h>}\par
+00012 {\cf21 #include <openssl/evp.h>}\par
+00013 {\cf21 #include <random>}\par
+00014 \par
+00015 {\cf17 using namespace }std;\par
+00016 \par
+00017 {\cf20 //Singleton section}\par
+00018 \par
+00019 {\cf17 class }UserAuthentication;\par
+00020 \par
+00021 {\cf17 class }SingletonDestroyer \{\par
+00022 {\cf17 private}:\par
+00023     UserAuthentication* p_instance;\par
+00024 \par
+00025 {\cf17 public}:\par
+00026     ~SingletonDestroyer();\par
+00027     {\cf18 void} initialize(UserAuthentication* p);\par
+00028 \};\par
+00029 \par
+00030 {\cf20 //UserAuthentication section}\par
+00031 \par
+00032 {\cf17 class }UserAuthentication \{\par
+00033 {\cf17 private}:\par
+00034     {\cf17 static} UserAuthentication* p_instance;\par
+00035     {\cf17 static} SingletonDestroyer destroyer;\par
+00036     {\cf18 string} generateRandomSalt({\cf18 int} length);\par
+00037     sqlite3* db;\par
+00038 \par
+00039 {\cf17 public}:\par
+00040     UserAuthentication();\par
+00041     ~UserAuthentication();\par
+00042     {\cf18 bool} authenticateUser({\cf17 const} {\cf18 string}& username, {\cf17 const} {\cf18 string}& password);\par
+00043     {\cf18 bool} registerUser({\cf17 const} {\cf18 string}& username, {\cf17 const} {\cf18 string}& password);\par
+00044     {\cf17 static} UserAuthentication* getInstance();\par
+00045 \par
+00046 \};\par
+00047 \par
+00048 {\cf21 #endif}\par
+}
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid Index\par 
+\pard\plain 
+{\tc \v Index}
+{\field\fldedit {\*\fldinst INDEX \\c2 \\*MERGEFORMAT}{\fldrslt INDEX}}
+}

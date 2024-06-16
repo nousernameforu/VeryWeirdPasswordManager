@@ -1,0 +1,53 @@
+\doxysection{TCPserver.\+h}
+\hypertarget{_t_c_pserver_8h_source}{}\label{_t_c_pserver_8h_source}\index{TCP-\/server/TCPserver.h@{TCP-\/server/TCPserver.h}}
+\mbox{\hyperlink{_t_c_pserver_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00001}00001\ \textcolor{comment}{//\ TCPserver.h}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00003}00003\ \textcolor{comment}{//Header\ file\ for\ the\ library}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00005}00005\ \textcolor{preprocessor}{\#ifndef\ TCPSERVER\_H}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00006}00006\ \textcolor{preprocessor}{\#define\ TCPSERVER\_H}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <arpa/inet.h>}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <unistd.h>}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_user_authentication_8h}{UserAuthentication.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_t_c_p-server_2_file_handeling_8h}{FileHandeling.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00019}00019\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00021}\mbox{\hyperlink{class_t_c_pserver}{00021}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_t_c_pserver}{TCPserver}}\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ serverSocket;\ \textcolor{comment}{//initial\ server\ socket}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00024}00024\ \ \ \ \ \ \ \ \ vector<thread>\ clientThreads;\ \textcolor{comment}{//Multiple\ client\ support\ is\ enabled\ by\ this\ vector}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ std::unordered\_map<int,\ bool>\ clientAuthStatus;\ \ \textcolor{comment}{//\ Map\ to\ store\ client\ authentication\ status}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ dumpBufferToLog(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ buffer,\ ssize\_t\ size,\ \textcolor{keywordtype}{int}\ clientSocket);\ \textcolor{comment}{//Will\ dump\ commands\ to\ a\ log\ file}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ baseDirectory\ =\ \textcolor{stringliteral}{"{}/client-\/files/"{}};}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00029}00029\ \ \ \ \ \ \ \ \ std::unordered\_map<int,\ std::string>\ clientUsernames;\ \ \textcolor{comment}{//\ Map\ to\ store\ authenticated\ usernames}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00032}00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_t_c_pserver_a4ebeab35fb2759f773c43f77b0f93672}{TCPserver}}(\textcolor{keywordtype}{int}\ port);}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_t_c_pserver_ad286027f220e98b07a732fe6fcab137a}{\string~TCPserver}}();}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_t_c_pserver_a895fa5f1717cc471fce3299cf803b1f6}{authCommand}}(\textcolor{keywordtype}{int}\ clientSocket,\ \textcolor{keywordtype}{char}*\ buffer);}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_t_c_pserver_a27261ed0d2b53077e16c207254b74b4a}{regCommand}}(\textcolor{keywordtype}{int}\ clientSocket,\ \textcolor{keywordtype}{char}*\ buffer);}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_t_c_pserver_a9ed3b12c5e6ee1f4fe4dfa34e73f99cf}{helloCommand}}(\textcolor{keywordtype}{int}\ clientSocket);}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_t_c_pserver_a2af1f2398d138ebeb74927dd5fd34a98}{quitCommand}}(\textcolor{keywordtype}{int}\ clientSocket);}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_t_c_pserver_a50c7ad26736b8d4fd2a2ca2a7b77b56f}{sendFileCommand}}(\textcolor{keywordtype}{int}\ clientSocket,\ \textcolor{keywordtype}{char}*\ buffer);}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_t_c_pserver_a39c6cc2662653629338083afaf024df7}{receiveFileCommand}}(\textcolor{keywordtype}{int}\ clientSocket,\ \textcolor{keywordtype}{char}*\ buffer);}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_c_pserver_aa4ef630ebef2bfb65ae07ce76e1faa1c}{handleClient}}(\textcolor{keywordtype}{int}\ clientSocket);}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_c_pserver_aa3f3fe9595a7bc17a741a35ee3d5b853}{startAcceptingConnections}}();}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00045}00045\ \};}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8h_source_l00047}00047\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

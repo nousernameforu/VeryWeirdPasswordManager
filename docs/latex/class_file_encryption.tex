@@ -1,0 +1,91 @@
+\doxysection{File\+Encryption Class Reference}
+\hypertarget{class_file_encryption}{}\label{class_file_encryption}\index{FileEncryption@{FileEncryption}}
+
+
+{\ttfamily \#include $<$File\+Encryption.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_file_encryption_afa7c8b3a31ca9e5bee8f5085b05f4bde}{generate\+Key\+File}} (const std\+::string \&key\+File\+Name)
+\item 
+\mbox{\hyperlink{class_file_encryption_aa2b84f979b8c8a1abfbec5415cb4a050}{File\+Encryption}} (const std\+::string \&key\+File\+Name)
+\item 
+void \mbox{\hyperlink{class_file_encryption_aba1c1ae5912ee63b8eef016f1ffdfa21}{encrypt\+File}} (const std\+::string \&input\+File, const std\+::string \&output\+File)
+\item 
+void \mbox{\hyperlink{class_file_encryption_acd9626eae2901e812866985605d67a84}{decrypt\+File}} (const std\+::string \&input\+File, const std\+::string \&output\+File)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_file_encryption}{File\+Encryption}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_file_encryption_ae48c6d19eb4877c55583471545acfc96}{get\+Instance}} (const std\+::string \&key\+File\+Name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_file_encryption_8h_source_l00022}{22}} of file \mbox{\hyperlink{_file_encryption_8h_source}{File\+Encryption.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_file_encryption_aa2b84f979b8c8a1abfbec5415cb4a050}\index{FileEncryption@{FileEncryption}!FileEncryption@{FileEncryption}}
+\index{FileEncryption@{FileEncryption}!FileEncryption@{FileEncryption}}
+\doxysubsubsection{\texorpdfstring{FileEncryption()}{FileEncryption()}}
+{\footnotesize\ttfamily \label{class_file_encryption_aa2b84f979b8c8a1abfbec5415cb4a050} 
+File\+Encryption\+::\+File\+Encryption (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key\+File\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_file_encryption_8cpp_source_l00067}{67}} of file \mbox{\hyperlink{_file_encryption_8cpp_source}{File\+Encryption.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_file_encryption_acd9626eae2901e812866985605d67a84}\index{FileEncryption@{FileEncryption}!decryptFile@{decryptFile}}
+\index{decryptFile@{decryptFile}!FileEncryption@{FileEncryption}}
+\doxysubsubsection{\texorpdfstring{decryptFile()}{decryptFile()}}
+{\footnotesize\ttfamily \label{class_file_encryption_acd9626eae2901e812866985605d67a84} 
+void File\+Encryption\+::decrypt\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input\+File}{, }\item[{const std\+::string \&}]{output\+File}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_file_encryption_8cpp_source_l00120}{120}} of file \mbox{\hyperlink{_file_encryption_8cpp_source}{File\+Encryption.\+cpp}}.
+
+\Hypertarget{class_file_encryption_aba1c1ae5912ee63b8eef016f1ffdfa21}\index{FileEncryption@{FileEncryption}!encryptFile@{encryptFile}}
+\index{encryptFile@{encryptFile}!FileEncryption@{FileEncryption}}
+\doxysubsubsection{\texorpdfstring{encryptFile()}{encryptFile()}}
+{\footnotesize\ttfamily \label{class_file_encryption_aba1c1ae5912ee63b8eef016f1ffdfa21} 
+void File\+Encryption\+::encrypt\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input\+File}{, }\item[{const std\+::string \&}]{output\+File}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_file_encryption_8cpp_source_l00071}{71}} of file \mbox{\hyperlink{_file_encryption_8cpp_source}{File\+Encryption.\+cpp}}.
+
+\Hypertarget{class_file_encryption_afa7c8b3a31ca9e5bee8f5085b05f4bde}\index{FileEncryption@{FileEncryption}!generateKeyFile@{generateKeyFile}}
+\index{generateKeyFile@{generateKeyFile}!FileEncryption@{FileEncryption}}
+\doxysubsubsection{\texorpdfstring{generateKeyFile()}{generateKeyFile()}}
+{\footnotesize\ttfamily \label{class_file_encryption_afa7c8b3a31ca9e5bee8f5085b05f4bde} 
+void File\+Encryption\+::generate\+Key\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key\+File\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_file_encryption_8cpp_source_l00046}{46}} of file \mbox{\hyperlink{_file_encryption_8cpp_source}{File\+Encryption.\+cpp}}.
+
+\Hypertarget{class_file_encryption_ae48c6d19eb4877c55583471545acfc96}\index{FileEncryption@{FileEncryption}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!FileEncryption@{FileEncryption}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \label{class_file_encryption_ae48c6d19eb4877c55583471545acfc96} 
+\mbox{\hyperlink{class_file_encryption}{File\+Encryption}} \texorpdfstring{$\ast$}{*} File\+Encryption\+::get\+Instance (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key\+File\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_file_encryption_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{_file_encryption_8cpp_source}{File\+Encryption.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+TCP-\/client/\mbox{\hyperlink{_file_encryption_8h}{File\+Encryption.\+h}}\item 
+TCP-\/client/\mbox{\hyperlink{_file_encryption_8cpp}{File\+Encryption.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,176 @@
+\doxysection{TCPserver.\+cpp}
+\hypertarget{_t_c_pserver_8cpp_source}{}\label{_t_c_pserver_8cpp_source}\index{TCP-\/server/TCPserver.cpp@{TCP-\/server/TCPserver.cpp}}
+\mbox{\hyperlink{_t_c_pserver_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00001}00001\ \textcolor{comment}{//TCPserver.cpp}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_t_c_pserver_8h}{TCPserver.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00005}00005\ \textcolor{keywordtype}{void}\ TCPserver::dumpBufferToLog(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ buffer,\ ssize\_t\ size,\ \textcolor{keywordtype}{int}\ clientSocket)\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00006}00006\ \ \ \ \ ofstream\ logFile(\textcolor{stringliteral}{"{}/logs/commands\_log.txt"{}},\ ios::app);\ \textcolor{comment}{//\ Open\ log\ file\ in\ append\ mode}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00008}00008\ \ \ \ \ \textcolor{keywordflow}{if}\ (logFile.is\_open())\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00009}00009\ \ \ \ \ \ \ \ \ logFile.write(buffer,\ size);\ \ \textcolor{comment}{//need\ to\ add\ clientsocket\ to\ the\ output\ to\ know\ which\ client\ wrote\ what.}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00010}00010\ \ \ \ \ \ \ \ \ logFile\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ logFile.close();}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}[Log]\ Buffer\ dumped\ to\ commands\_log.txt"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00013}00013\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}[Log]\ Error\ opening\ log\ file."{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00015}00015\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00016}00016\ \}\ \ \ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00018}\mbox{\hyperlink{class_t_c_pserver_a4ebeab35fb2759f773c43f77b0f93672}{00018}}\ \mbox{\hyperlink{class_t_c_pserver_a4ebeab35fb2759f773c43f77b0f93672}{TCPserver::TCPserver}}(\textcolor{keywordtype}{int}\ port)\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00019}00019\ \ \ \ \ serverSocket\ =\ socket(AF\_INET,\ SOCK\_STREAM,\ 0);}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00020}00020\ \ \ \ \ sockaddr\_in\ serverAddress;}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00021}00021\ \ \ \ \ serverAddress.sin\_addr.s\_addr\ =\ INADDR\_ANY;}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00022}00022\ \ \ \ \ memset(\&serverAddress,\ 0,\ \textcolor{keyword}{sizeof}(serverAddress));}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00023}00023\ \ \ \ \ serverAddress.sin\_family\ =\ AF\_INET;}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00024}00024\ \ \ \ \ serverAddress.sin\_addr.s\_addr\ =\ INADDR\_ANY;}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00025}00025\ \ \ \ \ serverAddress.sin\_port\ =\ htons(port);}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00027}00027\ \ \ \ \ bind(serverSocket,\ (\textcolor{keyword}{struct}\ sockaddr*)\&serverAddress,\ \textcolor{keyword}{sizeof}(serverAddress));}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00028}00028\ \ \ \ \ listen(serverSocket,\ 5);}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00030}00030\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}[Server]\ Listening\ on\ port\ "{}}\ <<\ port\ <<\ \textcolor{stringliteral}{"{}..."{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00031}00031\ \};}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00033}\mbox{\hyperlink{class_t_c_pserver_ad286027f220e98b07a732fe6fcab137a}{00033}}\ \mbox{\hyperlink{class_t_c_pserver_ad286027f220e98b07a732fe6fcab137a}{TCPserver::\string~TCPserver}}()\{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00034}00034\ \ \ \ \ close(serverSocket);}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ thread\ :\ clientThreads)\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (thread.joinable())\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ thread.join();}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00040}00040\ \};}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00042}\mbox{\hyperlink{class_t_c_pserver_a895fa5f1717cc471fce3299cf803b1f6}{00042}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_t_c_pserver_a895fa5f1717cc471fce3299cf803b1f6}{TCPserver::authCommand}}(\textcolor{keywordtype}{int}\ clientSocket,\ \textcolor{keywordtype}{char}*\ buffer)\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{keywordtype}{char}*\ token\ =\ strtok(buffer\ +\ 5,\ \textcolor{stringliteral}{"{}\ "{}});}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordtype}{string}\ username\ =\ token\ ?\ token\ :\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00045}00045\ \ \ \ \ token\ =\ strtok(\textcolor{keyword}{nullptr},\ \textcolor{stringliteral}{"{}\ "{}});}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{keywordtype}{string}\ password\ =\ token\ ?\ token\ :\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_user_authentication_aab739c873c910da553339c4297b0442b}{UserAuthentication::getInstance}}()-\/>authenticateUser(username,\ password))\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ send(clientSocket,\ \textcolor{stringliteral}{"{}Authentication\ successful\(\backslash\)n"{}},\ 27,\ 0);}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ clientAuthStatus[clientSocket]\ =\ \textcolor{keyword}{true};\ \ \textcolor{comment}{//\ Set\ authentication\ status\ for\ the\ client}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ clientUsernames[clientSocket]\ =\ username;\ \textcolor{comment}{//\ Record\ the\ username\ of\ user}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00051}00051\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ send(clientSocket,\ \textcolor{stringliteral}{"{}Authentication\ failed\(\backslash\)n"{}},\ 23,\ 0);}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00055}00055\ \};}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00057}\mbox{\hyperlink{class_t_c_pserver_a27261ed0d2b53077e16c207254b74b4a}{00057}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_t_c_pserver_a27261ed0d2b53077e16c207254b74b4a}{TCPserver::regCommand}}(\textcolor{keywordtype}{int}\ clientSocket,\ \textcolor{keywordtype}{char}*\ buffer)\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordtype}{char}*\ token\ =\ strtok(buffer\ +\ 4,\ \textcolor{stringliteral}{"{}\ "{}});}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00059}00059\ \ \ \ \ \textcolor{keywordtype}{string}\ username\ =\ token\ ?\ token\ :\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00060}00060\ \ \ \ \ token\ =\ strtok(\textcolor{keyword}{nullptr},\ \textcolor{stringliteral}{"{}\ "{}});}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordtype}{string}\ password\ =\ token\ ?\ token\ :\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_user_authentication_aab739c873c910da553339c4297b0442b}{UserAuthentication::getInstance}}()-\/>registerUser(username,\ password))\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ send(clientSocket,\ \textcolor{stringliteral}{"{}User\ registration\ successful\(\backslash\)n"{}},\ 30,\ 0);}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00064}00064\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ send(clientSocket,\ \textcolor{stringliteral}{"{}User\ registration\ failed\(\backslash\)n"{}},\ 26,\ 0);}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00068}00068\ \}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00070}\mbox{\hyperlink{class_t_c_pserver_a50c7ad26736b8d4fd2a2ca2a7b77b56f}{00070}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_t_c_pserver_a50c7ad26736b8d4fd2a2ca2a7b77b56f}{TCPserver::sendFileCommand}}(\textcolor{keywordtype}{int}\ clientSocket,\ \textcolor{keywordtype}{char}*\ buffer)\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00071}00071\ \ \ \ \ \textcolor{keywordtype}{string}\ username\ =\ clientUsernames[clientSocket];}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{keywordtype}{string}\ filePath\ =\ \textcolor{stringliteral}{"{}/client-\/files/"{}}\ +\ username;}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00073}00073\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_file_handeling_a76df564f211e9f5768dee696cb544369}{FileHandeling::getInstance}}()-\/>sendFile(clientSocket,\ filePath))\ \{\ \ \ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}Failed\ to\ send\ file!"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00075}00075\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00077}00077\ \}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00079}\mbox{\hyperlink{class_t_c_pserver_a39c6cc2662653629338083afaf024df7}{00079}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_t_c_pserver_a39c6cc2662653629338083afaf024df7}{TCPserver::receiveFileCommand}}(\textcolor{keywordtype}{int}\ clientSocket,\ \textcolor{keywordtype}{char}*\ buffer)\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00080}00080\ \ \ \ \ \textcolor{keywordtype}{string}\ username\ =\ clientUsernames[clientSocket];}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00081}00081\ \ \ \ \ \textcolor{keywordtype}{string}\ filePath\ =\ \textcolor{stringliteral}{"{}/client-\/files/"{}}\ +\ username;}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_file_handeling_a76df564f211e9f5768dee696cb544369}{FileHandeling::getInstance}}()-\/>receiveFile(clientSocket,\ filePath))\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}Failed\ to\ receive\ file!"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00084}00084\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00085}00085\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00086}00086\ \}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00088}\mbox{\hyperlink{class_t_c_pserver_a9ed3b12c5e6ee1f4fe4dfa34e73f99cf}{00088}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_t_c_pserver_a9ed3b12c5e6ee1f4fe4dfa34e73f99cf}{TCPserver::helloCommand}}(\textcolor{keywordtype}{int}\ clientSocket)\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00089}00089\ \ \ \ \ send(clientSocket,\ \textcolor{stringliteral}{"{}Hello,\ client!\(\backslash\)n"{}},\ 16,\ 0);}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00090}00090\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00091}00091\ \}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00093}\mbox{\hyperlink{class_t_c_pserver_a2af1f2398d138ebeb74927dd5fd34a98}{00093}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_t_c_pserver_a2af1f2398d138ebeb74927dd5fd34a98}{TCPserver::quitCommand}}(\textcolor{keywordtype}{int}\ clientSocket)\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00094}00094\ \ \ \ \ send(clientSocket,\ \textcolor{stringliteral}{"{}Quitting\ the\ program\(\backslash\)n"{}},\ 22,\ 0);}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00095}00095\ \ \ \ \ clientAuthStatus[clientSocket]\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00096}00096\ \ \ \ \ close(clientSocket);\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00097}00097\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00098}00098\ \}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00100}\mbox{\hyperlink{class_t_c_pserver_aa4ef630ebef2bfb65ae07ce76e1faa1c}{00100}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_c_pserver_aa4ef630ebef2bfb65ae07ce76e1faa1c}{TCPserver::handleClient}}(\textcolor{keywordtype}{int}\ clientSocket)\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00101}00101\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}[UserAuthentication]\ pointer\ for\ this\ client:\ "{}}\ <<\ \mbox{\hyperlink{class_user_authentication_aab739c873c910da553339c4297b0442b}{UserAuthentication::getInstance}}()\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00103}00103\ \ \ \ \ \textcolor{keywordflow}{while}(\textcolor{keyword}{true})\{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Buffer\ to\ store\ received\ data}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ buffer[1024];}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ memset(buffer,\ 0,\ \textcolor{keyword}{sizeof}(buffer));}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Read\ data\ from\ the\ client}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ bytesRead\ =\ recv(clientSocket,\ buffer,\ \textcolor{keyword}{sizeof}(buffer)\ -\/\ 1,\ 0);}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bytesRead\ <=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Handle\ error\ or\ client\ disconnect}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}Error\ reading\ from\ client\ "{}}\ <<\ clientSocket\ <<\ \textcolor{stringliteral}{"{}."{}}<<\ endl;}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ clientAuthStatus[clientSocket]\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ close(clientSocket);}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (ssize\_t\ i\ =\ 0;\ i\ <\ bytesRead;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (buffer[i]\ ==\ \textcolor{charliteral}{'\(\backslash\)r'}\ ||\ buffer[i]\ ==\ \textcolor{charliteral}{'\(\backslash\)n'})\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buffer[i]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ dumpBufferToLog(buffer,\ bytesRead,\ clientSocket);}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Process\ the\ received\ data\ (you\ can\ replace\ this\ with\ your\ logic)}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Received\ from\ client\ "{}}\ <<\ clientSocket\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ buffer\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ dumpBufferToLog(buffer,\ bytesRead);}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (clientAuthStatus.find(clientSocket)\ ==\ clientAuthStatus.end()\ ||\ !clientAuthStatus[clientSocket])\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strncmp(buffer,\ \textcolor{stringliteral}{"{}AUTH"{}},\ 4)\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_t_c_pserver_a895fa5f1717cc471fce3299cf803b1f6}{authCommand}}(clientSocket,buffer);}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (strncmp(buffer,\ \textcolor{stringliteral}{"{}REG"{}},\ 3)\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_t_c_pserver_a27261ed0d2b53077e16c207254b74b4a}{regCommand}}(clientSocket,buffer);}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ send(clientSocket,\ \textcolor{stringliteral}{"{}Authentication\ needed\ to\ proceed\(\backslash\)n"{}},\ 34,\ 0);}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strcmp(buffer,\ \textcolor{stringliteral}{"{}HELLO"{}})\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_t_c_pserver_a9ed3b12c5e6ee1f4fe4dfa34e73f99cf}{helloCommand}}(clientSocket);}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (strcmp(buffer,\ \textcolor{stringliteral}{"{}QUIT"{}})\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_t_c_pserver_a2af1f2398d138ebeb74927dd5fd34a98}{quitCommand}}(clientSocket);}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (strncmp(buffer,\ \textcolor{stringliteral}{"{}SEND\_FILE"{}},\ 9)\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_t_c_pserver_a39c6cc2662653629338083afaf024df7}{receiveFileCommand}}(clientSocket,buffer))\{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}error"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (strncmp(buffer,\ \textcolor{stringliteral}{"{}RECEIVE\_FILE"{}},\ 12)\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_t_c_pserver_a50c7ad26736b8d4fd2a2ca2a7b77b56f}{sendFileCommand}}(clientSocket,buffer))\{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}error"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ send(clientSocket,\ \textcolor{stringliteral}{"{}Unknown\ command"{}},\ 16,\ 0);}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00155}00155\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00156}00156\ \}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00158}\mbox{\hyperlink{class_t_c_pserver_aa3f3fe9595a7bc17a741a35ee3d5b853}{00158}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_c_pserver_aa3f3fe9595a7bc17a741a35ee3d5b853}{TCPserver::startAcceptingConnections}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00159}00159\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ sockaddr\_in\ clientAddress;}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ socklen\_t\ clientAddrLen\ =\ \textcolor{keyword}{sizeof}(clientAddress);}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ clientSocket\ =\ accept(serverSocket,\ (\textcolor{keyword}{struct}\ sockaddr*)\&clientAddress,\ \&clientAddrLen);}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (clientSocket\ !=\ -\/1)\ \{}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ thread\ clientThread(\&\mbox{\hyperlink{class_t_c_pserver_aa4ef630ebef2bfb65ae07ce76e1faa1c}{TCPserver::handleClient}},\ \textcolor{keyword}{this},\ clientSocket);}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ clientThreads.push\_back(move(clientThread));}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00169}00169\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_t_c_pserver_8cpp_source_l00170}00170\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,66 @@
+\doxysection{generate\+\_\+database.\+cpp}
+\hypertarget{generate__database_8cpp_source}{}\label{generate__database_8cpp_source}\index{TCP-\/server/generate\_database.cpp@{TCP-\/server/generate\_database.cpp}}
+\mbox{\hyperlink{generate__database_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <sqlite3.h>}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00004}\mbox{\hyperlink{generate__database_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00004}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{generate__database_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\ \{}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00005}00005\ \ \ \ \ sqlite3\ *db;}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00006}00006\ \ \ \ \ \textcolor{keywordtype}{char}\ *errMsg\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00008}00008\ \ \ \ \ \textcolor{comment}{//\ Open\ database\ or\ create\ if\ it\ doesn't\ exist}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00009}00009\ \ \ \ \ \textcolor{keywordtype}{int}\ rc\ =\ sqlite3\_open(\textcolor{stringliteral}{"{}temporary\_passwords.db"{}},\ \&db);}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00011}00011\ \ \ \ \ \textcolor{keywordflow}{if}\ (rc)\ \{}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ opening\ database:\ "{}}\ <<\ sqlite3\_errmsg(db)\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rc;}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00014}00014\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00016}00016\ \ \ \ \ \textcolor{comment}{//\ Create\ a\ table\ named\ "{}users"{}}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *createTableQuery\ =}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}CREATE\ TABLE\ IF\ NOT\ EXISTS\ users\ ("{}}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}id\ INTEGER\ PRIMARY\ KEY\ AUTOINCREMENT,"{}}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}username\ TEXT\ UNIQUE\ NOT\ NULL,"{}}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}password\ TEXT\ NOT\ NULL,"{}}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}salt\ TEXT\ NOT\ NULL);"{}};}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00024}00024\ \ \ \ \ rc\ =\ sqlite3\_exec(db,\ createTableQuery,\ 0,\ 0,\ \&errMsg);}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00026}00026\ \ \ \ \ \textcolor{keywordflow}{if}\ (rc\ !=\ SQLITE\_OK)\ \{}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ creating\ table:\ "{}}\ <<\ errMsg\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ sqlite3\_free(errMsg);}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00029}00029\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Table\ created\ successfully."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00031}00031\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{comment}{/*\ Insert\ sample\ data}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00034}00034\ \textcolor{comment}{\ \ \ \ const\ char\ *insertDataQuery1\ =\ "{}INSERT\ INTO\ users\ (username,\ password)\ VALUES\ ('user1',\ 'pass1');"{};}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00035}00035\ \textcolor{comment}{\ \ \ \ const\ char\ *insertDataQuery2\ =\ "{}INSERT\ INTO\ users\ (username,\ password)\ VALUES\ ('user2',\ 'pass2');"{};}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00036}00036\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00037}00037\ \textcolor{comment}{\ \ \ \ rc\ =\ sqlite3\_exec(db,\ insertDataQuery1,\ 0,\ 0,\ \&errMsg);}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00038}00038\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00039}00039\ \textcolor{comment}{\ \ \ \ if\ (rc\ !=\ SQLITE\_OK)\ \{}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00040}00040\ \textcolor{comment}{\ \ \ \ \ \ \ \ std::cerr\ <<\ "{}Error\ inserting\ data:\ "{}\ <<\ errMsg\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00041}00041\ \textcolor{comment}{\ \ \ \ \ \ \ \ sqlite3\_free(errMsg);}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00042}00042\ \textcolor{comment}{\ \ \ \ \}\ else\ \{}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00043}00043\ \textcolor{comment}{\ \ \ \ \ \ \ \ std::cout\ <<\ "{}Data\ inserted\ successfully."{}\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00044}00044\ \textcolor{comment}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00045}00045\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00046}00046\ \textcolor{comment}{\ \ \ \ rc\ =\ sqlite3\_exec(db,\ insertDataQuery2,\ 0,\ 0,\ \&errMsg);}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00047}00047\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00048}00048\ \textcolor{comment}{\ \ \ \ if\ (rc\ !=\ SQLITE\_OK)\ \{}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00049}00049\ \textcolor{comment}{\ \ \ \ \ \ \ \ std::cerr\ <<\ "{}Error\ inserting\ data:\ "{}\ <<\ errMsg\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00050}00050\ \textcolor{comment}{\ \ \ \ \ \ \ \ sqlite3\_free(errMsg);}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00051}00051\ \textcolor{comment}{\ \ \ \ \}\ else\ \{}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00052}00052\ \textcolor{comment}{\ \ \ \ \ \ \ \ std}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00053}00053\ \textcolor{comment}{::cout\ <<\ "{}Data\ inserted\ successfully."{}\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00054}00054\ \textcolor{comment}{\}*/}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00056}00056\ \textcolor{comment}{//\ Close\ the\ database}}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00057}00057\ sqlite3\_close(db);}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00059}00059\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{generate__database_8cpp_source_l00060}00060\ \}}
+
+\end{DoxyCode}

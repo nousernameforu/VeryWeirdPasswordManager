@@ -1,0 +1,45 @@
+\doxysection{File\+Encryption.\+h}
+\hypertarget{_file_encryption_8h_source}{}\label{_file_encryption_8h_source}\index{TCP-\/client/FileEncryption.h@{TCP-\/client/FileEncryption.h}}
+\mbox{\hyperlink{_file_encryption_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00001}00001\ \textcolor{comment}{//FileEncryption.h}}
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00003}00003\ \textcolor{preprocessor}{\#ifndef\ FILEENCRYPTION\_H}}
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00004}00004\ \textcolor{preprocessor}{\#define\ FILEENCRYPTION\_H}}
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <openssl/aes.h>}}
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <openssl/rand.h>}}
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00012}00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_file_encryption}{FileEncryption}};}
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00014}\mbox{\hyperlink{class_singleton_destroyer}{00014}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_singleton_destroyer}{SingletonDestroyer}}\ \{}
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00015}00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{class_file_encryption}{FileEncryption}}*\ p\_instance;}
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00017}00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00018}00018\ \ \ \ \ \mbox{\hyperlink{class_singleton_destroyer_a8ac3166871f4c5411edfdb13594dee15}{\string~SingletonDestroyer}}();}
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00019}00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_singleton_destroyer_ae934b0a626aac47f5a8867b2b7489ebd}{initialize}}(\mbox{\hyperlink{class_file_encryption}{FileEncryption}}*\ p);}
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00020}00020\ \};}
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00022}\mbox{\hyperlink{class_file_encryption}{00022}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_file_encryption}{FileEncryption}}\ \{}
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00023}00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00024}00024\ \ \ \ \ \textcolor{keywordtype}{void}\ loadKey(\textcolor{keyword}{const}\ std::string\&\ keyFileName);}
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00025}00025\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00026}00026\ \ \ \ \ std::vector<unsigned\ char>\ key;}
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_file_encryption}{FileEncryption}}*\ p\_instance;}
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_singleton_destroyer}{SingletonDestroyer}}\ destroyer;}
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00029}00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_file_encryption_afa7c8b3a31ca9e5bee8f5085b05f4bde}{generateKeyFile}}(\textcolor{keyword}{const}\ std::string\&\ keyFileName);}
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_file_encryption}{FileEncryption}}*\ \mbox{\hyperlink{class_file_encryption_ae48c6d19eb4877c55583471545acfc96}{getInstance}}(\textcolor{keyword}{const}\ std::string\&\ keyFileName);}
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00034}00034\ \ \ \ \ \mbox{\hyperlink{class_file_encryption_aa2b84f979b8c8a1abfbec5415cb4a050}{FileEncryption}}(\textcolor{keyword}{const}\ std::string\&\ keyFileName);}
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_file_encryption_aba1c1ae5912ee63b8eef016f1ffdfa21}{encryptFile}}(\textcolor{keyword}{const}\ std::string\&\ inputFile,\ \textcolor{keyword}{const}\ std::string\&\ outputFile);}
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00036}00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_file_encryption_acd9626eae2901e812866985605d67a84}{decryptFile}}(\textcolor{keyword}{const}\ std::string\&\ inputFile,\ \textcolor{keyword}{const}\ std::string\&\ outputFile);}
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00037}00037\ \};}
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_file_encryption_8h_source_l00039}00039\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
