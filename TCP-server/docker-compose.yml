@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+
+#database container
+
+#  mysql-server:
+#    image: mysql:latest
+#    container_name: my-mysql-container
+#    environment:
+#      MYSQL_ROOT_PASSWORD: root
+#      MYSQL_DATABASE: /database/temporary_passwords.db
+#      MYSQL_USER: user
+#      MYSQL_PASSWORD: user
+#    ports:
+#      - "3306:3306"
+
+#server container
+  cpp-server-container:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cpp-server-container
+    ports:
+      - "8080:8080"
+    #networks:
+    #  - database-link-network
+    volumes:
+      - ./database:/database
+      - ./client-files:/client-files
+      - ./logs:/logs
+    #depends_on:
+    #  - mysql-server
+
+#networking to link both containers
+#networks:
+#  database-link-network:
+#    driver: bridge
+
+#database volume 
+# volumes:
+#   sqlite_data:
+#     external: true

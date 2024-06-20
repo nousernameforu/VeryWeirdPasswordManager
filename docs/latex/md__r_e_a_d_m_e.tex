@@ -1,0 +1,42 @@
+\chapter{Very\+Weird\+Password\+Manager}
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{VeryWeirdPasswordManager@{VeryWeirdPasswordManager}}
+\label{md__r_e_a_d_m_e_autotoc_md0}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
+Проект по созданию простого менеджера паролей для предмета "{}Технологии и методы программирования"{}\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{\texorpdfstring{How to set up\+:}{How to set up\+:}}\label{md__r_e_a_d_m_e_autotoc_md1}
+(on linux or mac idk)
+
+install docker and docker-\/compose on your platform\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{curl\ -\/fsSL\ https://get.docker.com\ -\/o\ get-\/docker.sh\ \&\&\ \(\backslash\)}
+\DoxyCodeLine{sudo\ sh\ ./get-\/docker.sh\ -\/-\/dry-\/run}
+
+\end{DoxyCode}
+ then install g++ and openssl-\/dev to run the test client\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{apt-\/get\ install\ g++\ openssl-\/dev}
+
+\end{DoxyCode}
+ get repo cloned and cd into it\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ clone\ https://github.com/nousernameforu/VeryWeirdPasswordManager\ \&\&\ \(\backslash\)}
+\DoxyCodeLine{cd\ VeryWeirdPasswordManager}
+
+\end{DoxyCode}
+ then run the server with docker-\/compose\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd\ TCP-\/server\ \&\&\ \(\backslash\)}
+\DoxyCodeLine{docker-\/compose\ up\ \ }
+
+\end{DoxyCode}
+
+
+after server started run a client with startup.\+sh shell script\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd\ ../TCP-\/client\ \&\&\ \(\backslash\)}
+\DoxyCodeLine{chmod\ +x\ startup.sh\ \&\&\ \(\backslash\)}
+\DoxyCodeLine{./startup.sh}
+
+\end{DoxyCode}
+
+
+Now you can test this crappy code I wrote. 

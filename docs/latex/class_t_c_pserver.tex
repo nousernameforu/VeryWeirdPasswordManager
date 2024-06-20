@@ -1,0 +1,148 @@
+\doxysection{TCPserver Class Reference}
+\hypertarget{class_t_c_pserver}{}\label{class_t_c_pserver}\index{TCPserver@{TCPserver}}
+
+
+{\ttfamily \#include $<$TCPserver.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_t_c_pserver_a4ebeab35fb2759f773c43f77b0f93672}{TCPserver}} (int port)
+\item 
+\mbox{\hyperlink{class_t_c_pserver_ad286027f220e98b07a732fe6fcab137a}{\texorpdfstring{$\sim$}{\string~}\+TCPserver}} ()
+\item 
+bool \mbox{\hyperlink{class_t_c_pserver_a895fa5f1717cc471fce3299cf803b1f6}{auth\+Command}} (int client\+Socket, char \texorpdfstring{$\ast$}{*}buffer)
+\item 
+bool \mbox{\hyperlink{class_t_c_pserver_a27261ed0d2b53077e16c207254b74b4a}{reg\+Command}} (int client\+Socket, char \texorpdfstring{$\ast$}{*}buffer)
+\item 
+bool \mbox{\hyperlink{class_t_c_pserver_a9ed3b12c5e6ee1f4fe4dfa34e73f99cf}{hello\+Command}} (int client\+Socket)
+\item 
+bool \mbox{\hyperlink{class_t_c_pserver_a2af1f2398d138ebeb74927dd5fd34a98}{quit\+Command}} (int client\+Socket)
+\item 
+bool \mbox{\hyperlink{class_t_c_pserver_a50c7ad26736b8d4fd2a2ca2a7b77b56f}{send\+File\+Command}} (int client\+Socket, char \texorpdfstring{$\ast$}{*}buffer)
+\item 
+bool \mbox{\hyperlink{class_t_c_pserver_a39c6cc2662653629338083afaf024df7}{receive\+File\+Command}} (int client\+Socket, char \texorpdfstring{$\ast$}{*}buffer)
+\item 
+void \mbox{\hyperlink{class_t_c_pserver_aa4ef630ebef2bfb65ae07ce76e1faa1c}{handle\+Client}} (int client\+Socket)
+\item 
+void \mbox{\hyperlink{class_t_c_pserver_aa3f3fe9595a7bc17a741a35ee3d5b853}{start\+Accepting\+Connections}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_t_c_pserver_8h_source_l00021}{21}} of file \mbox{\hyperlink{_t_c_pserver_8h_source}{TCPserver.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_t_c_pserver_a4ebeab35fb2759f773c43f77b0f93672}\index{TCPserver@{TCPserver}!TCPserver@{TCPserver}}
+\index{TCPserver@{TCPserver}!TCPserver@{TCPserver}}
+\doxysubsubsection{\texorpdfstring{TCPserver()}{TCPserver()}}
+{\footnotesize\ttfamily \label{class_t_c_pserver_a4ebeab35fb2759f773c43f77b0f93672} 
+TCPserver\+::\+TCPserver (\begin{DoxyParamCaption}\item[{int}]{port}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_t_c_pserver_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{_t_c_pserver_8cpp_source}{TCPserver.\+cpp}}.
+
+\Hypertarget{class_t_c_pserver_ad286027f220e98b07a732fe6fcab137a}\index{TCPserver@{TCPserver}!````~TCPserver@{\texorpdfstring{$\sim$}{\string~}TCPserver}}
+\index{````~TCPserver@{\texorpdfstring{$\sim$}{\string~}TCPserver}!TCPserver@{TCPserver}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}TCPserver()}{\string~TCPserver()}}
+{\footnotesize\ttfamily \label{class_t_c_pserver_ad286027f220e98b07a732fe6fcab137a} 
+TCPserver\+::\texorpdfstring{$\sim$}{\string~}\+TCPserver (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_t_c_pserver_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{_t_c_pserver_8cpp_source}{TCPserver.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_t_c_pserver_a895fa5f1717cc471fce3299cf803b1f6}\index{TCPserver@{TCPserver}!authCommand@{authCommand}}
+\index{authCommand@{authCommand}!TCPserver@{TCPserver}}
+\doxysubsubsection{\texorpdfstring{authCommand()}{authCommand()}}
+{\footnotesize\ttfamily \label{class_t_c_pserver_a895fa5f1717cc471fce3299cf803b1f6} 
+bool TCPserver\+::auth\+Command (\begin{DoxyParamCaption}\item[{int}]{client\+Socket}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{buffer}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_t_c_pserver_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{_t_c_pserver_8cpp_source}{TCPserver.\+cpp}}.
+
+\Hypertarget{class_t_c_pserver_aa4ef630ebef2bfb65ae07ce76e1faa1c}\index{TCPserver@{TCPserver}!handleClient@{handleClient}}
+\index{handleClient@{handleClient}!TCPserver@{TCPserver}}
+\doxysubsubsection{\texorpdfstring{handleClient()}{handleClient()}}
+{\footnotesize\ttfamily \label{class_t_c_pserver_aa4ef630ebef2bfb65ae07ce76e1faa1c} 
+void TCPserver\+::handle\+Client (\begin{DoxyParamCaption}\item[{int}]{client\+Socket}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_t_c_pserver_8cpp_source_l00100}{100}} of file \mbox{\hyperlink{_t_c_pserver_8cpp_source}{TCPserver.\+cpp}}.
+
+\Hypertarget{class_t_c_pserver_a9ed3b12c5e6ee1f4fe4dfa34e73f99cf}\index{TCPserver@{TCPserver}!helloCommand@{helloCommand}}
+\index{helloCommand@{helloCommand}!TCPserver@{TCPserver}}
+\doxysubsubsection{\texorpdfstring{helloCommand()}{helloCommand()}}
+{\footnotesize\ttfamily \label{class_t_c_pserver_a9ed3b12c5e6ee1f4fe4dfa34e73f99cf} 
+bool TCPserver\+::hello\+Command (\begin{DoxyParamCaption}\item[{int}]{client\+Socket}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_t_c_pserver_8cpp_source_l00088}{88}} of file \mbox{\hyperlink{_t_c_pserver_8cpp_source}{TCPserver.\+cpp}}.
+
+\Hypertarget{class_t_c_pserver_a2af1f2398d138ebeb74927dd5fd34a98}\index{TCPserver@{TCPserver}!quitCommand@{quitCommand}}
+\index{quitCommand@{quitCommand}!TCPserver@{TCPserver}}
+\doxysubsubsection{\texorpdfstring{quitCommand()}{quitCommand()}}
+{\footnotesize\ttfamily \label{class_t_c_pserver_a2af1f2398d138ebeb74927dd5fd34a98} 
+bool TCPserver\+::quit\+Command (\begin{DoxyParamCaption}\item[{int}]{client\+Socket}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_t_c_pserver_8cpp_source_l00093}{93}} of file \mbox{\hyperlink{_t_c_pserver_8cpp_source}{TCPserver.\+cpp}}.
+
+\Hypertarget{class_t_c_pserver_a39c6cc2662653629338083afaf024df7}\index{TCPserver@{TCPserver}!receiveFileCommand@{receiveFileCommand}}
+\index{receiveFileCommand@{receiveFileCommand}!TCPserver@{TCPserver}}
+\doxysubsubsection{\texorpdfstring{receiveFileCommand()}{receiveFileCommand()}}
+{\footnotesize\ttfamily \label{class_t_c_pserver_a39c6cc2662653629338083afaf024df7} 
+bool TCPserver\+::receive\+File\+Command (\begin{DoxyParamCaption}\item[{int}]{client\+Socket}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{buffer}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_t_c_pserver_8cpp_source_l00079}{79}} of file \mbox{\hyperlink{_t_c_pserver_8cpp_source}{TCPserver.\+cpp}}.
+
+\Hypertarget{class_t_c_pserver_a27261ed0d2b53077e16c207254b74b4a}\index{TCPserver@{TCPserver}!regCommand@{regCommand}}
+\index{regCommand@{regCommand}!TCPserver@{TCPserver}}
+\doxysubsubsection{\texorpdfstring{regCommand()}{regCommand()}}
+{\footnotesize\ttfamily \label{class_t_c_pserver_a27261ed0d2b53077e16c207254b74b4a} 
+bool TCPserver\+::reg\+Command (\begin{DoxyParamCaption}\item[{int}]{client\+Socket}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{buffer}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_t_c_pserver_8cpp_source_l00057}{57}} of file \mbox{\hyperlink{_t_c_pserver_8cpp_source}{TCPserver.\+cpp}}.
+
+\Hypertarget{class_t_c_pserver_a50c7ad26736b8d4fd2a2ca2a7b77b56f}\index{TCPserver@{TCPserver}!sendFileCommand@{sendFileCommand}}
+\index{sendFileCommand@{sendFileCommand}!TCPserver@{TCPserver}}
+\doxysubsubsection{\texorpdfstring{sendFileCommand()}{sendFileCommand()}}
+{\footnotesize\ttfamily \label{class_t_c_pserver_a50c7ad26736b8d4fd2a2ca2a7b77b56f} 
+bool TCPserver\+::send\+File\+Command (\begin{DoxyParamCaption}\item[{int}]{client\+Socket}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{buffer}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_t_c_pserver_8cpp_source_l00070}{70}} of file \mbox{\hyperlink{_t_c_pserver_8cpp_source}{TCPserver.\+cpp}}.
+
+\Hypertarget{class_t_c_pserver_aa3f3fe9595a7bc17a741a35ee3d5b853}\index{TCPserver@{TCPserver}!startAcceptingConnections@{startAcceptingConnections}}
+\index{startAcceptingConnections@{startAcceptingConnections}!TCPserver@{TCPserver}}
+\doxysubsubsection{\texorpdfstring{startAcceptingConnections()}{startAcceptingConnections()}}
+{\footnotesize\ttfamily \label{class_t_c_pserver_aa3f3fe9595a7bc17a741a35ee3d5b853} 
+void TCPserver\+::start\+Accepting\+Connections (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_t_c_pserver_8cpp_source_l00158}{158}} of file \mbox{\hyperlink{_t_c_pserver_8cpp_source}{TCPserver.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+TCP-\/server/\mbox{\hyperlink{_t_c_pserver_8h}{TCPserver.\+h}}\item 
+TCP-\/server/\mbox{\hyperlink{_t_c_pserver_8cpp}{TCPserver.\+cpp}}\end{DoxyCompactItemize}
