@@ -117,7 +117,6 @@ bool UserAuthentication::authenticateUser(const string& username, const string& 
 
     sqlite3_finalize(statement);
     return isAuthenticated;
-
 }
 
 

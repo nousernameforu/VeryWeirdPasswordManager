@@ -34,6 +34,7 @@ class TCPserver {
         bool authCommand(int clientSocket, char* buffer);
         bool regCommand(int clientSocket, char* buffer);
         bool helloCommand(int clientSocket);
+        bool helpCommand(int clientSocket);
         bool quitCommand(int clientSocket);
         bool sendFileCommand(int clientSocket, char* buffer);
         bool receiveFileCommand(int clientSocket, char* buffer);

@@ -12,7 +12,6 @@ File_SingletonDestroyer::~File_SingletonDestroyer() {
     std::cout << "[FileHandeling_signletonDestroyer] Destructor ran." << std::endl;
 }
 
-
 // Implementation of SingletonDestroyer initialize method
 void File_SingletonDestroyer::initialize(FileHandeling* p) {
     p_instance = p;
@@ -35,8 +34,8 @@ FileHandeling::~FileHandeling() {
     std::cout << "[FileHandle] Destructor ran. " << std::endl;
 }
 
-bool FileHandeling::sendFile(int clientSocket, const std::string& filePath) {
-    
+bool FileHandeling::sendFile(int clientSocket, const QString& filePath) {
+
     const std::string HANDSHAKE_MESSAGE = "READY";
 
     char handshakeResponse[HANDSHAKE_MESSAGE.size() + 1];
@@ -48,38 +47,36 @@ bool FileHandeling::sendFile(int clientSocket, const std::string& filePath) {
     }
 
     send(clientSocket, HANDSHAKE_MESSAGE.c_str(), HANDSHAKE_MESSAGE.size(), 0);
+    // FileEncryption::getInstance()->encryptFile(filePath,filePath, "sdjlfjsdkl");
 
-    //FileEncryption::getInstance("keyfile")->encryptFile(filePath + "_unencrypted.txt",filePath);
-
-    std::ifstream fileToSend(filePath, std::ios::binary);
-    if (!fileToSend.is_open()) {
-        std::cerr << "Error opening file" << std::endl;
+    // Open the file
+    QFile file(filePath);
+    if (!file.open(QIODevice::ReadOnly)) {
+        qDebug() << "Error opening file";
         return false;
     }
 
-    std::cout << "Trying to send file <" << filePath << ">... " << std::endl;
+    qDebug() << "Trying to send file <" << filePath << ">... ";
 
     // Send file size
-    fileToSend.seekg(0, std::ios::end);
-    int fileSize = fileToSend.tellg();
-    fileToSend.seekg(0, std::ios::beg);
-    send(clientSocket, &fileSize, sizeof(fileSize), 0);
-    std::cout << "Sent the file size: " << fileSize << std::endl;
+    qint64 fileSize = file.size();
+    send(clientSocket, reinterpret_cast<const char*>(&fileSize), sizeof(fileSize), 0);
+    qDebug() << "Sent the file size: " << fileSize;
 
     // Send file data
     char sendBuffer[1024];
-    while (!fileToSend.eof()) {
-        fileToSend.read(sendBuffer, sizeof(sendBuffer));
-        send(clientSocket, sendBuffer, fileToSend.gcount(), 0);
+    qint64 bytesRead;
+    while (!file.atEnd()) {
+        bytesRead = file.read(sendBuffer, sizeof(sendBuffer));
+        send(clientSocket, sendBuffer, bytesRead, 0);
     }
 
-    fileToSend.close();
-    std::cout << "File sent successfully" << std::endl;
+    file.close();
+    qDebug() << "File sent successfully";
     return true;
 }
 
-bool FileHandeling::receiveFile(int clientSocket, const std::string& filePath) {
-
+bool FileHandeling::receiveFile(int clientSocket, const QString& filePath) {
     const std::string HANDSHAKE_MESSAGE = "READY";
 
     char handshakeMessage[HANDSHAKE_MESSAGE.size() + 1];
@@ -89,32 +86,37 @@ bool FileHandeling::receiveFile(int clientSocket, const std::string& filePath) {
         std::cerr << "Handshake failed." << std::endl;
         return false;
     }
-    
+
     send(clientSocket, HANDSHAKE_MESSAGE.c_str(), HANDSHAKE_MESSAGE.size(), 0);
 
     int fileSize = 0;
     recv(clientSocket, &fileSize, sizeof(fileSize), 0);
-    std::cout << "Trying to receive a file..." << std::endl;
+    qDebug() << "Trying to receive a file...";
 
     // Receive file data
-    std::ofstream fileToReceive(filePath, std::ios::binary);
-    std::cout << "Opened the file" << std::endl;
+    QFile file(filePath);
+    if (!file.open(QIODevice::WriteOnly)) {
+        qDebug() << "Error opening file";
+        return false;
+    }
+
+    qDebug() << "Opened the file";
     char receiveBuffer[1024];
     int bytesRead;
-    std::cout << "Reading the sent file." << std::endl;
+    qDebug() << "Reading the sent file.";
     while (fileSize > 0) {
         // Receive file data
         bytesRead = recv(clientSocket, receiveBuffer, sizeof(receiveBuffer), 0);
-        std::cout << "Receivinig buffer: " << receiveBuffer << std::endl;
         // Write data to the file
-        fileToReceive.write(receiveBuffer, bytesRead);
+        file.write(receiveBuffer, bytesRead);
         fileSize -= bytesRead;
-        std::cout << "Filesize is: " << fileSize << std::endl;
-
+        qDebug() << "Filesize is: " << fileSize;
     }
-    fileToReceive.close();
-    std::cout << "The file has been received successfully" << std::endl;
-    //FileEncryption::getInstance("keyfile")->decryptFile(filePath,filePath + "_unencrypted.txt");
+
+    file.close();
+    qDebug() << "The file has been received successfully";
+//    FileEncryption::getInstance("keyfile")->decryptFile(filePath,filePath + "_unencrypted.txt");
     return true;
 }
+
 

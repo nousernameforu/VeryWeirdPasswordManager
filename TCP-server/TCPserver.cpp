@@ -90,6 +90,11 @@ bool TCPserver::helloCommand(int clientSocket) {
     return true;
 }
 
+bool TCPserver::helpCommand(int clientSocket) {
+    send(clientSocket, "AUTH, REG, HELLO, QUIT, SEND_FILE, RECEIVE_FILE\n", 16, 0);
+    return true;
+}
+
 bool TCPserver::quitCommand(int clientSocket) {
     send(clientSocket, "Quitting the program\n", 22, 0);
     clientAuthStatus[clientSocket] = false;
@@ -148,7 +153,10 @@ void TCPserver::handleClient(int clientSocket) {
                 if (!sendFileCommand(clientSocket,buffer)){
                     cerr << "error" << endl;
                 };
-            } else {
+            } else if (strncmp(buffer, "HELP", 5) == 0) {
+                helpCommand(clientSocket);
+            }
+            else {
                 send(clientSocket, "Unknown command", 16, 0);
             }
         }

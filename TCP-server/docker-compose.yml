@@ -38,6 +38,6 @@ services:
 #    driver: bridge
 
 #database volume 
-volumes:
-  sqlite_data:
-    external: true
+# volumes:
+#   sqlite_data:
+#     external: true
